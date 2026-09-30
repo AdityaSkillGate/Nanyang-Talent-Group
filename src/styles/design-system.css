@@ -1,0 +1,214 @@
+/**
+ * NANYANG TALENT GROUP — DESIGN SYSTEM CSS TOKENS
+ * Premium Singapore Institutional Visual Language
+ */
+
+:root {
+  /* ==========================================================================
+     1. Brand Colors & Semantic Tokens
+     ========================================================================== */
+  --ny-navy-900: #0a1128;
+  --ny-navy-800: #0f1c4d;
+  --ny-navy-700: #172a73; /* Primary Corporate Navy */
+  --ny-navy-600: #203588;
+  --ny-navy-500: #2946a3;
+  --ny-navy-100: #e8ecf8;
+  --ny-navy-50:  #f4f6fc;
+
+  --ny-red-700:  #b8141a;
+  --ny-red-600:  #d71920; /* Primary Nanyang Red */
+  --ny-red-500:  #e62930;
+  --ny-red-100:  #fce8e9;
+  --ny-red-50:   #fdf3f4;
+
+  --ny-blue-700: #0e789b;
+  --ny-blue-600: #1fa7d6; /* Globe Sky Blue */
+  --ny-blue-500: #38bdf8;
+  --ny-blue-200: #9bd2eb;
+  --ny-blue-50:  #eaf7f9;
+
+  --ny-gold-700: #9e7a2b;
+  --ny-gold-600: #c7a04b; /* Warm Institutional Gold */
+  --ny-gold-500: #dfb85d;
+  --ny-gold-100: #f7eed7;
+  --ny-gold-50:  #faf6ea;
+
+  /* Surfaces & Canvas */
+  --ny-canvas:        #f8f9fb;
+  --ny-surface-card:  #ffffff;
+  --ny-surface-subtle:#f1f4f9;
+  --ny-surface-muted: #e9eef5;
+
+  /* Typography Inks */
+  --ny-ink-primary:   #172033;
+  --ny-ink-secondary: #475467;
+  --ny-ink-muted:     #667085;
+  --ny-ink-light:     #98a2b3;
+  --ny-ink-inverse:   #ffffff;
+
+  /* Borders & Dividers */
+  --ny-border-subtle: #e4e7ec;
+  --ny-border-medium: #d0d5dd;
+  --ny-border-strong: #98a2b3;
+  --ny-border-navy:   #172a73;
+  --ny-border-red:    #d71920;
+
+  /* ==========================================================================
+     2. Spacing Scale (8pt Grid)
+     ========================================================================== */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+
+  /* ==========================================================================
+     3. Typography Scale & Line Heights
+     ========================================================================== */
+  --font-family-en: "Inter", "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-sans: var(--font-family-en);
+
+  --font-size-xs:   0.75rem;     /* 12px */
+  --line-height-xs: 1rem;        /* 16px */
+
+  --font-size-sm:   0.875rem;    /* 14px */
+  --line-height-sm: 1.25rem;     /* 20px */
+
+  --font-size-base: 1rem;        /* 16px */
+  --line-height-base: 1.5rem;    /* 24px */
+
+  --font-size-lg:   1.125rem;    /* 18px */
+  --line-height-lg: 1.75rem;     /* 28px */
+
+  --font-size-xl:   1.25rem;     /* 20px */
+  --line-height-xl: 1.875rem;    /* 30px */
+
+  --font-size-2xl:  1.5rem;      /* 24px */
+  --line-height-2xl: 2rem;       /* 32px */
+
+  --font-size-3xl:  1.875rem;    /* 30px */
+  --line-height-3xl: 2.25rem;    /* 36px */
+
+  --font-size-4xl:  2.25rem;     /* 36px */
+  --line-height-4xl: 2.5rem;     /* 40px */
+
+  --font-size-5xl:  3rem;        /* 48px */
+  --line-height-5xl: 1.15;
+
+  /* ==========================================================================
+     4. Shadows & Editorial Elevations (Restrained, no muddy heavy blur)
+     ========================================================================== */
+  --ny-shadow-subtle: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  --ny-shadow-card:   0 1px 3px 0 rgba(16, 24, 40, 0.07), 0 1px 2px -1px rgba(16, 24, 40, 0.05);
+  --ny-shadow-hover:  0 10px 24px -4px rgba(23, 42, 115, 0.08), 0 2px 6px -2px rgba(23, 42, 115, 0.04);
+  --ny-shadow-focus:  0 0 0 3px rgba(23, 42, 115, 0.18);
+  --ny-shadow-red-focus: 0 0 0 3px rgba(215, 25, 32, 0.2);
+
+  /* ==========================================================================
+     5. Border Radii
+     ========================================================================== */
+  --radius-xs: 0.125rem; /* 2px */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 0.75rem;  /* 12px */
+  --radius-xl: 1rem;     /* 16px */
+  --radius-2xl: 1.5rem;  /* 24px */
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     6. Transitions
+     ========================================================================== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   7. CSS-First Micro-Animations (Restrained, Editorial)
+   ========================================================================== */
+@keyframes ny-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ny-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ny-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ny-pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes ny-brush-stroke-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.ny-animate-fade-in {
+  animation: ny-fade-in var(--transition-normal) forwards;
+}
+
+.ny-animate-slide-up {
+  animation: ny-slide-up var(--transition-smooth) forwards;
+}
+
+.ny-animate-pulse {
+  animation: ny-pulse-subtle 3s ease-in-out infinite;
+}
+
+.ny-brush-reveal {
+  animation: ny-brush-stroke-reveal 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Accessibility: Safe reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

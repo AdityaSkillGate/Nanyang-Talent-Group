@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singapore Nanyang Artists Society | 新加坡南洋美术家协会</title>
+  <meta name="description" content="Established in 2002 under the guidance of pioneer master Liu Kang. Fostering Singaporean arts education, national grade examinations, international competitions, and cultural exchange.">
+  <link rel="icon" type="image/png" href="assets/logo/logo.png">
+  <link rel="stylesheet" href="css/main.css?v=mf4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Shared Shell Roots -->
+  <div id="announcement-root"></div>
+  <div id="header-root"></div>
+
+  <main class="site-main">
+    <!-- ====================================================================
+         SECTION 1: CINEMATIC HERO
+         ==================================================================== -->
+    <!-- ====================================================================
+         SECTION 1: CINEMATIC HERO MEDIA SEQUENCE (5 SLIDES)
+         ==================================================================== -->
+    <section class="hero-cinematic hero-slider-wrap" id="hero-slider-wrap" aria-label="Hero Media Showcase">
+      <div class="hero-slider-track" id="hero-slider-track">
+        <!-- Initial Slide (Dynamically rendered & enhanced via js/modules/hero-slider.js) -->
+        <div class="hero-slide is-active">
+          <img src="assets/images/art-works/art-21.png" alt="Master Chinese Ink Landscape Painting" class="hero-slide-img">
+          <div class="hero-slide-overlay"></div>
+        </div>
+      </div>
+
+      <div class="container hero-content hero-slider-content">
+        <div class="hero-eyebrow text-stagger">
+          <span class="seal-badge seal-badge-gold">Since 2002</span>
+          <span class="seal-badge" style="background: rgba(186, 27, 29, 0.2); color: #FFA3A5; border-color: #BA1B1D;">Pioneer Liu Kang Inscribed</span>
+          <span class="seal-badge" id="hero-slide-tag" style="background: rgba(255, 255, 255, 0.12); color: #F5EFEB; border-color: rgba(255, 255, 255, 0.25);">
+            1/5 · Master Ink Landscape & Asian Heritage
+          </span>
+        </div>
+
+        <h1 class="hero-title reveal-up">
+          <span data-i18n="home.hero_title">Create. Learn. Achieve. Inspire.</span>
+          <span class="hero-title-zh">以艺养心 · 启智树人 · 融贯中西</span>
+        </h1>
+
+        <p class="hero-description reveal-up" data-i18n="home.hero_desc">
+          Explore artistic learning, heritage arts, creative development and prestigious opportunities to showcase talent across Singapore and the world.
+        </p>
+
+        <div class="hero-cta-wrap reveal-up">
+          <a href="courses.html" class="btn btn-primary btn-lg" data-i18n="home.hero_explore">Explore Art Courses →</a>
+          <a href="nanyang-star.html" class="btn btn-outline btn-lg" style="color: #FFFFFF; border-color: rgba(255, 255, 255, 0.4);" data-i18n="home.hero_nanyang_star">Discover Nanyang Star</a>
+          <a href="grade.html" class="btn btn-outline btn-lg" style="color: #FFFFFF; border-color: rgba(255, 255, 255, 0.4);">Grade Exam (考级)</a>
+        </div>
+      </div>
+
+      <!-- Hero Slide Controls & Indicators -->
+      <div class="hero-slider-controls" aria-label="Hero Slide Navigation">
+        <button type="button" class="hero-nav-arrow" id="hero-prev-btn" aria-label="Previous Slide">‹</button>
+        <div class="hero-pagination-dots" id="hero-pagination-dots"></div>
+        <button type="button" class="hero-nav-arrow" id="hero-next-btn" aria-label="Next Slide">›</button>
+        <button type="button" class="hero-pause-toggle" id="hero-pause-btn" aria-label="Pause Auto Scroll" title="Pause / Play Slides">⏸</button>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: FOUR QUICK ACTION GATES
+         ==================================================================== -->
+    <section class="section-sm" style="padding-top: 0;">
+      <div class="container">
+        <div class="gate-grid">
+          <!-- Gate 1: Explore Courses -->
+          <div class="gate-card">
+            <div>
+              <div class="gate-icon">🎨</div>
+              <h2 style="font-size: 20px; margin-bottom: 4px;" data-i18n="home.gate_courses_title">Explore Courses</h2>
+              <h3 style="font-size: 13px; color: var(--color-cinnabar); margin-bottom: 8px;">艺术课程体系</h3>
+              <p style="font-size: 13px; color: var(--color-ink-muted); margin-bottom: 16px;" data-i18n="home.gate_courses_desc">
+                Foundations in Chinese ink, academic sketch, oil, and children intellectual art.
+              </p>
+            </div>
+            <a href="courses.html" class="btn btn-outline btn-sm" data-i18n="home.gate_courses_btn">Browse Catalog →</a>
+          </div>
+
+          <!-- Gate 2: Grade Examination -->
+          <div class="gate-card">
+            <div>
+              <div class="gate-icon">📜</div>
+              <h2 style="font-size: 20px; margin-bottom: 4px;" data-i18n="home.gate_grade_title">Grade Exam</h2>
+              <h3 style="font-size: 13px; color: var(--color-cobalt); margin-bottom: 8px;">全国考级认证</h3>
+              <p style="font-size: 13px; color: var(--color-ink-muted); margin-bottom: 16px;" data-i18n="home.gate_grade_desc">
+                Grades 1 to 9 standardized assessment supervised across accredited test centres.
+              </p>
+            </div>
+            <a href="grade.html" class="btn btn-outline btn-sm" data-i18n="home.gate_grade_btn">Exam Pathway →</a>
+          </div>
+
+          <!-- Gate 3: Nanyang Star -->
+          <div class="gate-card">
+            <div>
+              <div class="gate-icon">⭐</div>
+              <h2 style="font-size: 20px; margin-bottom: 4px;" data-i18n="home.gate_star_title">Nanyang Star</h2>
+              <h3 style="font-size: 13px; color: var(--color-muted-gold-dark); margin-bottom: 8px;">南洋之星国际大赛</h3>
+              <p style="font-size: 13px; color: var(--color-ink-muted); margin-bottom: 16px;" data-i18n="home.gate_star_desc">
+                Premier international youth art competitions, gala exhibitions, and global awards.
+              </p>
+            </div>
+            <a href="nanyang-star.html" class="btn btn-outline btn-sm" data-i18n="home.gate_star_btn">Competition Hub →</a>
+          </div>
+
+          <!-- Gate 4: Find an Event -->
+          <div class="gate-card">
+            <div>
+              <div class="gate-icon">📅</div>
+              <h2 style="font-size: 20px; margin-bottom: 4px;" data-i18n="home.gate_events_title">News & Events</h2>
+              <h3 style="font-size: 13px; color: var(--color-cinnabar); margin-bottom: 8px;">展赛与大师讲座</h3>
+              <p style="font-size: 13px; color: var(--color-ink-muted); margin-bottom: 16px;" data-i18n="home.gate_events_desc">
+                Masterclass workshops, calligraphy rubbings, and gallery tour dates.
+              </p>
+            </div>
+            <a href="news-events.html" class="btn btn-outline btn-sm" data-i18n="home.gate_events_btn">Event Calendar →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: FOUR ART PATHWAYS
+         ==================================================================== -->
+    <section class="section section-ivory-dark" id="disciplines-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle" data-i18n="home.disciplines_subtitle">Curriculum Framework</span>
+          <h2 class="section-title" data-i18n="home.disciplines_title">Visual Arts Disciplines & Pathways</h2>
+          <p class="section-desc" data-i18n="home.disciplines_desc">
+            Structured artistic progression from sensory childhood discovery to academic mastery.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-4" style="gap: 24px;">
+          <!-- Pathway 1: Fine Arts -->
+          <a href="courses.html?cat=fine_arts" class="pathway-card-premium">
+            <div class="pathway-media-header">
+              <img src="assets/images/art-works/sketch-art.png" alt="Academic Sketching & Fine Arts" class="pathway-media-img" loading="lazy" onerror="this.onerror=null; this.src='assets/logo/logo.png';">
+              <div class="pathway-media-overlay">
+                <div class="pathway-seal-stamp">精</div>
+                <span class="pathway-audience-badge">Ages 8–Adults</span>
+              </div>
+            </div>
+            <div class="pathway-card-body">
+              <h3 class="pathway-card-title" data-i18n="home.pathway1_title">Fine Arts</h3>
+              <span class="pathway-card-zh" data-i18n="home.pathway1_zh">纯美术与学院素描</span>
+              <p class="pathway-card-desc" data-i18n="home.pathway1_desc">
+                Academic pencil sketching, plaster bust anatomical studies, watercolor washes, and Western oil compositions.
+              </p>
+              <div class="pathway-feature-tags">
+                <span class="pathway-tag-item">Plaster Casts</span>
+                <span class="pathway-tag-item">Still Life</span>
+                <span class="pathway-tag-item">Oil & Watercolor</span>
+              </div>
+              <div class="pathway-card-footer">
+                <span data-i18n="home.learn_more">Explore Studio Pathway</span>
+                <span aria-hidden="true">→</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Pathway 2: Heritage Arts -->
+          <a href="courses.html?cat=heritage_arts" class="pathway-card-premium">
+            <div class="pathway-media-header">
+              <img src="assets/images/art-works/chinese-children-art.png" alt="Traditional Chinese Painting & Calligraphy" class="pathway-media-img" loading="lazy" onerror="this.onerror=null; this.src='assets/logo/logo.png';">
+              <div class="pathway-media-overlay">
+                <div class="pathway-seal-stamp">墨</div>
+                <span class="pathway-audience-badge">Ages 6–Adults</span>
+              </div>
+            </div>
+            <div class="pathway-card-body">
+              <h3 class="pathway-card-title" data-i18n="home.pathway2_title">Heritage Arts</h3>
+              <span class="pathway-card-zh" data-i18n="home.pathway2_zh">中国画与传统书法</span>
+              <p class="pathway-card-desc" data-i18n="home.pathway2_desc">
+                Soft/hard pen calligraphy, Yan & Liu regular script, Shanshui landscapes, and Lingnan flower-and-bird painting.
+              </p>
+              <div class="pathway-feature-tags">
+                <span class="pathway-tag-item">Brush & Hard Pen</span>
+                <span class="pathway-tag-item">Shanshui Xieyi</span>
+                <span class="pathway-tag-item">Yan & Liu Script</span>
+              </div>
+              <div class="pathway-card-footer">
+                <span data-i18n="home.learn_more">Explore Heritage Pathway</span>
+                <span aria-hidden="true">→</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Pathway 3: Youth Arts -->
+          <a href="courses.html?cat=youth_arts" class="pathway-card-premium">
+            <div class="pathway-media-header">
+              <img src="assets/images/art-works/Creative-Cartoon-art.png" alt="Youth Arts & Patented Origami" class="pathway-media-img" loading="lazy" onerror="this.onerror=null; this.src='assets/logo/logo.png';">
+              <div class="pathway-media-overlay">
+                <div class="pathway-seal-stamp">创</div>
+                <span class="pathway-audience-badge">Ages 2–14</span>
+              </div>
+            </div>
+            <div class="pathway-card-body">
+              <h3 class="pathway-card-title" data-i18n="home.pathway3_title">Youth Arts</h3>
+              <span class="pathway-card-zh" data-i18n="home.pathway3_zh">少儿智力美术与卡通</span>
+              <p class="pathway-card-desc" data-i18n="home.pathway3_desc">
+                Sensory intellectual art, imaginative cartoon illustration, color theory, and patented 3D plastic origami sculpture.
+              </p>
+              <div class="pathway-feature-tags">
+                <span class="pathway-tag-item">Brain Development</span>
+                <span class="pathway-tag-item">Patented Origami</span>
+                <span class="pathway-tag-item">Creative Comic</span>
+              </div>
+              <div class="pathway-card-footer">
+                <span data-i18n="home.learn_more">Explore Youth Pathway</span>
+                <span aria-hidden="true">→</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Pathway 4: Professional Certification -->
+          <a href="courses.html?cat=professional_certification" class="pathway-card-premium">
+            <div class="pathway-media-header">
+              <img src="assets/images/art-works/art-21.png" alt="National Grade Examination & Accreditation" class="pathway-media-img" loading="lazy" onerror="this.onerror=null; this.src='assets/logo/logo.png';">
+              <div class="pathway-media-overlay">
+                <div class="pathway-seal-stamp">评</div>
+                <span class="pathway-audience-badge">Grades 1–9</span>
+              </div>
+            </div>
+            <div class="pathway-card-body">
+              <h3 class="pathway-card-title" data-i18n="home.pathway4_title">Certification</h3>
+              <span class="pathway-card-zh" data-i18n="home.pathway4_zh">全国考级与师资认证</span>
+              <p class="pathway-card-desc" data-i18n="home.pathway4_desc">
+                Progressive Grades 1 to 9 standardized assessment, verified certification credentials, and educator diplomas.
+              </p>
+              <div class="pathway-feature-tags">
+                <span class="pathway-tag-item">Grades 1 to 9</span>
+                <span class="pathway-tag-item">DSA Portfolio</span>
+                <span class="pathway-tag-item">Verified Registry</span>
+              </div>
+              <div class="pathway-card-footer">
+                <span data-i18n="home.learn_more">Explore Exam Pathway</span>
+                <span aria-hidden="true">→</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: FEATURED COURSES (DYNAMICALLY SOURCED)
+         ==================================================================== -->
+    <section class="section" id="featured-courses-section">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-8); flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="section-subtitle">Studio Classes</span>
+            <h2 class="section-title" style="margin-bottom: 4px;" data-i18n="home.featured_courses_title">Featured Art Studio Courses</h2>
+            <p style="font-size: 15px; color: var(--color-ink-muted); margin: 0;" data-i18n="home.featured_courses_desc">Carefully structured studio curriculums taught by acclaimed master instructors.</p>
+          </div>
+          <a href="courses.html" class="btn btn-outline" data-i18n="nav.courses_all">View All Courses Catalog →</a>
+        </div>
+
+        <!-- Course Category Filter Pills -->
+        <div class="filter-bar" id="course-filter-tabs">
+          <button type="button" class="filter-pill active" data-category="all">All Disciplines</button>
+          <button type="button" class="filter-pill" data-category="youth-arts">Children Intellectual Art (少儿智力)</button>
+          <button type="button" class="filter-pill" data-category="heritage-arts">Calligraphy & Ink (书法水墨)</button>
+          <button type="button" class="filter-pill" data-category="fine-arts">Academic Sketch (学院素描)</button>
+        </div>
+
+        <!-- Dynamic Course Feed Grid -->
+        <div class="grid grid-cols-3" id="featured-courses-grid">
+          <!-- Populated dynamically via js/home.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: EXPLORE THE NINE-LEVEL JOURNEY (INTERACTIVE PROGRESSION ROADMAP)
+         ==================================================================== -->
+    <section class="section section-ivory-dark" id="journey-section" aria-label="Explore the Nine-Level Journey">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-subtitle" data-i18n="home.journey_subtitle">National Visual Arts & Calligraphy Progression</span>
+          <h2 class="section-title" data-i18n="home.journey_title">Explore the Nine-Level Journey</h2>
+          <h3 style="font-size: 18px; color: var(--color-cinnabar); margin-top: 4px; font-weight: 500;">
+            探索一至九阶艺术成长之路
+          </h3>
+          <p class="section-desc" data-i18n="home.journey_desc">
+            A structured, progressive pathway in visual arts assessment and classical calligraphic mastery from foundational strokes to mature artistic expression. Click any grade to view its official syllabus and authentic reference plates.
+          </p>
+        </div>
+
+        <!-- 4-Stage Interactive Filter Bar -->
+        <div class="nine-level-stage-bar" id="journey-stage-tabs">
+          <button type="button" class="nine-level-stage-pill active" data-stage="all">
+            <span data-i18n="home.journey_stage_all">All 9 Levels</span>
+          </button>
+          <button type="button" class="nine-level-stage-pill" data-stage="foundation">
+            <span data-i18n="home.journey_stage_1">🌱 Stage 1: Foundation (Grades 1–2)</span>
+          </button>
+          <button type="button" class="nine-level-stage-pill" data-stage="practice">
+            <span data-i18n="home.journey_stage_2">📖 Stage 2: Copybook (Grades 3–4)</span>
+          </button>
+          <button type="button" class="nine-level-stage-pill" data-stage="development">
+            <span data-i18n="home.journey_stage_3">🏛️ Stage 3: Style Development (Grades 5–6)</span>
+          </button>
+          <button type="button" class="nine-level-stage-pill" data-stage="mastery">
+            <span data-i18n="home.journey_stage_4">👑 Stage 4: Apex Mastery (Grades 7–9)</span>
+          </button>
+        </div>
+
+        <!-- 9-Level Progressive Pathway Grid -->
+        <div class="grid grid-cols-3" id="journey-cards-grid" style="gap: 22px; margin-bottom: 32px;">
+          <!-- Grade 1 -->
+          <div class="grade-journey-card reveal-up" data-stage="foundation">
+            <div class="grade-watermark-seal">一</div>
+            <div class="grade-header-meta">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="grade-index-badge">01</span>
+                <span class="seal-badge seal-badge-gold">Grade 1 · 一级</span>
+              </div>
+              <span class="grade-target-metric" style="margin-left: 10px;">🎯 50+ Characters · 16K Grid</span>
+            </div>
+            <h3 class="grade-title-text">Fundamental Brushwork</h3>
+            <span class="grade-zh-text">硬笔与软笔执笔姿势及基本笔画</span>
+            <p class="grade-desc-text">
+              Correct pen/brush grip, posture ergonomics, and 8 foundational strokes (horizontal, vertical, pie, na, dot). Centered balance within 16K grid paper.
+            </p>
+            <a href="grade-detail.html?track=hard-pen&level=1" class="grade-action-btn">
+              <span>Inspect Grade 1 Standards</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <!-- Grade 2 -->
+          <div class="grade-journey-card reveal-up" data-stage="foundation">
+            <div class="grade-watermark-seal">十</div>
+            <div class="grade-header-meta">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="grade-index-badge">02</span>
+                <span class="seal-badge seal-badge-gold">Grade 2 · 二级</span>
+              </div>
+              <span class="grade-target-metric" style="margin-left: 10px;">🎯 50+ Characters · Nine-Palace</span>
+            </div>
+            <h3 class="grade-title-text">Balance & Proportion</h3>
+            <span class="grade-zh-text">九宫结构与复合折钩笔画</span>
+            <p class="grade-desc-text">
+              Compound stroke combinations (pie-dian, shu-ti, heng-zhe-gou) and spatial equilibrium within standard Nine-Palace grid frames.
+            </p>
+            <a href="grade-detail.html?track=hard-pen&level=2" class="grade-action-btn">
+              <span>Inspect Grade 2 Standards</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <!-- Grade 3 -->
+          <div class="grade-journey-card reveal-up" data-stage="practice">
+            <div class="grade-watermark-seal">楷</div>
+            <div class="grade-header-meta">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="grade-index-badge">03</span>
+                <span class="seal-badge seal-badge-cobalt">Grade 3 · 三级</span>
+              </div>
+              <span class="grade-target-metric" style="margin-left: 10px;">🎯 80+ Characters · Idioms</span>
+            </div>
+            <h3 class="grade-title-text">Regular Script Discipline</h3>
+            <span class="grade-zh-text">标准楷书临摹与四字成语临写</span>
+            <p class="grade-desc-text">
+              Rigorous Standard Regular Script imitation with classical four-character idioms, disciplined column alignment, and even character spacing.
+            </p>
+            <a href="grade-detail.html?track=hard-pen&level=3" class="grade-action-btn">
+              <span>Inspect Grade 3 Standards</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <!-- Grade 4 -->
+          <div class="grade-journey-card reveal-up" data-stage="practice">
+            <div class="grade-watermark-seal">唐</div>
+            <div class="grade-header-meta">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="grade-index-badge">04</span>
+                <span class="seal-badge seal-badge-cobalt" style="width: 60px;">Grade 4 · 四级</span>
+              </div>
+              <span class="grade-target-metric" style="margin-left: 5px;">🎯 100+ Characters · 8K Format</span>
+            </div>
+            <h3 class="grade-title-text">Classical Tang Poetry</h3>
+            <span class="grade-zh-text">唐诗五言绝句创作与题款</span>
+            <p class="grade-desc-text">
+              Complete Tang quatrain composition (20 characters) with harmonious side inscription, year/name signatures, and disciplined 8K paper layout.
+            </p>
+            <a href="grade-detail.html?track=hard-pen&level=4" class="grade-action-btn">
+              <span>Inspect Grade 4 Standards</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <!-- Grade 5 -->
+          <div class="grade-journey-card reveal-up" data-stage="development">
+            <div class="grade-watermark-seal">碑</div>
+            <div class="grade-header-meta">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="grade-index-badge">05</span>
+                <span class="seal-badge seal-badge-cinnabar" style="width: 60px;">Grade 5 · 五级</span>
+              </div>
+              <span class="grade-target-metric" style="margin-left: 5px;">🎯 100+ Characters · Wei Stele</span>
+            </div>
+            <h3 class="grade-title-text">Wei Stele & Master Models</h3>
+            <span class="grade-zh-text">魏碑方笔气象与颜柳经典名帖</span>
+            <p class="grade-desc-text">
+              Northern Wei monument stele vigor or Yan Zhenqing/Liu Gongquan standard copybook rigor on 8K layout. Master chisel-like square bone structure.
+            </p>
+            <a href="grade-detail.html?track=hard-pen&level=5" class="grade-action-btn">
+              <span>Inspect Grade 5 Standards</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <!-- Grade 6 -->
+          <div class="grade-journey-card reveal-up" data-stage="development">
+            <div class="grade-watermark-seal">隶</div>
+            <div class="grade-header-meta">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="grade-index-badge">06</span>
+                <span class="seal-badge seal-badge-cinnabar" style="width: 60px;">Grade 6 · 六级</span>
+              </div>
+              <span class="grade-target-metric" style="margin-left: 5px;">🎯 100+ Characters · Versatility</span>
+            </div>
+            <h3 class="grade-title-text">Script Versatility</h3>
+            <span class="grade-zh-text">隶书蚕头燕尾与行书过渡研习</span>
+            <p class="grade-desc-text">
+              Clerical Script (隶书) silkworm-head and swallow-tail dynamics or Running Script (行书) transitions with formal year and artist seals.
+            </p>
+            <a href="grade-detail.html?track=hard-pen&level=6" class="grade-action-btn">
+              <span>Inspect Grade 6 Standards</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <!-- Grade 7 -->
+          <div class="grade-journey-card reveal-up" data-stage="mastery">
+            <div class="grade-watermark-seal">行</div>
+            <div class="grade-header-meta">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="grade-index-badge">07</span>
+                <span class="seal-badge seal-badge-gold" style="width: 60px;">Grade 7 · 七级</span>
+              </div>
+              <span class="grade-target-metric" style="margin-left: 5px;">🎯 120+ Characters · Running Qi</span>
+            </div>
+            <h3 class="grade-title-text">Running Script Tempo</h3>
+            <span class="grade-zh-text">行书气韵连贯与提按节奏掌控</span>
+            <p class="grade-desc-text">
+              Semi-cursive running script (行书) poem scrolls with continuous stroke energy, spontaneous dry-brush transitions, and rhythmic musical tempo.
+            </p>
+            <a href="grade-detail.html?track=hard-pen&level=7" class="grade-action-btn">
+              <span>Inspect Grade 7 Standards</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <!-- Grade 8 -->
+          <div class="grade-journey-card reveal-up" data-stage="mastery">
+            <div class="grade-watermark-seal">联</div>
+            <div class="grade-header-meta">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="grade-index-badge">08</span>
+                <span class="seal-badge seal-badge-gold">Grade 8 · 八级</span>
+              </div>
+              <span class="grade-target-metric" style="margin-left: 8px;">🎯 120+ Characters · Couplets</span>
+            </div>
+            <h3 class="grade-title-text">Dual Script Couplets</h3>
+            <span class="grade-zh-text">楹联书法创作与长篇自撰题跋</span>
+            <p class="grade-desc-text">
+              Choice of Seal, Clerical, or Running cursive couplet scrolls with long self-composed inscriptions, historical commentary, and balanced spacing.
+            </p>
+            <a href="grade-detail.html?track=hard-pen&level=8" class="grade-action-btn">
+              <span>Inspect Grade 8 Standards</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <!-- Grade 9 (Apex Card) -->
+          <div class="grade-journey-card grade-card-apex reveal-up" data-stage="mastery">
+            <div class="grade-watermark-seal" style="margin-top: 14px;">鼎</div>
+            <div class="grade-header-meta">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="grade-index-badge">09</span>
+                <span class="seal-badge seal-badge-cinnabar">Grade 9 · 毕业九段</span>
+              </div>
+              <span class="grade-target-metric" style="background: #FEE2E2; border-color: #FECACA; color: #991B1B; margin-left: 10px;">👑 Highest Master Scroll</span>
+            </div>
+            <h3 class="grade-title-text">Apex Graduation Scroll</h3>
+            <span class="grade-zh-text">毕业九段·多体通篇创作与金石钤印</span>
+            <p class="grade-desc-text">
+              Master classical scroll creation in dual distinct scripts, complete with scholarly seal carving appraisal, colophons, and expert critique.
+            </p>
+            <a href="grade-detail.html?track=hard-pen&level=9" class="grade-action-btn">
+              <span>Inspect Apex Grade 9 Standards</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Grade Examination Platform Promotional Hub -->
+        <div class="card reveal-up" style="background: var(--color-gallery-white); border: 1px solid var(--color-paper-border); padding: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+          <div>
+            <span class="seal-badge seal-badge-gold" style="margin-bottom: 8px;">Accredited National Platform</span>
+            <h3 style="font-size: 22px; margin-bottom: 6px;">Singapore National Visual Arts Grade Examination</h3>
+            <p style="font-size: 14px; color: var(--color-ink-muted); margin: 0; max-width: 640px; line-height: 1.6;">
+              Administered across accredited testing centres in Singapore. Features 18 complete Chinese calligraphy levels, authentic master reference plates, and interactive level comparison.
+            </p>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="grade.html" class="btn btn-primary">
+              Explore Examination Hub (考级中心) →
+            </a>
+            <a href="grade.html#grade-track-nav" class="btn btn-outline">
+              Compare Standards (标准对比)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: NANYANG STAR INTERNATIONAL COMPETITION SPOTLIGHT
+         ==================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div style="background: var(--color-gallery-white); border: 1px solid var(--color-paper-border); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-card);">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+            <div style="padding: 48px; display: flex; flex-direction: column; justify-content: center;">
+              <span class="seal-badge seal-badge-gold" style="margin-bottom: 12px; align-self: flex-start;">Flagship International Event</span>
+              <h2 style="font-size: 32px; margin-bottom: 8px; line-height: 1.2;" data-i18n="home.star_spotlight_title">Nanyang Star International Children's Art Competition</h2>
+              <h3 style="font-size: 18px; color: var(--color-cinnabar); margin-bottom: 20px;">南洋之星国际少儿艺术大赛</h3>
+              
+              <p style="font-size: 15px; color: var(--color-ink-charcoal); line-height: 1.65; margin-bottom: 16px;">
+                An esteemed global creative stage empowering youth to express humanitarian values, environmental harmony, and cross-cultural heritage through fine art.
+              </p>
+
+              <div style="background: var(--color-warm-ivory); border-left: 3px solid var(--color-muted-gold); padding: 12px 16px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: 24px;">
+                <p style="font-size: 13px; color: var(--color-ink-charcoal); margin: 0;">
+                  <strong>Historical Sample Spotlight (2020):</strong> Over 100 international youth pieces exhibited online under the theme <em>"Looking into the Future"</em> (共创美好未来).
+                </p>
+              </div>
+
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="nanyang-star.html" class="btn btn-primary" data-i18n="nav.nanyang_star_hub">Competition Hub →</a>
+                <a href="nanyang-star.html#winners" class="btn btn-outline" data-i18n="nav.nanyang_star_winners">2020 Winner Archive</a>
+              </div>
+            </div>
+
+            <div style="background: var(--color-warm-ivory-dark); position: relative; min-height: 340px;">
+              <img src="assets/images/art-works/art-1.png" alt="Nanyang Star Children Art Exhibition" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='assets/logo/logo.png';">
+              <div style="position: absolute; bottom: 16px; right: 16px; background: rgba(18, 19, 22, 0.85); color: #FFFFFF; padding: 6px 12px; border-radius: var(--radius-xs); font-size: 12px;">
+                Singapore Nanyang Division · Grand Prize
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: DIGITAL ART MUSEUM PREVIEW
+         ==================================================================== -->
+    <section class="section section-ivory-dark">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-8); flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="section-subtitle">Curated Collection</span>
+            <h2 class="section-title" style="margin-bottom: 4px;">Digital Art Museum & Exhibition Vault</h2>
+            <p style="font-size: 15px; color: var(--color-ink-muted); margin: 0;">Masterpieces across Singapore Nanyang, Singapore KEC, and China Divisions.</p>
+          </div>
+          <a href="gallery.html" class="btn btn-outline" data-i18n="nav.gallery">Explore Full Gallery →</a>
+        </div>
+
+        <div class="grid grid-cols-3" style="gap: 24px;">
+          <!-- Division 1 Showcase -->
+          <div class="gallery-tile">
+            <div class="tile-media" style="background: var(--color-warm-ivory-dark); overflow: hidden; height: 260px;">
+              <img src="assets/images/art-works/art-1.png" alt="Singapore Nanyang Division Masterpiece" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='assets/logo/logo.png';">
+            </div>
+            <div class="tile-caption" style="padding: 16px;">
+              <span class="seal-badge seal-badge-gold" style="font-size: 10px; margin-bottom: 6px; display: inline-block;">Singapore Nanyang Division (南洋赛区)</span>
+              <h3 class="tile-title" style="font-size: 15px; margin: 0 0 2px;">Harmony of Nanyang Gardens (南洋花园交响)</h3>
+              <p class="tile-artist" style="font-size: 12px; color: var(--color-ink-muted); margin: 0;">Chloe Lim (林欣怡) · Star of Nanyang Grand Trophy (特等奖)</p>
+            </div>
+          </div>
+
+          <!-- Division 2 Showcase -->
+          <div class="gallery-tile">
+            <div class="tile-media" style="background: var(--color-warm-ivory-dark); overflow: hidden; height: 260px;">
+              <img src="assets/images/art-works/art-11.png" alt="Singapore KEC Division Masterpiece" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='assets/logo/logo.png';">
+            </div>
+            <div class="tile-caption" style="padding: 16px;">
+              <span class="seal-badge seal-badge-gold" style="font-size: 10px; margin-bottom: 6px; display: inline-block;">Singapore KEC Division (KEC赛区)</span>
+              <h3 class="tile-title" style="font-size: 15px; margin: 0 0 2px;">KEC Youth Creative Journey (少儿创意启航)</h3>
+              <p class="tile-artist" style="font-size: 12px; color: var(--color-ink-muted); margin: 0;">Megan Low (刘美嘉) · Star of Nanyang Grand Trophy (特等奖)</p>
+            </div>
+          </div>
+
+          <!-- Division 3 Showcase -->
+          <div class="gallery-tile">
+            <div class="tile-media" style="background: var(--color-warm-ivory-dark); overflow: hidden; height: 260px;">
+              <img src="assets/images/art-works/art-21.png" alt="China Division Masterpiece" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='assets/logo/logo.png';">
+            </div>
+            <div class="tile-caption" style="padding: 16px;">
+              <span class="seal-badge seal-badge-gold" style="font-size: 10px; margin-bottom: 6px; display: inline-block;">China Division (中国赛区)</span>
+              <h3 class="tile-title" style="font-size: 15px; margin: 0 0 2px;">Rivers & Mountains in Splendor (千里江山万里云)</h3>
+              <p class="tile-artist" style="font-size: 12px; color: var(--color-ink-muted); margin: 0;">Zhang Haoran (张浩然) · Star of Nanyang Grand Trophy (特等奖)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ====================================================================
+         SECTION 9: HERITAGE TIMELINE PREVIEW (VERIFIED FACTS)
+         ==================================================================== -->
+    <section class="section section-ivory-dark">
+      <div class="container container-narrow">
+        <div class="section-header">
+          <span class="section-subtitle">Since 2002</span>
+          <h2 class="section-title">Selected Milestones & Pioneer Heritage</h2>
+          <p class="section-desc">
+            Founded with the advocacy and calligraphy inscription of pioneer master Liu Kang.
+          </p>
+        </div>
+
+        <div class="timeline-v">
+          <div class="timeline-node">
+            <span class="timeline-year-badge">2002</span>
+            <div class="timeline-content">
+              <h4>Establishment & Pioneer Inscription</h4>
+              <p>Pioneer artist Liu Kang encourages society formation and inscribes "南洋美术家協會" with his artist seal.</p>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <span class="timeline-year-badge">2017</span>
+            <div class="timeline-content">
+              <h4>15th Anniversary Milestone</h4>
+              <p>Expansion of children's fine art education and establishment of standardized exam criteria.</p>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <span class="timeline-year-badge">Dec 2019</span>
+            <div class="timeline-content">
+              <h4>First International Rubbing & Calligraphy Exhibition</h4>
+              <p>Lee Kong Chian Gallery, Singapore Calligraphy Centre; attended by MP Wang Dingkun and Embassy Counselor Que Xiaohua.</p>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <span class="timeline-year-badge">Jan 2020</span>
+            <div class="timeline-content">
+              <h4>Dreaming Lion City International Youth Art & Calligraphy</h4>
+              <p>Finals at Canopy (Jurong East) and gala awards ceremony at The Old Parliament House (The Arts House).</p>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <span class="timeline-year-badge">Sep 2020</span>
+            <div class="timeline-content">
+              <h4>Nanyang Star International Competition ("Looking into the Future")</h4>
+              <p>Over 100 international youth artworks cataloged in digital archives celebrating creative resilience.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 32px;">
+          <a href="about.html#timeline" class="btn btn-outline">Read Complete Society History →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 10: EVENTS & NEWS BULLETINS PREVIEW
+         ==================================================================== -->
+    <section class="section" id="society-events-section">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-8); flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="section-subtitle" data-i18n="home.events_subtitle">Official Announcements & Salons</span>
+            <h2 class="section-title" style="margin-bottom: 4px;" data-i18n="home.events_title">Upcoming Events & Society News</h2>
+            <p style="font-size: 15px; color: var(--color-ink-muted); margin: 0;" data-i18n="home.events_desc">Stay informed about registration dates, masterclasses, and exhibition open calls.</p>
+          </div>
+          <a href="news-events.html" class="btn btn-outline" data-i18n="nav.news">View All News & Events →</a>
+        </div>
+
+        <div class="grid grid-cols-3" style="gap: 24px;">
+          <!-- Event 1: National Grade Exam -->
+          <div class="event-card-premium reveal-up">
+            <div class="event-media-wrap">
+              <img src="assets/images/art-works/art-1.png" alt="National Grade Exam Winter Intake" class="event-media-img" onerror="this.onerror=null; this.src='assets/logo/logo.png';">
+              <div class="event-calendar-badge">
+                <div class="event-cal-month">DEC</div>
+                <div class="event-cal-day">15</div>
+              </div>
+              <span class="event-type-pill" data-i18n="home.events_card1_tag">Official Examination</span>
+            </div>
+            <div class="event-body-content">
+              <h3 class="event-title-main" data-i18n="home.events_card1_title">National Grade Exam Winter Intake</h3>
+              <div class="event-title-zh" data-i18n="home.events_card1_zh">全国美术书法考级冬季统考报名</div>
+              <div class="event-meta-location">
+                <span>📍</span> <span data-i18n="home.events_card1_venue">5 Accredited Singapore Test Centres</span>
+              </div>
+              <p class="event-desc-text" data-i18n="home.events_card1_desc">
+                Standardized evaluation across 6 disciplines under certified examiner criteria with official dual-seal credentials.
+              </p>
+              <div class="event-card-bottom">
+                <span class="event-status-pill">
+                  <span>🟢</span> <span data-i18n="home.events_card1_status">Registration Open</span>
+                </span>
+                <a href="grade.html" class="event-action-link">
+                  <span data-i18n="home.events_card1_btn">Intake Schedule</span> →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2: Masterclass -->
+          <div class="event-card-premium reveal-up">
+            <div class="event-media-wrap">
+              <img src="assets/images/art-works/oil-panting.png" alt="Chinese Ink Brushwork Masterclass" class="event-media-img" onerror="this.onerror=null; this.src='assets/logo/logo.png';">
+              <div class="event-calendar-badge">
+                <div class="event-cal-month">JAN</div>
+                <div class="event-cal-day">10</div>
+              </div>
+              <span class="event-type-pill" data-i18n="home.events_card2_tag">Academic Masterclass</span>
+            </div>
+            <div class="event-body-content">
+              <h3 class="event-title-main" data-i18n="home.events_card2_title">Chinese Ink Brushwork & Shanshui Landscape</h3>
+              <div class="event-title-zh" data-i18n="home.events_card2_zh">中国画水墨笔墨意境与山水写生大师课</div>
+              <div class="event-meta-location">
+                <span>📍</span> <span data-i18n="home.events_card2_venue">FAS Gallery, Singapore Federation of Art Societies</span>
+              </div>
+              <p class="event-desc-text" data-i18n="home.events_card2_desc">
+                Led by Society President Dr. Teng Jiashu. Exploring classical Song-Yuan brushwork principles and contemporary Southeast Asian Nanyang landscape expression.
+              </p>
+              <div class="event-card-bottom">
+                <span class="event-status-pill" style="color: #BA1B1D; background: #FEF2F2; border-color: #FECACA;">
+                  <span>🔥</span> <span data-i18n="home.events_card2_status">Limited Seats (24 Pax)</span>
+                </span>
+                <a href="news-events.html" class="event-action-link">
+                  <span data-i18n="home.events_card2_btn">Reserve Seat</span> →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3: Nanyang Star Competition -->
+          <div class="event-card-premium reveal-up">
+            <div class="event-media-wrap">
+              <img src="assets/images/art-works/art-11.png" alt="5th Nanyang Star International Competition" class="event-media-img" onerror="this.onerror=null; this.src='assets/logo/logo.png';">
+              <div class="event-calendar-badge">
+                <div class="event-cal-month">MAR</div>
+                <div class="event-cal-day">28</div>
+              </div>
+              <span class="event-type-pill" data-i18n="home.events_card3_tag">Flagship Competition</span>
+            </div>
+            <div class="event-body-content">
+              <h3 class="event-title-main" data-i18n="home.events_card3_title">5th Nanyang Star International Competition & Gala</h3>
+              <div class="event-title-zh" data-i18n="home.events_card3_zh">第五届“南洋之星”国际少儿美术大赛与艺术盛典</div>
+              <div class="event-meta-location">
+                <span>📍</span> <span data-i18n="home.events_card3_venue">The Arts House (Old Parliament) & Online Gallery</span>
+              </div>
+              <p class="event-desc-text" data-i18n="home.events_card3_desc">
+                Annual landmark youth competition uniting over 100 art institutions across Southeast Asia. Open call submissions now accepted.
+              </p>
+              <div class="event-card-bottom">
+                <span class="event-status-pill" style="color: #B45309; background: #FFFBEB; border-color: #FDE68A;">
+                  <span>🏆</span> <span data-i18n="home.events_card3_status">Global Open Call</span>
+                </span>
+                <a href="nanyang-star.html" class="event-action-link">
+                  <span data-i18n="home.events_card3_btn">Competition Details</span> →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 11: FINAL CREATIVE CALL-TO-ACTION
+         ==================================================================== -->
+    <section class="hero-final-cta" aria-label="Final Call to Action">
+      <div class="container container-narrow">
+        <span class="seal-badge seal-badge-gold" style="margin-bottom: 16px;">Admissions & Enrollment</span>
+        <h2 style="font-size: 38px; margin-bottom: 12px; color: #FFFFFF;">Start Your Creative Journey</h2>
+        <h3 style="font-size: 18px; color: #E5E7EB; margin-bottom: 20px; font-weight: 500;">开启您的艺术探索与考级进阶之路</h3>
+        <p style="font-size: 16px; color: #D1D5DB; margin-bottom: 32px; line-height: 1.6;">
+          Whether beginning your first stroke in Chinese calligraphy, preparing for academic grade examinations, or submitting masterworks to international competitions, our secretariat and faculty are here to guide you.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="courses.html" class="btn btn-primary btn-lg">Explore Studio Courses →</a>
+          <a href="contact.html" class="btn btn-outline btn-lg" style="color: #FFFFFF; border-color: rgba(255, 255, 255, 0.4);">Enquire With Secretariat</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Shell Footer Root -->
+  <div id="footer-root"></div>
+
+  <!-- Entrance Popup Root -->
+  <div id="entrance-popup-root"></div>
+
+  <!-- Shared Bootloader & Homepage Controller -->
+  <script type="module" src="js/core/app.js?v=mf4"></script>
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

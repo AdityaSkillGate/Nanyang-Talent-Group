@@ -1,0 +1,73 @@
+@import './design-system.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    color: var(--ny-ink-primary);
+    background-color: var(--ny-canvas);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Editorial Headings Standard */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--ny-navy-700);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  /* Chinese Typography & Hierarchy Enhancement */
+  html[lang^="zh"],
+  [lang^="zh"],
+  :lang(zh),
+  :lang(zh-Hans) {
+    font-family: var(--font-family-zh), var(--font-family-en);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  html[lang^="zh"] h1, html[lang^="zh"] h2, html[lang^="zh"] h3, html[lang^="zh"] h4, html[lang^="zh"] h5, html[lang^="zh"] h6,
+  [lang^="zh"] h1, [lang^="zh"] h2, [lang^="zh"] h3, [lang^="zh"] h4, [lang^="zh"] h5, [lang^="zh"] h6,
+  :lang(zh) h1, :lang(zh) h2, :lang(zh) h3, :lang(zh) h4, :lang(zh) h5, :lang(zh) h6 {
+    letter-spacing: 0.01em;
+  }
+}
+
+/* Prevent animation jitter & subpixel flickering */
+.ny-animate-fade-in,
+.ny-animate-slide-up,
+.ny-brush-reveal,
+[class*="animate-in"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Custom Scrollbar for sleek aesthetic */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ny-surface-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ny-border-strong);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ny-navy-600);
+}
+
+/* Focus styles for WCAG accessibility */
+*:focus-visible {
+  outline: 2px solid var(--ny-navy-700);
+  outline-offset: 2px;
+}

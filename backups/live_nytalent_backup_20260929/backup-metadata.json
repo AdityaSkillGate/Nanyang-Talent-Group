@@ -1,0 +1,17 @@
+{
+  "source": "https://nytalent.com.sg",
+  "timestamp": "2026-09-29T15:59:16.496Z",
+  "description": "Pre-deployment backup of existing live site at nytalent.com.sg prior to Phase 13 deployment",
+  "pages": [
+    "/",
+    "/index.html",
+    "/courses.html",
+    "/nanyang-star.html",
+    "/grade.html",
+    "/about.html",
+    "/contact.html",
+    "/css/main.css?v=mf4",
+    "/robots.txt",
+    "/sitemap.xml"
+  ]
+}

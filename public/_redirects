@@ -1,0 +1,4 @@
+https://www.nytalent.com.sg/* https://nytalent.com.sg/:splat 301!
+http://nytalent.com.sg/* https://nytalent.com.sg/:splat 301!
+http://www.nytalent.com.sg/* https://nytalent.com.sg/:splat 301!
+/* /404.html 404
