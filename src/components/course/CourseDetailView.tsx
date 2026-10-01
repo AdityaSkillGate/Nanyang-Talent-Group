@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CourseDetail, Language } from '@/content/types';
 import { siteConfig } from '@/data/site-config';
 import { Breadcrumb, Badge, Button } from '@/components/ui';
@@ -54,9 +55,7 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
       ? '全脑启发'
       : 'Brain Intelligence';
 
-  const isPendingCourse =
-    course.slug === 'short-course-art-teacher' ||
-    (course.objectivesStatus === 'client-confirm' && !course.fees.groupFee);
+  const isPendingCourse = course.slug === 'short-course-art-teacher';
 
   return (
     <div className="py-10 sm:py-16 bg-surface-canvas min-h-screen">
@@ -140,6 +139,20 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
               </a>
             </div>
           </div>
+
+          {/* Course Hero Visual Banner */}
+          {course.image && (
+            <div className="relative h-64 sm:h-80 md:h-96 w-full rounded-2xl overflow-hidden shadow-card border border-surface-border bg-slate-100">
+              <Image
+                src={course.image}
+                alt={course.title[lang]}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-cover"
+              />
+            </div>
+          )}
         </div>
 
         {/* ========================================================= */}
@@ -299,88 +312,75 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
         </section>
 
         {/* ========================================================= */}
-        {/* 5. FEES / FEE STATUS                                     */}
+        {/* ========================================================= */}
+        {/* 5. TUITION & ENROLMENT CONSULTATION                      */}
         {/* ========================================================= */}
         <section className="bg-white rounded-2xl border border-surface-border p-8 sm:p-10 shadow-xs space-y-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-xs uppercase tracking-wider font-bold text-brand-gold">
                 <Wallet className="w-4 h-4" />
-                <span>{isZh ? '学费标准与核准状态' : 'Tuition Fees & Status'}</span>
+                <span>{isZh ? '学费标准与咨询通道' : 'Tuition & Enrollment'}</span>
               </div>
               <h2 className="text-2xl font-extrabold text-brand-navy">
-                {isZh ? '学费参考与缴费说明' : 'Tuition Structure & Terms'}
+                {isZh ? '课时规划与学费咨询' : 'Tuition Consultation & Class Formats'}
               </h2>
             </div>
-            {course.fees.status === 'client-confirm' ? (
-              <BilingualBadge
-                en="Pending Client Confirmation"
-                zh="待客户核准"
-                color="gold"
-              />
-            ) : (
-              <BilingualBadge
-                en="Official Rate"
-                zh="官方标准"
-                color="navy"
-              />
-            )}
+            <BilingualBadge
+              en="Admissions Consultation"
+              zh="顾问定制安排"
+              color="navy"
+            />
           </div>
 
-          {/* Configurable Fee Breakdown (never hardcoded) */}
-          {course.fees.groupFee || course.fees.privateFee ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {course.fees.groupFee && (
-                <div className="p-6 rounded-xl bg-surface-canvas border border-surface-border space-y-2">
-                  <span className="text-xs uppercase tracking-wider font-semibold text-slate-500 block">
-                    {isZh ? '小组标准班学费' : 'Small Group Rate'}
-                  </span>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-brand-navy">
-                    {course.fees.groupFee[lang]}
-                  </div>
-                  <span className="text-xs text-ink-muted block">
-                    {isZh ? '每课时2小时 · 师生互动充分' : '2 Hours per session • Collaborative focus'}
-                  </span>
-                </div>
-              )}
-
-              {course.fees.privateFee && (
-                <div className="p-6 rounded-xl bg-surface-canvas border border-surface-border space-y-2">
-                  <span className="text-xs uppercase tracking-wider font-semibold text-slate-500 block">
-                    {isZh ? '一对一定制私教' : 'Private 1-to-1 Rate'}
-                  </span>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-brand-navy">
-                    {course.fees.privateFee[lang]}
-                  </div>
-                  <span className="text-xs text-ink-muted block">
-                    {isZh ? '量身定制进度 · 精准技法突破' : 'Personalized curriculum & tailored feedback'}
-                  </span>
-                </div>
-              )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {/* Small Group Cohort */}
+            <div className="p-6 rounded-xl bg-surface-canvas border border-surface-border space-y-2">
+              <span className="text-xs uppercase tracking-wider font-semibold text-slate-500 block">
+                {isZh ? '精品小班互动授课' : 'Small Group Cohort'}
+              </span>
+              <div className="text-xl sm:text-2xl font-extrabold text-brand-navy">
+                {isZh ? '小班精讲 · 互动研习' : 'Interactive Studio Groups'}
+              </div>
+              <p className="text-xs text-ink-muted leading-relaxed">
+                {isZh ? '每课时2小时，兼顾同侪交流与专业导师细致辅导，循序渐进夯实专业功底。' : '2 Hours per session with high mentor attention and peer learning dynamics.'}
+              </p>
             </div>
-          ) : (
-            <div className="p-5 rounded-xl bg-amber-50 border border-amber-200 text-sm text-amber-900">
-              <span className="font-semibold block mb-1">
+
+            {/* Private 1-to-1 */}
+            <div className="p-6 rounded-xl bg-surface-canvas border border-surface-border space-y-2">
+              <span className="text-xs uppercase tracking-wider font-semibold text-slate-500 block">
+                {isZh ? '一对一定制私教' : 'Private 1-to-1 Tuition'}
+              </span>
+              <div className="text-xl sm:text-2xl font-extrabold text-brand-navy">
+                {isZh ? '量身定制 · 专属课表' : 'Tailored Pacing & Mentorship'}
+              </div>
+              <p className="text-xs text-ink-muted leading-relaxed">
+                {isZh ? '根据学员基础、升学目标或特定研习偏好量身定制教学进度与针对性技法突破。' : 'Custom syllabus and flexible pacing aligned with student level and goals.'}
+              </p>
+            </div>
+          </div>
+
+          <div className="p-5 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <span className="font-semibold text-brand-navy text-sm block">
                 {course.fees.displayFallback[lang]}
               </span>
-              <span className="text-xs text-amber-800">
+              <p className="text-xs text-ink-muted">
                 {isZh
-                  ? '如需了解最新开班批次学费，请联络我们的课程顾问。'
-                  : 'Please connect with admissions for the latest intake fee structure.'}
-              </span>
+                  ? '欢迎联络招生处获取最新招生排期、学期套餐与适龄测评安排。'
+                  : 'Contact our admissions team for current intake availability, term schedules, and trial placement.'}
+              </p>
             </div>
-          )}
-
-          {/* Institutional Pricing Disclosure */}
-          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-xs text-ink-muted space-y-1">
-            <span className="font-semibold text-brand-navy block">
-              {isZh ? '学费核准与政策声明' : 'Tuition Transparency Notice'}
-            </span>
-            <p>
-              {isZh
-                ? '上述费用仅供参考，具体学费标准待客户最终确认。课程将视班期安排及优惠政策有所调整，最终报名费用以正式确认通知书为准。'
-                : 'Rates listed are subject to final client confirmation. Pricing may vary according to enrollment period, package selections, and class schedules.'}
-            </p>
+            <a
+              href={siteConfig.contact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 transition-colors shrink-0 min-h-[40px]"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>{isZh ? '咨询学费与排期' : 'Inquire on WhatsApp'}</span>
+            </a>
           </div>
         </section>
 
@@ -419,71 +419,6 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
                 : 'Specific materials list for this course is pending client confirmation.'}
             </div>
           )}
-        </section>
-
-        {/* ========================================================= */}
-        {/* 7. PAYMENT INFORMATION                                   */}
-        {/* ========================================================= */}
-        <section className="bg-white rounded-2xl border border-surface-border p-8 sm:p-10 shadow-xs space-y-6">
-          <div className="space-y-1">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-wider font-bold text-brand-blue">
-              <Wallet className="w-4 h-4" />
-              <span>{isZh ? '缴费与学制细则' : 'Payment Information & Discounts'}</span>
-            </div>
-            <h2 className="text-2xl font-extrabold text-brand-navy">
-              {isZh ? '缴费周期与学费减免优惠' : 'Payment Terms & Advance Savings'}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {/* Payment Terms */}
-            <div className="p-5 rounded-xl bg-surface-canvas border border-surface-border space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
-                {isZh ? '缴费周期与学费要求' : 'Payment Enrolment Terms'}
-              </span>
-              {course.fees.paymentTerms && course.fees.paymentTerms.length > 0 ? (
-                <ul className="space-y-2 text-xs sm:text-sm text-ink-secondary">
-                  {course.fees.paymentTerms.map((term, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-brand-navy shrink-0 mt-0.5" />
-                      <span>{term[lang]}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-xs text-ink-muted">
-                  {isZh
-                    ? '缴费周期与报名条款待客户确认。'
-                    : 'Payment terms pending client confirmation.'}
-                </p>
-              )}
-            </div>
-
-            {/* Advance Discounts */}
-            <div className="p-5 rounded-xl bg-surface-canvas border border-surface-border space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
-                {isZh ? '连报及预付学费减免' : 'Advance Payment Discounts'}
-              </span>
-              {course.fees.discounts && course.fees.discounts.length > 0 ? (
-                <ul className="space-y-2 text-xs sm:text-sm text-ink-secondary">
-                  {course.fees.discounts.map((disc, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="text-brand-red font-bold">★</span>
-                      <span className="font-semibold text-brand-navy">
-                        {disc[lang]}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-xs text-ink-muted">
-                  {isZh
-                    ? '预付学费优惠待客户确认。'
-                    : 'Advance discounts pending client confirmation.'}
-                </p>
-              )}
-            </div>
-          </div>
         </section>
 
         {/* ========================================================= */}

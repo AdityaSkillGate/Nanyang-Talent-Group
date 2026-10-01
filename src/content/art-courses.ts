@@ -5,6 +5,7 @@ export const artCourses: CourseDetail[] = [
     slug: 'oil-painting',
     category: 'art',
     order: 1,
+    image: '/assets/courses/oil-painting.jpg',
     title: {
       en: 'Oil Painting',
       zh: '油画',
@@ -18,8 +19,8 @@ export const artCourses: CourseDetail[] = [
       zh: '每课时 2 小时',
     },
     summary: {
-      en: 'Practice on techniques of Water Colour, Gouache and Oil Painting helps students lay a solid foundation in the usage of colour, including transparency, overlaying, and detailing. Cultivates an advanced sense of colour and expressive technique for future creative pathways.',
-      zh: '系统研习水彩、水粉及经典油画技法，打下扎实的色彩运用基础，涵盖色彩通透度、叠色与细节表现等专业手法，培养敏锐色感与个人艺术表达。',
+      en: 'Master foundational to advanced color techniques in oil, watercolor, and gouache. Students develop color sensitivity, underpainting, glazing, and impasto brushwork.',
+      zh: '系统研习水彩、水粉及经典油画技法，打下扎实的色彩运用基础，涵盖通透度、叠色与细节表现，培养敏锐色感与个人艺术表达。',
     },
     techniques: [
       { en: 'Transparency & Layering', zh: '色彩通透与层次叠色' },
@@ -30,19 +31,10 @@ export const artCourses: CourseDetail[] = [
     objectivesStatus: 'client-confirm',
     fees: {
       status: 'client-confirm',
-      groupFee: { en: 'S$ 50 (2 hrs) [Subject to confirmation]', zh: 'S$ 50 (2小时/小组) [待确认]' },
-      privateFee: { en: 'S$ 80 (2 hrs) [Subject to confirmation]', zh: 'S$ 80 (2小时/一对一) [待确认]' },
       materialsFee: { en: 'Self-contained Materials', zh: '画材自备或详询' },
-      paymentTerms: [
-        { en: 'Minimum payment: 3 months enrollment', zh: '每次缴费至少3个月学费' },
-      ],
-      discounts: [
-        { en: 'Half-year advance payment: S$50 discount', zh: '一次性支付半年学费优惠 S$50' },
-        { en: 'One-year advance payment: S$150 discount', zh: '一次性支付全年学费优惠 S$150' },
-      ],
       displayFallback: {
-        en: 'Please contact us for the latest course fee and package details.',
-        zh: '最新学费与课时套餐安排，请直接与我们咨询。',
+        en: 'Course fees and term schedules are available upon consultation.',
+        zh: '最新学费与开班排期请直接向招生顾问咨询。',
       },
     },
     featured: true,
@@ -51,6 +43,7 @@ export const artCourses: CourseDetail[] = [
     slug: 'sketching',
     category: 'art',
     order: 2,
+    image: '/assets/courses/sketching.jpg',
     title: {
       en: 'Sketching',
       zh: '素描基础与进阶',
@@ -64,8 +57,8 @@ export const artCourses: CourseDetail[] = [
       zh: '每课时 2 小时',
     },
     summary: {
-      en: 'Present stereoscopic objects through tonal contrast. Develop fundamental art creation through still life, plaster cast, and character sketching. Students develop mastery of texture, dimension, proportion, and perspective.',
-      zh: '通过黑白灰明暗对比呈现物体的立体结构与空间感。通过静物、石膏几何体/石膏像与人物肖像素描，掌握质感、体积感、比例与透视法则。',
+      en: 'Present stereoscopic objects through tonal contrast. Develop fundamental drawing through still life, plaster casts, and portraits, mastering proportion and perspective.',
+      zh: '通过黑白灰明暗对比呈现物体的立体结构与空间感。通过静物、石膏像与人物肖像素描，掌握质感、体积感、比例与透视法则。',
     },
     techniques: [
       { en: 'Linear Perspective & Proportion', zh: '透视结构与精确比例' },
@@ -76,19 +69,10 @@ export const artCourses: CourseDetail[] = [
     objectivesStatus: 'client-confirm',
     fees: {
       status: 'client-confirm',
-      groupFee: { en: 'S$ 50 (2 hrs) [Subject to confirmation]', zh: 'S$ 50 (2小时/小组) [待确认]' },
-      privateFee: { en: 'S$ 80 (2 hrs) [Subject to confirmation]', zh: 'S$ 80 (2小时/一对一) [待确认]' },
       materialsFee: { en: 'Self-contained Materials', zh: '画材自备' },
-      paymentTerms: [
-        { en: 'Minimum payment: 3 months enrollment', zh: '每次缴费至少3个月学费' },
-      ],
-      discounts: [
-        { en: 'Half-year advance payment: S$50 discount', zh: '一次性支付半年学费优惠 S$50' },
-        { en: 'One-year advance payment: S$150 discount', zh: '一次性支付全年学费优惠 S$150' },
-      ],
       displayFallback: {
-        en: 'Please contact us for the latest course fee and package details.',
-        zh: '最新学费与课时套餐安排，请直接与我们咨询。',
+        en: 'Course fees and term schedules are available upon consultation.',
+        zh: '最新学费与开班排期请直接向招生顾问咨询。',
       },
     },
     featured: true,
@@ -97,6 +81,7 @@ export const artCourses: CourseDetail[] = [
     slug: 'water-color',
     category: 'art',
     order: 3,
+    image: '/assets/courses/water-color.jpg',
     title: {
       en: 'Water Color',
       zh: '水彩画',
@@ -110,8 +95,8 @@ export const artCourses: CourseDetail[] = [
       zh: '每课时 2 小时',
     },
     summary: {
-      en: 'Practice the dynamic techniques of watercolor painting, mastering water control, transparency, color bleeding, and atmospheric perspective. Learn both wet-on-wet and wet-on-dry methods.',
-      zh: '学习水彩画特有的水色调和技法，掌握控水、湿画法、干画法与色彩通透过渡，捕捉光影与空气感。',
+      en: 'Practice dynamic watercolor techniques, mastering water control, transparency, color bleeding, and atmospheric perspective in wet-on-wet and wet-on-dry methods.',
+      zh: '学习水彩画特有的水色调和技法，掌握控水、湿画法、干画法与色彩通透过渡，捕捉自然光影与空气感。',
     },
     techniques: [
       { en: 'Wet-on-Wet & Wet-on-Dry Washes', zh: '湿画晕染与干画层叠' },
@@ -122,19 +107,10 @@ export const artCourses: CourseDetail[] = [
     objectivesStatus: 'client-confirm',
     fees: {
       status: 'client-confirm',
-      groupFee: { en: 'S$ 50 (2 hrs) [Subject to confirmation]', zh: 'S$ 50 (2小时/小组) [待确认]' },
-      privateFee: { en: 'S$ 80 (2 hrs) [Subject to confirmation]', zh: 'S$ 80 (2小时/一对一) [待确认]' },
       materialsFee: { en: 'Self-contained Materials', zh: '画材自备' },
-      paymentTerms: [
-        { en: 'Minimum payment: 3 months enrollment', zh: '每次缴费至少3个月学费' },
-      ],
-      discounts: [
-        { en: 'Half-year advance payment: S$50 discount', zh: '一次性支付半年学费优惠 S$50' },
-        { en: 'One-year advance payment: S$150 discount', zh: '一次性支付全年学费优惠 S$150' },
-      ],
       displayFallback: {
-        en: 'Please contact us for the latest course fee and package details.',
-        zh: '最新学费与课时套餐安排，请直接与我们咨询。',
+        en: 'Course fees and term schedules are available upon consultation.',
+        zh: '最新学费与开班排期请直接向招生顾问咨询。',
       },
     },
     featured: true,
@@ -143,6 +119,7 @@ export const artCourses: CourseDetail[] = [
     slug: 'chinese-calligraphy',
     category: 'art',
     order: 4,
+    image: '/assets/calligraphy/5-running-script.jpg',
     title: {
       en: 'Chinese Calligraphy',
       zh: '中国书法',
@@ -156,31 +133,23 @@ export const artCourses: CourseDetail[] = [
       zh: '每课时 2 小时',
     },
     summary: {
-      en: 'Chinese calligraphy (shufa) is one of the highest forms of traditional Chinese visual art, conveying thoughts while showcasing the abstract beauty of line and rhythm. The course covers the five classical scripts: Kaishu, Lishu, Xingshu, Caoshu, and Zhuanshu, along with appreciation of historical copybooks and stone inscriptions.',
-      zh: '中国书法是东方艺术的高峰形式，蕴含深厚文人精神与线条节奏之美。课程系统教授楷书、隶书、行书、草书及篆书五大书体，辅以历代法帖碑帖临摹与名家艺术品鉴。',
+      en: 'Explore the five classical scripts: Seal Script (Zhuanshu), Clerical Script (Lishu), Cursive Hand (Caoshu), Regular Script (Kaishu), and Running Script (Xingshu), studying line rhythm and brush spirit.',
+      zh: '系统研习中国书法五大正统书体：篆书、隶书、草书、楷书与行书，精研名碑法帖临摹，涵养东方人文精神与线条气韵。',
     },
     techniques: [
-      { en: 'Kaishu (Regular Script) - Structure & Balance', zh: '楷书——间架结构与正锋用笔' },
-      { en: 'Lishu (Official Script) - Silkworm Head & Swallow Tail', zh: '隶书——蚕头燕尾与古朴凝重' },
-      { en: 'Xingshu & Caoshu (Running & Cursive) - Flow & Rhythm', zh: '行草——笔势连绵与气韵律动' },
-      { en: 'Zhuanshu (Seal Script) & Inscription Appreciation', zh: '篆书——中锋圆劲与碑帖拓本研读' },
+      { en: 'Zhuanshu (Seal Script) - Archaic Symmetry', zh: '篆书——圆润对称与秦汉古风' },
+      { en: 'Lishu (Clerical Script) - Silkworm Head & Swallow Tail', zh: '隶书——蚕头燕尾与古朴凝重' },
+      { en: 'Caoshu (Cursive Hand) - Dynamic Energy', zh: '草书——笔走龙蛇与意境超逸' },
+      { en: 'Kaishu (Regular Script) - Upright Balance', zh: '楷书——严谨正锋与间架结构' },
+      { en: 'Xingshu (Running Script) - Fluid Rhythm', zh: '行书——行云流水与生动气韵' },
     ],
     objectivesStatus: 'client-confirm',
     fees: {
       status: 'client-confirm',
-      groupFee: { en: 'S$ 50 (2 hrs) [Subject to confirmation]', zh: 'S$ 50 (2小时/小组) [待确认]' },
-      privateFee: { en: 'S$ 80 (2 hrs) [Subject to confirmation]', zh: 'S$ 80 (2小时/一对一) [待确认]' },
       materialsFee: { en: 'Self-contained Materials (Brush, Ink, Xuan Paper)', zh: '笔墨纸砚自备或详询' },
-      paymentTerms: [
-        { en: 'Minimum payment: 3 months enrollment', zh: '每次缴费至少3个月学费' },
-      ],
-      discounts: [
-        { en: 'Half-year advance payment: S$50 discount', zh: '一次性支付半年学费优惠 S$50' },
-        { en: 'One-year advance payment: S$150 discount', zh: '一次性支付全年学费优惠 S$150' },
-      ],
       displayFallback: {
-        en: 'Please contact us for the latest course fee and package details.',
-        zh: '最新学费与课时套餐安排，请直接与我们咨询。',
+        en: 'Course fees and term schedules are available upon consultation.',
+        zh: '最新学费与开班排期请直接向招生顾问咨询。',
       },
     },
     featured: true,
@@ -189,6 +158,7 @@ export const artCourses: CourseDetail[] = [
     slug: 'chinese-painting',
     category: 'art',
     order: 5,
+    image: '/assets/courses/chinese-painting.jpg',
     title: {
       en: 'Chinese Painting',
       zh: '中国国画',
@@ -202,8 +172,8 @@ export const artCourses: CourseDetail[] = [
       zh: '每课时 2 小时',
     },
     summary: {
-      en: 'A comprehensive study of Chinese traditional painting across two millennia of artistic heritage. Classified by genres (Bird-and-flower, Landscape, Figure) and methods including Xieyi (freehand style), Gongbi (fine-brush detail), and Pomo (splash-ink), expressing inner character through ink and brushwork.',
-      zh: '承袭两千年国画文脉，涵盖花鸟、山水与人物三大传统题材，融合写意、工笔与泼墨技法，以毛笔、水墨及天然矿物色彩展现画者心性意境与东方美学。',
+      en: 'Comprehensive study of Chinese traditional painting across flower-and-bird, landscape, and figures, mastering freehand Xieyi and fine-brush Gongbi techniques.',
+      zh: '承袭正统国画文脉，涵盖花鸟、山水与人物三大传统题材，融合写意、工笔与泼墨技法，以水墨与天然矿物色彩展现东方意境。',
     },
     techniques: [
       { en: 'Xieyi (Freehand Style) - Expressive Ink Energy', zh: '写意画——水墨淋漓与神韵意境' },
@@ -214,19 +184,10 @@ export const artCourses: CourseDetail[] = [
     objectivesStatus: 'client-confirm',
     fees: {
       status: 'client-confirm',
-      groupFee: { en: 'S$ 50 (2 hrs) [Subject to confirmation]', zh: 'S$ 50 (2小时/小组) [待确认]' },
-      privateFee: { en: 'S$ 80 (2 hrs) [Subject to confirmation]', zh: 'S$ 80 (2小时/一对一) [待确认]' },
       materialsFee: { en: 'Self-contained Materials', zh: '画材自备' },
-      paymentTerms: [
-        { en: 'Minimum payment: 3 months enrollment', zh: '每次缴费至少3个月学费' },
-      ],
-      discounts: [
-        { en: 'Half-year advance payment: S$50 discount', zh: '一次性支付半年学费优惠 S$50' },
-        { en: 'One-year advance payment: S$150 discount', zh: '一次性支付全年学费优惠 S$150' },
-      ],
       displayFallback: {
-        en: 'Please contact us for the latest course fee and package details.',
-        zh: '最新学费与课时套餐安排，请直接与我们咨询。',
+        en: 'Course fees and term schedules are available upon consultation.',
+        zh: '最新学费与开班排期请直接向招生顾问咨询。',
       },
     },
     featured: true,
@@ -235,6 +196,7 @@ export const artCourses: CourseDetail[] = [
     slug: 'childrens-drawing',
     category: 'art',
     order: 6,
+    image: '/assets/courses/childrens-drawing.jpg',
     title: {
       en: "Children's Drawing",
       zh: '儿童创意美术',
@@ -248,8 +210,8 @@ export const artCourses: CourseDetail[] = [
       zh: '每课时 2 小时',
     },
     summary: {
-      en: "Promotes ongoing cognitive development, memory retention, and concentration in young children through drawing, painting, integrated arts, and cartoon character creation. Brings characters from favorite stories and animations to life while inspiring emotional intelligence.",
-      zh: '通过绘画、综合手工创意、卡通动漫形象创作与记忆训练，全面提升儿童专注力、空间想象力与情商表达，在快乐绘画中启迪艺术天赋。',
+      en: 'Promotes creative thinking, spatial memory, and focus in young children through expressive painting, mixed craftwork, and fun cartoon character storytelling.',
+      zh: '通过绘画、综合手工创意、卡通动漫形象创作与记忆训练，全面提升儿童专注力与空间想象力，在快乐绘画中启迪艺术天赋。',
     },
     techniques: [
       { en: 'Creative Painting & Handwork Crafting', zh: '多媒介创意绘画与综合手作' },
@@ -260,19 +222,10 @@ export const artCourses: CourseDetail[] = [
     objectivesStatus: 'client-confirm',
     fees: {
       status: 'client-confirm',
-      groupFee: { en: 'S$ 50 (2 hrs) [Subject to confirmation]', zh: 'S$ 50 (2小时/小组) [待确认]' },
-      privateFee: { en: 'S$ 80 (2 hrs) [Subject to confirmation]', zh: 'S$ 80 (2小时/一对一) [待确认]' },
-      materialsFee: { en: 'S$ 50 one-time teaching materials fee [Source noted]', zh: '一次性材料费 S$50 [资料注明]' },
-      paymentTerms: [
-        { en: 'Minimum payment: 3 months enrollment', zh: '每次缴费至少3个月学费' },
-      ],
-      discounts: [
-        { en: 'Half-year advance payment: S$50 discount', zh: '一次性支付半年学费优惠 S$50' },
-        { en: 'One-year advance payment: S$150 discount', zh: '一次性支付全年学费优惠 S$150' },
-      ],
+      materialsFee: { en: 'Teaching materials fee upon enrollment', zh: '教学耗材费报读时详询' },
       displayFallback: {
-        en: 'Please contact us for the latest course fee and package details.',
-        zh: '最新学费与课时套餐安排，请直接与我们咨询。',
+        en: 'Course fees and term schedules are available upon consultation.',
+        zh: '最新学费与开班排期请直接向招生顾问咨询。',
       },
     },
     featured: true,
@@ -281,6 +234,7 @@ export const artCourses: CourseDetail[] = [
     slug: 'short-course-art-teacher',
     category: 'art',
     order: 7,
+    image: '/assets/courses/short-course-art-teacher.jpg',
     title: {
       en: 'Short Course Art Teacher',
       zh: '美术师资短期培训班',
@@ -294,7 +248,7 @@ export const artCourses: CourseDetail[] = [
       zh: '课时待确认',
     },
     summary: {
-      en: 'Professional training module designed for aspiring art instructors and educators. Detailed curriculum syllabus, certification pathways, and intake schedules are pending client confirmation.',
+      en: 'Professional training module designed for aspiring art instructors and educators. Curriculum syllabus and certification pathways are available upon inquiry.',
       zh: '为有志从事美术教学的导师量身定制的师资专业进修课程。具体课程大纲、认证体系与开班排期待客户最终确认。',
     },
     techniques: [

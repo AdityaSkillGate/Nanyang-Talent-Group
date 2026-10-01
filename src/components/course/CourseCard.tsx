@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CourseDetail, Language } from '@/content/types';
 import { uiTranslations } from '@/content/translations';
 import { Badge } from '@/components/ui';
-import { ArrowRight, Clock, AlertCircle } from 'lucide-react';
+import { ArrowRight, Clock, AlertCircle, Sparkles } from 'lucide-react';
 
 interface CourseCardProps {
   course: CourseDetail;
@@ -43,11 +44,24 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, lang }) => {
 
   const isPending =
     course.slug === 'short-course-art-teacher' ||
-    course.objectivesStatus === 'client-confirm' && !course.fees.groupFee;
+    (course.objectivesStatus === 'client-confirm' && !course.duration);
 
   return (
-    <div className="bg-white rounded-2xl border border-surface-border p-5 sm:p-7 shadow-subtle hover:shadow-card transition-all flex flex-col justify-between group">
+    <div className="bg-white rounded-2xl border border-surface-border p-5 sm:p-6 shadow-subtle hover:shadow-card transition-all flex flex-col justify-between group">
       <div className="space-y-4">
+        {/* Course Related Visual Image (if present) */}
+        {course.image && (
+          <div className="relative h-44 w-full rounded-xl overflow-hidden border border-surface-border/80 bg-slate-100">
+            <Image
+              src={course.image}
+              alt={course.title[lang]}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        )}
+
         {/* Top Badges & Duration */}
         <div className="flex items-center justify-between gap-2 flex-wrap">
           <div className="flex items-center gap-1.5">
@@ -101,18 +115,11 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, lang }) => {
         )}
       </div>
 
-      {/* Footer: Configurable Pricing & Action Link with Accessible Touch Target */}
+      {/* Footer: Course Format & Action Link (No Price Numbers) */}
       <div className="pt-5 mt-6 border-t border-slate-100 flex items-center justify-between gap-3">
-        <div className="text-xs text-ink-muted font-medium">
-          {course.fees.groupFee ? (
-            <span className="font-semibold text-brand-navy">
-              {course.fees.groupFee[lang].split('[')[0].trim()}
-            </span>
-          ) : (
-            <span className="italic text-slate-500">
-              {isZh ? '学费咨询顾问' : 'Tuition on enquiry'}
-            </span>
-          )}
+        <div className="text-xs text-ink-muted font-medium flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-brand-gold shrink-0" />
+          <span>{isZh ? '小班互动 · 定制课表' : 'Small Group & 1-to-1'}</span>
         </div>
         <Link
           href={detailUrl}

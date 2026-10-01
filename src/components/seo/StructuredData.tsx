@@ -17,8 +17,9 @@ export function getOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
-    name: 'Nanyang Talent Group Pte Ltd',
-    alternateName: '南洋人才集团',
+    name: 'Nanyang Talent Group Pte Ltd · Since 1998',
+    legalName: 'Nanyang Talent Group Pte Ltd',
+    alternateName: '南洋人才集团 · 始于1998',
     url: 'https://nytalent.com.sg',
     logo: 'https://nytalent.com.sg/assets/logo-horizontal.png',
     image: 'https://nytalent.com.sg/assets/logo-vertical.png',
@@ -27,17 +28,31 @@ export function getOrganizationSchema() {
     foundingDate: '1998',
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'SG',
+      streetAddress: '135 Jurong Gateway Road, #03-335',
+      postalCode: '600135',
       addressLocality: 'Singapore',
+      addressCountry: 'SG',
     },
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'Admissions and Enquiries',
-      telephone: '+65-6789-0123',
-      email: 'info@nytalent.com.sg',
-      availableLanguage: ['English', 'Chinese'],
-    },
-    sameAs: ['https://wa.me/6567890123'],
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'General Office',
+        telephone: '+65-6899-0828',
+        email: 'info@nytalent.com.sg',
+        availableLanguage: ['English', 'Chinese'],
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'WhatsApp Admissions',
+        telephone: '+65-9004-8768',
+        availableLanguage: ['English', 'Chinese'],
+      }
+    ],
+    sameAs: [
+      'https://wa.me/6590048768',
+      'https://www.nycollege.edu.sg/',
+      'https://nyart.org.sg/'
+    ],
   };
 }
 
@@ -45,8 +60,8 @@ export function getWebSiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Nanyang Talent Group',
-    alternateName: '南洋人才集团',
+    name: 'Nanyang Talent Group Pte Ltd · Since 1998',
+    alternateName: '南洋人才集团 · 始于1998',
     url: 'https://nytalent.com.sg',
     inLanguage: ['en-SG', 'zh-SG'],
   };

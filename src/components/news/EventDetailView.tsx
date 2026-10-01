@@ -138,7 +138,7 @@ export const EventDetailView: React.FC<EventDetailViewProps> = ({ item, lang }) 
             <Building2 className="w-4 h-4" />
             <span>{lang === 'zh' ? '南洋人才集团 · 活动组织组' : 'Nanyang Talent Group · Events Desk'}</span>
           </div>
-          <h3 className="text-xl font-bold">
+          <h3 className="text-xl font-bold text-white">
             {lang === 'zh' ? '计划参加我们的名师工坊或开放日？' : 'Interested in Joining Our Masterclasses?'}
           </h3>
           <p className="text-slate-300 text-sm max-w-xl">

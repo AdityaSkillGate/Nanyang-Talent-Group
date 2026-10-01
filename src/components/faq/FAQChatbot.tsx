@@ -183,8 +183,8 @@ export const FAQChatbot: React.FC<FAQChatbotProps> = ({ lang }) => {
                 <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 border border-brand-navy" />
               </div>
               <div>
-                <h4 className="text-sm sm:text-base font-bold leading-tight flex items-center gap-1.5">
-                  <span>{content.headerTitle[lang]}</span>
+                <h4 className="text-sm sm:text-base font-bold leading-tight flex items-center gap-1.5 text-white">
+                  <span className="text-white font-bold">{content.headerTitle[lang]}</span>
                   <span className="text-[10px] font-normal px-1.5 py-0.5 rounded bg-brand-gold/20 text-brand-gold border border-brand-gold/30">
                     Est. 1998
                   </span>

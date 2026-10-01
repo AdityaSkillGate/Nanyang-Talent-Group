@@ -75,7 +75,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
               <Button
                 variant="primary"
                 size="lg"
-                href={`${prefix}/art-courses`}
+                href={`${prefix}/#courses`}
                 rightIcon={<ArrowRight className="w-4 h-4" />}
                 className="w-full sm:w-auto shadow-md"
               >

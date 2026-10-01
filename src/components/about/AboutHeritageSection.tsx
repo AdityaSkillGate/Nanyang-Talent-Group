@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Language } from '@/content/types';
 import { Brush, Sparkles, ArrowRight, BookOpen, Palette } from 'lucide-react';
 import { BilingualBadge } from '@/components/ui/BilingualLabel';
@@ -12,12 +13,48 @@ export const AboutHeritageSection: React.FC<AboutHeritageSectionProps> = ({ lang
   const isZh = lang === 'zh';
   const prefix = isZh ? '/zh' : '';
 
+  // Order strictly defined: 1-Seal Script, 2-Clerical Script, 3-Cursive Hand, 4-Regular Script, 5-Running Script
   const scripts = [
-    { name: '楷书', pinyin: 'Kaishu', en: 'Regular Script', desc: isZh ? '结构严谨，点画分明' : 'Balanced structure & linear poise' },
-    { name: '隶书', pinyin: 'Lishu', en: 'Clerical Script', desc: isZh ? '蚕头燕尾，古雅厚重' : 'Archaic elegance & horizontal spread' },
-    { name: '行书', pinyin: 'Xingshu', en: 'Running Script', desc: isZh ? '行云流水，气韵连贯' : 'Fluid rhythm & transitional motion' },
-    { name: '草书', pinyin: 'Caoshu', en: 'Cursive Hand', desc: isZh ? '笔走龙蛇，意境超逸' : 'Dynamic momentum & expressive spirit' },
-    { name: '篆书', pinyin: 'Zhuanshu', en: 'Seal Script', desc: isZh ? '圆润对称，源远流长' : 'Ancient symmetry & seal dignity' },
+    {
+      order: '01',
+      name: '篆书',
+      pinyin: 'Zhuanshu',
+      en: 'Seal Script',
+      desc: isZh ? '圆润对称，源远流长，秦汉古风' : 'Ancient symmetry & archaic seal dignity',
+      image: '/assets/calligraphy/1-seal-script.jpg',
+    },
+    {
+      order: '02',
+      name: '隶书',
+      pinyin: 'Lishu',
+      en: 'Clerical Script',
+      desc: isZh ? '蚕头燕尾，古雅厚重，横平竖直' : 'Archaic elegance & horizontal spread',
+      image: '/assets/calligraphy/2-clerical-script.jpg',
+    },
+    {
+      order: '03',
+      name: '草书',
+      pinyin: 'Caoshu',
+      en: 'Cursive Hand',
+      desc: isZh ? '笔走龙蛇，意境超逸，气势贯通' : 'Dynamic momentum & expressive spirit',
+      image: '/assets/calligraphy/3-cursive-hand.jpg',
+    },
+    {
+      order: '04',
+      name: '楷书',
+      pinyin: 'Kaishu',
+      en: 'Regular Script',
+      desc: isZh ? '结构严谨，点画分明，端庄方正' : 'Balanced structure & linear poise',
+      image: '/assets/calligraphy/4-regular-script.jpg',
+    },
+    {
+      order: '05',
+      name: '行书',
+      pinyin: 'Xingshu',
+      en: 'Running Script',
+      desc: isZh ? '行云流水，气韵生动，虚实相生' : 'Fluid rhythm & transitional motion',
+      image: '/assets/calligraphy/5-running-script.jpg',
+    },
   ];
 
   const paintingTraditions = [
@@ -51,11 +88,11 @@ export const AboutHeritageSection: React.FC<AboutHeritageSectionProps> = ({ lang
             <BilingualBadge en="Calligraphy & Painting" zh="书画同源" color="gold" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             {isZh ? (
-              <span className="font-chinese">融汇东方古典精髓 · 贯通现当代视觉语言</span>
+              <span className="font-chinese text-white">融汇东方古典精髓 · 贯通现当代视觉语言</span>
             ) : (
-              <span>Classical Traditions Alongside Modern Studio Pedagogy</span>
+              <span className="text-white">Classical Traditions Alongside Modern Studio Pedagogy</span>
             )}
           </h2>
 
@@ -79,29 +116,48 @@ export const AboutHeritageSection: React.FC<AboutHeritageSectionProps> = ({ lang
                   {isZh ? '正统中国书法教学体系' : 'Chinese Calligraphic Heritage'}
                 </h3>
               </div>
-              <span className="text-xs text-slate-400 font-mono">Kaishu to Zhuanshu</span>
+              <span className="text-xs text-slate-400 font-mono">
+                {isZh ? '篆 · 隶 · 草 · 楷 · 行' : 'Zhuanshu to Xingshu'}
+              </span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
               {scripts.map((script, idx) => (
                 <div
-                  key={idx}
-                  className={`p-4 rounded-xl bg-white/5 border border-white/10 hover:border-brand-gold/40 transition-colors ${
+                  key={script.order}
+                  className={`p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-brand-gold/40 transition-all duration-200 group flex flex-col justify-between ${
                     idx === 4 ? 'sm:col-span-2 lg:col-span-1' : ''
                   }`}
                 >
-                  <div className="flex items-baseline justify-between mb-1">
-                    <span className="text-xl font-bold text-brand-gold font-chinese">
-                      {script.name}
-                    </span>
-                    <span className="text-xs text-slate-400 font-mono">
-                      {script.pinyin}
-                    </span>
+                  <div>
+                    {/* Script Specimen Visual Image */}
+                    <div className="relative h-28 w-full rounded-lg overflow-hidden mb-3 border border-white/10 bg-slate-900/60">
+                      <Image
+                        src={script.image}
+                        alt={`${script.name} - ${script.en}`}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 240px"
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/70 backdrop-blur-xs text-[10px] font-mono font-bold text-brand-gold border border-white/15">
+                        {script.order}
+                      </div>
+                    </div>
+
+                    <div className="flex items-baseline justify-between mb-0.5">
+                      <span className="text-lg font-bold text-brand-gold font-chinese tracking-wide">
+                        {script.name}
+                      </span>
+                      <span className="text-[11px] text-slate-400 font-mono">
+                        {script.pinyin}
+                      </span>
+                    </div>
+                    <div className="text-xs font-semibold text-white">
+                      {script.order} - {script.en}
+                    </div>
                   </div>
-                  <div className="text-xs font-semibold text-white">
-                    {script.en}
-                  </div>
-                  <div className="text-[11px] text-slate-400 mt-1 leading-snug">
+
+                  <div className="text-[11px] text-slate-300 mt-2 leading-snug">
                     {script.desc}
                   </div>
                 </div>

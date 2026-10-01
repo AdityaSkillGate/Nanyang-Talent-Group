@@ -10,15 +10,15 @@ const baseUrl = 'https://nytalent.com.sg';
 export const seoMetadata = {
   home: {
     en: {
-      title: 'Home | Nanyang Talent Group Pte Ltd | Since 1998',
+      title: 'Home | Nanyang Talent Group Pte Ltd · Since 1998',
       description:
         'Discover premier art academy, language studies, and cognitive brain intelligence enrichment programmes in Singapore. Nanyang Talent Group Pte Ltd, Established Since 1998.',
       openGraph: {
-        title: 'Nanyang Talent Group Pte Ltd | Since 1998',
+        title: 'Nanyang Talent Group Pte Ltd · Since 1998',
         description:
           'Premier Singapore art academy, language studies, and cognitive brain intelligence programmes. Established Since 1998.',
         url: baseUrl,
-        siteName: 'Nanyang Talent Group',
+        siteName: 'Nanyang Talent Group Pte Ltd · Since 1998',
         locale: 'en_SG',
         type: 'website',
       },
@@ -31,15 +31,15 @@ export const seoMetadata = {
       },
     } as Metadata,
     zh: {
-      title: '首页 | 南洋人才集团 | 始于1998年',
+      title: '首页 | 南洋人才集团 · 始于1998',
       description:
         '探索专为激发创意、促进学习与个人发展而设的新加坡美术、多语种与全脑启发课程。南洋人才集团，始于1998年。',
       openGraph: {
-        title: '南洋人才集团 | 始于1998年',
+        title: '南洋人才集团 · 始于1998',
         description:
           '新加坡专业美术学院、多语种研习与全脑智力启发课程体系。始于1998年。',
         url: `${baseUrl}/zh`,
-        siteName: '南洋人才集团',
+        siteName: '南洋人才集团 · 始于1998',
         locale: 'zh_SG',
         type: 'website',
       },
@@ -89,6 +89,49 @@ export const seoMetadata = {
         languages: {
           'en-SG': `${baseUrl}/about`,
           'zh-SG': `${baseUrl}/zh/about`,
+        },
+      },
+    } as Metadata,
+  },
+
+  studentRecruitment: {
+    en: {
+      title: 'Student Recruitment Service | Study in Singapore | Nanyang Talent Group',
+      description:
+        'Official student recruitment and education agent services in Singapore: course counseling, school admissions, ICA Student Pass processing, and arrival support in partnership with Nanyang Asia College.',
+      openGraph: {
+        title: 'Student Recruitment Service | Study in Singapore',
+        description:
+          'Comprehensive education agent representation in Singapore: course counseling, admissions, ICA student pass, and arrival support.',
+        url: `${baseUrl}/student-recruitment`,
+        locale: 'en_SG',
+        type: 'website',
+      },
+      alternates: {
+        canonical: `${baseUrl}/student-recruitment`,
+        languages: {
+          'en-SG': `${baseUrl}/student-recruitment`,
+          'zh-SG': `${baseUrl}/zh/student-recruitment`,
+        },
+      },
+    } as Metadata,
+    zh: {
+      title: '留学服务与国际招生代表 | 新加坡求学 | 南洋人才集团',
+      description:
+        '南洋人才集团官方留学招生服务：院校专业咨询、申请材料递交、新加坡移民局（ICA）学生准证申报与抵星安顿，携手南洋亚洲学院等权威合作院校。',
+      openGraph: {
+        title: '留学服务与国际招生代表 | 南洋人才集团',
+        description:
+          '全方位新加坡留学服务：择校规划、入学报读、学生准证申报与行前接机住宿安排。',
+        url: `${baseUrl}/zh/student-recruitment`,
+        locale: 'zh_SG',
+        type: 'website',
+      },
+      alternates: {
+        canonical: `${baseUrl}/zh/student-recruitment`,
+        languages: {
+          'en-SG': `${baseUrl}/student-recruitment`,
+          'zh-SG': `${baseUrl}/zh/student-recruitment`,
         },
       },
     } as Metadata,

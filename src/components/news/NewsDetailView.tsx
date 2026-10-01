@@ -119,7 +119,7 @@ export const NewsDetailView: React.FC<NewsDetailViewProps> = ({ item, lang }) =>
             <Building2 className="w-4 h-4" />
             <span>{lang === 'zh' ? '南洋人才集团 · 招生咨询部' : 'Nanyang Talent Group · Admissions'}</span>
           </div>
-          <h3 className="text-xl font-bold">
+          <h3 className="text-xl font-bold text-white">
             {lang === 'zh' ? '有关于本通告或排期的疑问？' : 'Questions Regarding This Announcement?'}
           </h3>
           <p className="text-slate-300 text-sm max-w-xl">

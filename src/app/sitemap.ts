@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
     '/about',
+    '/student-recruitment',
     '/art-courses',
     '/enrichment-courses',
     '/news-events',
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/design-system',
     '/zh',
     '/zh/about',
+    '/zh/student-recruitment',
     '/zh/art-courses',
     '/zh/enrichment-courses',
     '/zh/news-events',

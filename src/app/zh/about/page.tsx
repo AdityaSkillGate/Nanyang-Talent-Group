@@ -4,6 +4,8 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { AboutHero } from '@/components/about/AboutHero';
 import { OurStorySection } from '@/components/about/OurStorySection';
+import { DrTengSection } from '@/components/about/DrTengSection';
+import { InstitutionalAllianceSection } from '@/components/about/InstitutionalAllianceSection';
 import { LearningAreasSection } from '@/components/about/LearningAreasSection';
 import { StatsSection } from '@/components/home/StatsSection';
 import { LearningPhilosophySection } from '@/components/about/LearningPhilosophySection';
@@ -40,7 +42,13 @@ export default function ChineseAboutPage() {
         {/* Section 2: Our Story */}
         <OurStorySection lang="zh" />
 
-        {/* Section 3: Learning Areas */}
+        {/* Section 3: Leadership & Artistic Direction - Dr. Teng Jiashu */}
+        <DrTengSection lang="zh" />
+
+        {/* Section 4: Nanyang Institutional Alliance */}
+        <InstitutionalAllianceSection lang="zh" />
+
+        {/* Section 5: Learning Areas */}
         <LearningAreasSection lang="zh" />
 
         {/* Section 4: Our Numbers */}

@@ -25,6 +25,8 @@ export const uiTranslations = {
   nav: {
     home: { en: 'Home', zh: '首页' },
     about: { en: 'About Us', zh: '关于我们' },
+    studentRecruitment: { en: 'Explore Service', zh: '探索服务' },
+    theCourses: { en: 'Explore Course', zh: '探索课程' },
     artCourses: { en: 'Art Courses', zh: '美术课程' },
     enrichmentCourses: { en: 'Enrichment Courses', zh: '潜能与语言课程' },
     languageCourses: { en: 'Language Courses', zh: '多语种研习' },
@@ -50,7 +52,8 @@ export const uiTranslations = {
   },
 
   buttons: {
-    exploreCourses: { en: 'Explore Courses', zh: '探索课程' },
+    exploreCourses: { en: 'Explore Course', zh: '探索课程' },
+    exploreService: { en: 'Explore Service (Student Recruitment)', zh: '探索服务（权威留学）' },
     learnMore: { en: 'Learn More', zh: '了解更多' },
     viewAll: { en: 'View All', zh: '查看全部' },
     viewAllArt: { en: 'View All Art Courses', zh: '查看全部美术课程' },
@@ -80,7 +83,8 @@ export const uiTranslations = {
       en: 'Discover art, languages and enrichment programmes designed to encourage creativity, learning and personal development.',
       zh: '探索专为激发创意、促进学习与个人发展而设的美术、语言与潜能启发课程。',
     },
-    primaryCta: { en: 'Explore Courses', zh: '探索课程' },
+    primaryCta: { en: 'Explore Course', zh: '探索课程' },
+    serviceCta: { en: 'Explore Service (Student Recruitment)', zh: '探索服务（权威留学）' },
     secondaryCta: { en: 'Contact Us', zh: '联系我们' },
     pillars: {
       art: { en: 'Fine Arts & Calligraphy', zh: '艺术与经典书法' },
@@ -114,10 +118,10 @@ export const uiTranslations = {
   },
 
   pathways: {
-    title: { en: 'Three Distinct Learning Pathways', zh: '三大核心学习领域' },
+    title: { en: 'Explore Course', zh: '探索课程' },
     subtitle: {
-      en: 'Cultivating artistic expression, linguistic competence, and cognitive excellence in Singapore.',
-      zh: '在新加坡深耕艺术创作、语言沟通与全脑潜能开发。',
+      en: 'Three Distinct Learning Pathways: Cultivating artistic expression, linguistic competence, and cognitive excellence in Singapore.',
+      zh: '三大核心学习领域：在新加坡深耕艺术创作、语言沟通与全脑潜能开发。',
     },
     art: {
       title: { en: 'Art Courses', zh: '美术学院' },
@@ -289,12 +293,13 @@ export const uiTranslations = {
     },
     directInquiries: { en: 'Direct Inquiries', zh: '招生直通咨询' },
     whatsappAdmissions: { en: 'WhatsApp Admissions', zh: 'WhatsApp 招生顾问' },
+    officeNumber: { en: 'Office Telephone', zh: '办公总机电话' },
     officialEmail: { en: 'Official Email', zh: '官方咨询邮箱' },
-    locationTitle: { en: 'Studio / Center Location', zh: '校区与画室地址' },
-    singaporeLocation: { en: 'Singapore', zh: '新加坡' },
+    locationTitle: { en: 'Official Campus Address', zh: '官方中心地址' },
+    singaporeLocation: { en: '135 Jurong Gateway Road, #03-335, Singapore 600135', zh: '135 裕廊商业大道，#03-335，新加坡 600135' },
     locationPending: {
-      en: '(Exact campus address pending final client confirmation)',
-      zh: '（具体校区地址待客户最终确认）',
+      en: 'Jurong Gateway Campus',
+      zh: '裕廊商业大道校区',
     },
     hoursTitle: { en: 'Consultation Hours', zh: '咨询接待时间' },
     hoursValue: {

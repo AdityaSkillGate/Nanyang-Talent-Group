@@ -5,6 +5,10 @@ export const siteConfig = {
     en: 'Nanyang Talent Group Pte Ltd',
     zh: '南洋人才集团',
   },
+  fullName: {
+    en: 'Nanyang Talent Group Pte Ltd · Since 1998',
+    zh: '南洋人才集团 · 始于1998',
+  },
   shortName: {
     en: 'Nanyang Talent Group',
     zh: '南洋人才',
@@ -17,21 +21,22 @@ export const siteConfig = {
   url: 'https://nytalent.com.sg',
   contact: {
     email: 'info@nytalent.com.sg',
-    phone: '+65 6789 0123',
-    whatsapp: 'https://wa.me/6567890123',
-    whatsappLabel: '+65 6789 0123',
+    phone: '+65 6899 0828',
+    officePhone: '+65 6899 0828',
+    whatsapp: 'https://wa.me/6590048768',
+    whatsappLabel: '+65 9004 8768',
     address: {
-      en: 'Singapore (Exact campus address pending client confirmation)',
-      zh: '新加坡（具体校区地址待客户最终确认）',
+      en: '135 Jurong Gateway Road, #03-335, Singapore 600135',
+      zh: '135 裕廊商业大道，#03-335，新加坡 600135',
     },
     hours: {
       en: 'Monday – Saturday: 9:00 AM – 6:00 PM',
       zh: '周一至周六：上午 9:00 – 下午 6:00',
     },
-    status: 'client-confirm' as const,
+    status: 'verified-source' as const,
     notice: {
-      en: 'Campus address and official contact details are subject to final client confirmation.',
-      zh: '校区具体地址及官方联系方式待客户最终核准确认。',
+      en: 'Official Campus: 135 Jurong Gateway Road, #03-335, Singapore 600135. Consultations welcome by appointment.',
+      zh: '官方教学中心：新加坡裕廊商业大道 135 号 #03-335。欢迎预约实地探校与课程咨询。',
     },
   },
   stats: [
@@ -76,27 +81,27 @@ export const siteConfig = {
     },
     {
       key: 'about',
-      label: { en: 'About', zh: '关于我们' },
+      label: { en: 'About Us', zh: '关于我们' },
       href: { en: '/about', zh: '/zh/about' },
     },
     {
-      key: 'art',
-      label: { en: 'Art Courses', zh: '美术课程' },
+      key: 'recruitment',
+      label: { en: 'Student Recruitment Service', zh: '留学服务' },
+      href: { en: '/student-recruitment', zh: '/zh/student-recruitment' },
+    },
+    {
+      key: 'courses',
+      label: { en: 'The Courses', zh: '课程体系' },
       href: { en: '/art-courses', zh: '/zh/art-courses' },
     },
     {
-      key: 'enrichment',
-      label: { en: 'Enrichment Courses', zh: '潜能与语言' },
-      href: { en: '/enrichment-courses', zh: '/zh/enrichment-courses' },
-    },
-    {
       key: 'news',
-      label: { en: 'News & Events', zh: '动态与活动' },
+      label: { en: 'News & Events', zh: '资讯与活动' },
       href: { en: '/news-events', zh: '/zh/news-events' },
     },
     {
       key: 'contact',
-      label: { en: 'Contact', zh: '联系我们' },
+      label: { en: 'Contact Us', zh: '联系我们' },
       href: { en: '/contact', zh: '/zh/contact' },
     },
   ] as NavigationItem[],

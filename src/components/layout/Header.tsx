@@ -22,7 +22,9 @@ import {
   Brain, 
   ArrowRight,
   Clock,
-  Sparkles
+  Sparkles,
+  GraduationCap,
+  MessageCircle
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -31,8 +33,8 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ lang }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<'art' | 'enrichment' | null>(null);
-  const [mobileExpandedSection, setMobileExpandedSection] = useState<'art' | 'enrichment' | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<'courses' | null>(null);
+  const [mobileExpandedSection, setMobileExpandedSection] = useState<'courses' | 'art' | 'enrichment' | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const pathname = usePathname();
@@ -80,11 +82,11 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const handleMouseEnter = (menu: 'art' | 'enrichment') => {
+  const handleMouseEnter = () => {
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
     }
-    setActiveDropdown(menu);
+    setActiveDropdown('courses');
   };
 
   const handleMouseLeave = () => {
@@ -92,6 +94,11 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
       setActiveDropdown(null);
     }, 180);
   };
+
+  const isCoursesActive =
+    pathname.startsWith(`${prefix}/art-courses`) ||
+    pathname.startsWith(`${prefix}/enrichment-courses`) ||
+    activeDropdown === 'courses';
 
   return (
     <>
@@ -103,7 +110,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
             : 'bg-white/95 backdrop-blur-md border-b border-surface-border'
         }`}
       >
-        {/* Top micro bar: Singapore Institutional branding & WhatsApp link */}
+        {/* Top micro bar: Singapore Institutional branding & Contact numbers */}
         <div className="bg-brand-navy text-white text-[11px] py-1.5 px-3 sm:px-8 border-b border-brand-navy-dark">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
             <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
@@ -113,16 +120,22 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               </span>
             </div>
             <div className="hidden sm:flex items-center gap-4 text-slate-300 shrink-0">
-              <span>{t.institutionalStandard[lang]}</span>
+              <a 
+                href={`tel:${siteConfig.contact.officePhone.replace(/\s+/g, '')}`}
+                className="hover:text-white flex items-center gap-1.5 transition-colors group"
+              >
+                <Phone className="w-3 h-3 text-brand-gold group-hover:scale-110 transition-transform" />
+                <span>Office: {siteConfig.contact.officePhone}</span>
+              </a>
               <span className="text-slate-500">|</span>
               <a 
                 href={siteConfig.contact.whatsapp} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="hover:text-white flex items-center gap-1.5 transition-colors group"
+                className="hover:text-emerald-400 flex items-center gap-1.5 transition-colors group"
               >
-                <Phone className="w-3 h-3 text-brand-gold group-hover:scale-110 transition-transform" />
-                <span>{t.nav.whatsappAdmissions[lang]}</span>
+                <MessageCircle className="w-3 h-3 text-emerald-400 group-hover:scale-110 transition-transform" />
+                <span>WhatsApp: {siteConfig.contact.whatsappLabel}</span>
               </a>
             </div>
           </div>
@@ -130,32 +143,32 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
 
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-4 xl:px-8" ref={navContainerRef}>
-        <div className="flex items-center justify-between h-20 gap-2">
+        <div className="flex items-center justify-between h-20 sm:h-[5.5rem] lg:h-24 gap-2 lg:gap-3 xl:gap-4">
           {/* Logo Section */}
           <Link 
             href={prefix || '/'} 
             className="flex items-center gap-2 sm:gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-navy rounded-lg py-1 px-0.5 sm:p-1 shrink-0" 
             aria-label={`${siteConfig.name.en} Home`}
           >
-            {/* Desktop Horizontal Logo */}
-            <div className="hidden sm:block relative h-11 w-44 lg:h-11 lg:w-44 xl:h-14 xl:w-56 shrink-0">
+            {/* Desktop Horizontal Logo (Prominently Increased Size) */}
+            <div className="hidden sm:block relative h-14 w-56 sm:h-15 sm:w-64 lg:h-16 lg:w-72 xl:h-[4.75rem] xl:w-80 shrink-0">
               <Image
                 src="/assets/logo-horizontal.png"
-                alt={siteConfig.name[lang]}
+                alt={siteConfig.fullName[lang]}
                 fill
                 priority
-                sizes="(max-width: 1024px) 176px, 224px"
+                sizes="(max-width: 1024px) 256px, (max-width: 1280px) 288px, 320px"
                 className="object-contain object-left group-hover:opacity-95 transition-opacity"
               />
             </div>
-            {/* Mobile Compact Horizontal Logo */}
-            <div className="sm:hidden relative h-10 w-36 xs:w-44 shrink-0">
+            {/* Mobile Compact Horizontal Logo (Increased Size) */}
+            <div className="sm:hidden relative h-12 w-44 xs:h-13 xs:w-52 shrink-0">
               <Image
                 src="/assets/logo-horizontal.png"
-                alt={siteConfig.shortName[lang]}
+                alt={siteConfig.fullName[lang]}
                 fill
                 priority
-                sizes="(max-width: 400px) 144px, 176px"
+                sizes="(max-width: 400px) 176px, 208px"
                 className="object-contain object-left"
               />
             </div>
@@ -175,7 +188,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               {t.nav.home[lang]}
             </Link>
 
-            {/* 2. About */}
+            {/* 2. About Us */}
             <Link
               href={`${prefix}/about`}
               className={`px-2 xl:px-3 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-colors ${
@@ -187,227 +200,185 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               {t.nav.about[lang]}
             </Link>
 
-            {/* 3. Art Courses (With Desktop Dropdown Menu) */}
+            {/* 3. Student Recruitment Service */}
+            <Link
+              href={`${prefix}/student-recruitment`}
+              className={`px-2 xl:px-3 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-colors ${
+                pathname.startsWith(`${prefix}/student-recruitment`)
+                  ? 'text-brand-red font-semibold bg-red-50/70'
+                  : 'text-ink-primary hover:text-brand-navy hover:bg-slate-50'
+              }`}
+            >
+              {t.nav.studentRecruitment[lang]}
+            </Link>
+
+            {/* 4. The Courses (Dropdown with Art Courses & Enrichment Courses) */}
             <div 
               className="relative shrink-0"
-              onMouseEnter={() => handleMouseEnter('art')}
+              onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               <button
                 type="button"
-                onClick={() => setActiveDropdown(activeDropdown === 'art' ? null : 'art')}
-                aria-expanded={activeDropdown === 'art'}
+                onClick={() => setActiveDropdown(activeDropdown === 'courses' ? null : 'courses')}
+                aria-expanded={activeDropdown === 'courses'}
                 aria-haspopup="true"
                 className={`inline-flex items-center gap-0.5 xl:gap-1 px-2 xl:px-3 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-colors ${
-                  pathname.startsWith(`${prefix}/art-courses`) || activeDropdown === 'art'
+                  isCoursesActive
                     ? 'text-brand-red font-semibold bg-red-50/70'
                     : 'text-ink-primary hover:text-brand-navy hover:bg-slate-50'
                 }`}
               >
-                <span className="whitespace-nowrap">{t.nav.artCourses[lang]}</span>
+                <span className="whitespace-nowrap">{t.nav.theCourses[lang]}</span>
                 <ChevronDown 
                   className={`w-3.5 h-3.5 xl:w-4 xl:h-4 transition-transform duration-200 shrink-0 ${
-                    activeDropdown === 'art' ? 'rotate-180 text-brand-red' : 'text-slate-400'
+                    activeDropdown === 'courses' ? 'rotate-180 text-brand-red' : 'text-slate-400'
                   }`} 
                 />
               </button>
 
-              {/* Art Courses Mega Dropdown */}
-              {activeDropdown === 'art' && (
+              {/* The Courses Unified Mega Dropdown */}
+              {activeDropdown === 'courses' && (
                 <div 
-                  className="absolute left-0 mt-1 w-[520px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-xl border border-surface-border p-5 animate-in fade-in slide-in-from-top-2 duration-150 z-50"
-                  onMouseEnter={() => handleMouseEnter('art')}
+                  className="absolute -left-36 xl:-left-20 mt-1 w-[780px] xl:w-[840px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-surface-border p-6 animate-in fade-in slide-in-from-top-2 duration-150 z-50"
+                  onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                   role="menu"
                 >
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-brand-red shrink-0">
-                        <Palette className="w-4 h-4" />
+                  <div className="grid grid-cols-12 gap-6 divide-x divide-slate-100">
+                    {/* Left Column: Art Courses (6 cols) */}
+                    <div className="col-span-6 space-y-3">
+                      <div className="flex items-center justify-between pb-2.5 border-b border-slate-100">
+                        <div className="flex items-center gap-2">
+                          <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center text-brand-red">
+                            <Palette className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-brand-navy">
+                              {t.nav.artCourses[lang]}
+                            </h4>
+                          </div>
+                        </div>
+                        <Link 
+                          href={`${prefix}/art-courses`}
+                          className="text-[11px] font-semibold text-brand-red hover:underline"
+                        >
+                          {t.nav.viewAllMega[lang]}
+                        </Link>
                       </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-brand-navy">
-                          {lang === 'zh' ? '南洋美术研习学院' : 'Nanyang Fine Arts Academy'}
-                        </h4>
-                        <p className="text-[11px] text-ink-muted">
-                          {lang === 'zh' ? '7大专业美术体系 · 培养扎实造型力' : '7 Structured Fine Art Disciplines'}
-                        </p>
+
+                      <div className="grid grid-cols-1 gap-1">
+                        {artCourses.map((c) => (
+                          <Link
+                            key={c.slug}
+                            href={`${prefix}/art-courses/${c.slug}`}
+                            className="p-2 rounded-lg hover:bg-red-50/60 transition-colors group flex items-center justify-between"
+                            role="menuitem"
+                          >
+                            <div className="min-w-0">
+                              <span className="text-xs font-bold text-ink-primary group-hover:text-brand-red transition-colors block truncate">
+                                {c.title[lang]}
+                              </span>
+                              <span className="text-[10px] text-ink-muted block truncate">
+                                {c.subtitle ? c.subtitle[lang] : c.summary[lang]}
+                              </span>
+                            </div>
+                            <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-brand-red group-hover:translate-x-0.5 transition-all shrink-0 ml-2" />
+                          </Link>
+                        ))}
                       </div>
                     </div>
-                    <Link
-                      href={`${prefix}/art-courses`}
-                      className="text-xs font-semibold text-brand-red hover:underline flex items-center gap-1 group"
-                    >
-                      <span>{lang === 'zh' ? '查看全部美术课程' : 'Explore All'}</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                    </Link>
-                  </div>
 
-                  <div className="grid grid-cols-2 gap-2">
-                    {artCourses.map((course) => (
-                      <Link
-                        key={course.slug}
-                        href={`${prefix}/art-courses/${course.slug}`}
-                        className="p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-colors group flex flex-col justify-between"
-                        role="menuitem"
-                      >
-                        <div className="flex items-start justify-between gap-1.5">
-                          <span className="text-xs font-bold text-ink-primary group-hover:text-brand-red transition-colors">
-                            {course.title[lang]}
-                          </span>
-                          {course.slug === 'short-course-art-teacher' && (
-                            <span className="text-[9px] px-1.5 py-0.5 bg-amber-50 text-amber-700 rounded border border-amber-200 shrink-0 font-medium">
-                              {lang === 'zh' ? '待确认' : 'Pending'}
-                            </span>
-                          )}
+                    {/* Right Column: Enrichment Courses (6 cols) */}
+                    <div className="col-span-6 pl-6 space-y-4">
+                      {/* Language Courses */}
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between pb-1.5 border-b border-slate-100">
+                          <div className="flex items-center gap-2">
+                            <div className="w-6 h-6 rounded-md bg-sky-50 flex items-center justify-center text-brand-blue">
+                              <Globe className="w-3.5 h-3.5" />
+                            </div>
+                            <h5 className="text-[11px] font-bold uppercase tracking-wider text-brand-navy">
+                              {t.nav.languageMegaHeading[lang]}
+                            </h5>
+                          </div>
+                          <Link 
+                            href={`${prefix}/enrichment-courses#languages`}
+                            className="text-[10px] font-semibold text-brand-blue hover:underline"
+                          >
+                            {t.nav.viewAllMega[lang]}
+                          </Link>
                         </div>
-                        <span className="text-[11px] text-ink-muted line-clamp-1 mt-0.5">
-                          {course.subtitle ? course.subtitle[lang] : course.summary[lang]}
-                        </span>
-                      </Link>
-                    ))}
+
+                        <div className="grid grid-cols-2 gap-1">
+                          {languageCourses.map((lc) => (
+                            <Link
+                              key={lc.slug}
+                              href={`${prefix}/enrichment-courses/language/${lc.slug}`}
+                              className="p-1.5 rounded-md hover:bg-sky-50/60 transition-colors text-xs font-medium text-ink-primary hover:text-brand-blue truncate"
+                              role="menuitem"
+                            >
+                              {lc.title[lang]}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Brain Intelligence */}
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between pb-1.5 border-b border-slate-100">
+                          <div className="flex items-center gap-2">
+                            <div className="w-6 h-6 rounded-md bg-amber-50 flex items-center justify-center text-brand-gold">
+                              <Brain className="w-3.5 h-3.5" />
+                            </div>
+                            <h5 className="text-[11px] font-bold uppercase tracking-wider text-brand-navy">
+                              {t.nav.brainMegaHeading[lang]}
+                            </h5>
+                          </div>
+                          <Link 
+                            href={`${prefix}/enrichment-courses#brain`}
+                            className="text-[10px] font-semibold text-brand-gold hover:underline"
+                          >
+                            {t.nav.viewAllMega[lang]}
+                          </Link>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-1">
+                          {brainCourses.map((bc) => (
+                            <Link
+                              key={bc.slug}
+                              href={`${prefix}/enrichment-courses/brain/${bc.slug}`}
+                              className="p-1.5 rounded-md hover:bg-amber-50/60 transition-colors text-xs font-medium text-ink-primary hover:text-brand-gold truncate"
+                              role="menuitem"
+                            >
+                              {bc.title[lang]}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="mt-3 pt-3 border-t border-slate-100 bg-surface-canvas -mx-5 -mb-5 p-3 px-5 rounded-b-2xl flex items-center justify-between text-xs text-ink-muted">
+                  {/* Mega Dropdown Footer */}
+                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-ink-muted bg-surface-canvas -mx-6 -mb-6 p-3 px-6 rounded-b-2xl">
                     <span className="flex items-center gap-1.5">
                       <Clock className="w-3.5 h-3.5 text-brand-gold" />
                       <span>{t.nav.artMegaTip[lang]}</span>
                     </span>
-                    <Link href={`${prefix}/contact`} className="font-semibold text-brand-navy hover:text-brand-red transition-colors">
-                      {t.nav.inquireMega[lang]}
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* 4. Enrichment Courses (With Desktop Two-Column Dropdown) */}
-            <div 
-              className="relative shrink-0"
-              onMouseEnter={() => handleMouseEnter('enrichment')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button
-                type="button"
-                onClick={() => setActiveDropdown(activeDropdown === 'enrichment' ? null : 'enrichment')}
-                aria-expanded={activeDropdown === 'enrichment'}
-                aria-haspopup="true"
-                className={`inline-flex items-center gap-0.5 xl:gap-1 px-2 xl:px-3 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-colors ${
-                  pathname.startsWith(`${prefix}/enrichment-courses`) || activeDropdown === 'enrichment'
-                    ? 'text-brand-red font-semibold bg-red-50/70'
-                    : 'text-ink-primary hover:text-brand-navy hover:bg-slate-50'
-                }`}
-              >
-                <span className="whitespace-nowrap">{t.nav.enrichmentCourses[lang]}</span>
-                <ChevronDown 
-                  className={`w-3.5 h-3.5 xl:w-4 xl:h-4 transition-transform duration-200 shrink-0 ${
-                    activeDropdown === 'enrichment' ? 'rotate-180 text-brand-red' : 'text-slate-400'
-                  }`} 
-                />
-              </button>
-
-              {/* Enrichment Courses Mega Dropdown Menu */}
-              {activeDropdown === 'enrichment' && (
-                <div 
-                  className="absolute lg:-left-56 xl:-left-28 mt-1 w-[640px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-xl border border-surface-border p-6 animate-in fade-in slide-in-from-top-2 duration-150 z-50"
-                  onMouseEnter={() => handleMouseEnter('enrichment')}
-                  onMouseLeave={handleMouseLeave}
-                  role="menu"
-                >
-                  <div className="grid grid-cols-2 gap-6 divide-x divide-slate-100">
-                    {/* Column 1: Language Courses */}
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between pb-2 border-b border-slate-100">
-                        <div className="flex items-center gap-2">
-                          <div className="w-7 h-7 rounded-lg bg-sky-50 flex items-center justify-center text-brand-blue">
-                            <Globe className="w-4 h-4" />
-                          </div>
-                          <div>
-                            <h4 className="text-xs font-bold uppercase tracking-wider text-brand-navy">
-                              {t.nav.languageMegaHeading[lang]}
-                            </h4>
-                          </div>
-                        </div>
-                        <Link 
-                          href={`${prefix}/enrichment-courses#languages`}
-                          className="text-[11px] font-semibold text-brand-blue hover:underline"
-                        >
-                          {t.nav.viewAllMega[lang]}
-                        </Link>
-                      </div>
-
-                      <div className="space-y-1">
-                        {languageCourses.map((lc) => (
-                          <Link
-                            key={lc.slug}
-                            href={`${prefix}/enrichment-courses/language/${lc.slug}`}
-                            className="block p-2 rounded-lg hover:bg-slate-50 transition-colors group"
-                            role="menuitem"
-                          >
-                            <div className="text-xs font-bold text-ink-primary group-hover:text-brand-blue transition-colors">
-                              {lc.title[lang]}
-                            </div>
-                            <div className="text-[10px] text-ink-muted line-clamp-1">
-                              {lc.subtitle ? lc.subtitle[lang] : lc.duration?.[lang]}
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
+                    <div className="flex items-center gap-4">
+                      <Link 
+                        href={`${prefix}/art-courses`} 
+                        className="font-semibold text-brand-red hover:underline"
+                      >
+                        {lang === 'zh' ? '美术学院 →' : 'Art Academy →'}
+                      </Link>
+                      <Link 
+                        href={`${prefix}/enrichment-courses`} 
+                        className="font-semibold text-brand-navy hover:underline"
+                      >
+                        {lang === 'zh' ? '特色强化中心 →' : 'Enrichment Hub →'}
+                      </Link>
                     </div>
-
-                    {/* Column 2: Brain Intelligence Courses */}
-                    <div className="pl-6 space-y-3">
-                      <div className="flex items-center justify-between pb-2 border-b border-slate-100">
-                        <div className="flex items-center gap-2">
-                          <div className="w-7 h-7 rounded-lg bg-amber-50 flex items-center justify-center text-brand-gold">
-                            <Brain className="w-4 h-4" />
-                          </div>
-                          <div>
-                            <h4 className="text-xs font-bold uppercase tracking-wider text-brand-navy">
-                              {t.nav.brainMegaHeading[lang]}
-                            </h4>
-                          </div>
-                        </div>
-                        <Link 
-                          href={`${prefix}/enrichment-courses#brain`}
-                          className="text-[11px] font-semibold text-brand-gold hover:underline"
-                        >
-                          {t.nav.viewAllMega[lang]}
-                        </Link>
-                      </div>
-
-                      <div className="space-y-1">
-                        {brainCourses.map((bc) => (
-                          <Link
-                            key={bc.slug}
-                            href={`${prefix}/enrichment-courses/brain/${bc.slug}`}
-                            className="block p-2 rounded-lg hover:bg-slate-50 transition-colors group"
-                            role="menuitem"
-                          >
-                            <div className="text-xs font-bold text-ink-primary group-hover:text-brand-gold transition-colors">
-                              {bc.title[lang]}
-                            </div>
-                            <div className="text-[10px] text-ink-muted line-clamp-1">
-                              {bc.ageGroup?.[lang] || (bc.duration ? bc.duration[lang] : '专注力与心智成长')}
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Dropdown Footer CTA */}
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                    <span className="text-ink-muted">
-                      {t.nav.enrichmentMegaTip[lang]}
-                    </span>
-                    <Link 
-                      href={`${prefix}/enrichment-courses`} 
-                      className="font-semibold text-brand-navy hover:text-brand-red flex items-center gap-1 group"
-                    >
-                      <span>{t.nav.viewEnrichmentHub[lang]}</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                    </Link>
                   </div>
                 </div>
               )}
@@ -425,7 +396,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               {t.nav.newsEvents[lang]}
             </Link>
 
-            {/* 6. Contact */}
+            {/* 6. Contact Us */}
             <Link
               href={`${prefix}/contact`}
               className={`px-2 xl:px-3 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-colors ${
@@ -494,7 +465,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               <ChevronRight className="w-5 h-5 text-slate-400" />
             </Link>
 
-            {/* 2. About */}
+            {/* 2. About Us */}
             <Link
               href={`${prefix}/about`}
               onClick={() => setMobileMenuOpen(false)}
@@ -508,117 +479,95 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               <ChevronRight className="w-5 h-5 text-slate-400" />
             </Link>
 
-            {/* 3. Art Courses Accordion */}
+            {/* 3. Student Recruitment Service */}
+            <Link
+              href={`${prefix}/student-recruitment`}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-semibold min-h-[48px] ${
+                pathname.startsWith(`${prefix}/student-recruitment`) 
+                  ? 'bg-red-50 text-brand-red font-bold' 
+                  : 'text-ink-primary hover:bg-slate-50'
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <GraduationCap className="w-5 h-5 text-brand-navy" />
+                <span>{t.nav.studentRecruitment[lang]}</span>
+              </div>
+              <ChevronRight className="w-5 h-5 text-slate-400" />
+            </Link>
+
+            {/* 4. The Courses Accordion */}
             <div className="border border-slate-200/80 rounded-xl overflow-hidden">
               <div className="flex items-center justify-between px-4 py-1 bg-slate-50 min-h-[48px]">
-                <Link
-                  href={`${prefix}/art-courses`}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-semibold text-base text-ink-primary hover:text-brand-red flex items-center gap-2.5 flex-1 min-h-[44px]"
-                >
+                <div className="font-semibold text-base text-ink-primary flex items-center gap-2.5 flex-1 min-h-[44px]">
                   <Palette className="w-5 h-5 text-brand-red shrink-0" />
-                  <span>{t.nav.artCourses[lang]}</span>
-                </Link>
+                  <span>{t.nav.theCourses[lang]}</span>
+                </div>
                 <button
                   type="button"
-                  onClick={() => setMobileExpandedSection(mobileExpandedSection === 'art' ? null : 'art')}
+                  onClick={() => setMobileExpandedSection(mobileExpandedSection === 'courses' ? null : 'courses')}
                   className="p-2 rounded-lg text-slate-500 hover:text-slate-800 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                  aria-label="Expand Art Courses Submenu"
+                  aria-label="Expand Courses Submenu"
                 >
-                  <ChevronDown className={`w-5 h-5 transition-transform ${mobileExpandedSection === 'art' ? 'rotate-180 text-brand-red' : ''}`} />
+                  <ChevronDown className={`w-5 h-5 transition-transform ${mobileExpandedSection === 'courses' ? 'rotate-180 text-brand-red' : ''}`} />
                 </button>
               </div>
 
-              {mobileExpandedSection === 'art' && (
-                <div className="p-2.5 space-y-1 bg-white border-t border-slate-100">
-                  {artCourses.map((c) => (
-                    <Link
-                      key={c.slug}
-                      href={`${prefix}/art-courses/${c.slug}`}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="px-3.5 py-3 rounded-lg text-sm font-medium text-ink-secondary hover:bg-red-50 hover:text-brand-red transition-colors min-h-[44px] flex items-center justify-between"
-                    >
-                      <span>{c.title[lang]}</span>
-                      {c.slug === 'short-course-art-teacher' && (
-                        <span className="text-[10px] px-1.5 py-0.5 bg-amber-50 text-amber-700 rounded border border-amber-200">
-                          {lang === 'zh' ? '待确认' : 'Pending'}
-                        </span>
-                      )}
-                    </Link>
-                  ))}
-                  <div className="pt-2 border-t border-slate-100">
+              {mobileExpandedSection === 'courses' && (
+                <div className="p-2.5 space-y-3 bg-white border-t border-slate-100">
+                  {/* Art Courses Group */}
+                  <div className="space-y-1">
+                    <span className="px-3 py-1 text-[11px] uppercase font-bold text-brand-red block">
+                      {t.nav.artCourses[lang]}
+                    </span>
+                    {artCourses.map((c) => (
+                      <Link
+                        key={c.slug}
+                        href={`${prefix}/art-courses/${c.slug}`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="px-3.5 py-2 rounded-lg text-sm text-ink-secondary hover:bg-red-50 hover:text-brand-red transition-colors min-h-[40px] flex items-center justify-between"
+                      >
+                        <span>{c.title[lang]}</span>
+                      </Link>
+                    ))}
                     <Link
                       href={`${prefix}/art-courses`}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="px-3.5 py-3 font-bold text-sm text-brand-red hover:underline min-h-[44px] flex items-center"
+                      className="px-3.5 py-2 font-bold text-xs text-brand-red hover:underline flex items-center"
                     >
-                      {lang === 'zh' ? '进入美术学院主页 →' : 'View Art Courses Hub →'}
+                      {lang === 'zh' ? '进入美术学院主页 →' : 'View Art Academy Hub →'}
                     </Link>
                   </div>
-                </div>
-              )}
-            </div>
 
-            {/* 4. Enrichment Courses Accordion */}
-            <div className="border border-slate-200/80 rounded-xl overflow-hidden">
-              <div className="flex items-center justify-between px-4 py-1 bg-slate-50 min-h-[48px]">
-                <Link
-                  href={`${prefix}/enrichment-courses`}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-semibold text-base text-ink-primary hover:text-brand-blue flex items-center gap-2.5 flex-1 min-h-[44px]"
-                >
-                  <Globe className="w-5 h-5 text-brand-blue shrink-0" />
-                  <span>{t.nav.enrichmentCourses[lang]}</span>
-                </Link>
-                <button
-                  type="button"
-                  onClick={() => setMobileExpandedSection(mobileExpandedSection === 'enrichment' ? null : 'enrichment')}
-                  className="p-2 rounded-lg text-slate-500 hover:text-slate-800 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                  aria-label="Expand Enrichment Courses Submenu"
-                >
-                  <ChevronDown className={`w-5 h-5 transition-transform ${mobileExpandedSection === 'enrichment' ? 'rotate-180 text-brand-blue' : ''}`} />
-                </button>
-              </div>
-
-              {mobileExpandedSection === 'enrichment' && (
-                <div className="p-2.5 space-y-2.5 bg-white border-t border-slate-100">
-                  <div>
+                  {/* Enrichment Courses Group */}
+                  <div className="pt-2 border-t border-slate-100 space-y-1">
                     <span className="px-3 py-1 text-[11px] uppercase font-bold text-brand-blue block">
-                      {lang === 'zh' ? '多语种研习 (5大语种)' : 'Language Courses (5)'}
+                      {t.nav.enrichmentCourses[lang]}
                     </span>
-                    {languageCourses.map((lc) => (
+                    {languageCourses.slice(0, 3).map((lc) => (
                       <Link
                         key={lc.slug}
                         href={`${prefix}/enrichment-courses/language/${lc.slug}`}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="px-3.5 py-2.5 rounded-lg text-sm text-ink-secondary hover:bg-sky-50 hover:text-brand-blue transition-colors min-h-[44px] flex items-center"
+                        className="px-3.5 py-2 rounded-lg text-sm text-ink-secondary hover:bg-sky-50 hover:text-brand-blue transition-colors min-h-[40px] flex items-center"
                       >
                         {lc.title[lang]}
                       </Link>
                     ))}
-                  </div>
-
-                  <div className="pt-2 border-t border-slate-100">
-                    <span className="px-3 py-1 text-[11px] uppercase font-bold text-brand-gold block">
-                      {lang === 'zh' ? '全脑潜能启发 (6大模块)' : 'Brain Intelligence (6)'}
-                    </span>
-                    {brainCourses.map((bc) => (
+                    {brainCourses.slice(0, 3).map((bc) => (
                       <Link
                         key={bc.slug}
                         href={`${prefix}/enrichment-courses/brain/${bc.slug}`}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="px-3.5 py-2.5 rounded-lg text-sm text-ink-secondary hover:bg-amber-50 hover:text-brand-gold transition-colors min-h-[44px] flex items-center"
+                        className="px-3.5 py-2 rounded-lg text-sm text-ink-secondary hover:bg-amber-50 hover:text-brand-gold transition-colors min-h-[40px] flex items-center"
                       >
                         {bc.title[lang]}
                       </Link>
                     ))}
-                  </div>
-
-                  <div className="pt-2 border-t border-slate-100">
                     <Link
                       href={`${prefix}/enrichment-courses`}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="px-3.5 py-3 font-bold text-sm text-brand-navy hover:underline min-h-[44px] flex items-center"
+                      className="px-3.5 py-2 font-bold text-xs text-brand-navy hover:underline flex items-center"
                     >
                       {lang === 'zh' ? '进入强化课程中心 →' : 'View Enrichment Hub →'}
                     </Link>
@@ -641,7 +590,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               <ChevronRight className="w-5 h-5 text-slate-400" />
             </Link>
 
-            {/* 6. Contact */}
+            {/* 6. Contact Us */}
             <Link
               href={`${prefix}/contact`}
               onClick={() => setMobileMenuOpen(false)}
@@ -657,7 +606,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
           </div>
 
           {/* Action CTAs in Mobile Drawer */}
-          <div className="pt-4 border-t border-slate-100 space-y-3">
+          <div className="pt-4 border-t border-slate-100 space-y-2.5">
             <Link
               href={`${prefix}/contact`}
               onClick={() => setMobileMenuOpen(false)}
@@ -671,8 +620,15 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors min-h-[44px]"
             >
-              <Phone className="w-4 h-4 text-emerald-600" />
+              <MessageCircle className="w-4 h-4 text-emerald-600" />
               <span>WhatsApp: {siteConfig.contact.whatsappLabel}</span>
+            </a>
+            <a
+              href={`tel:${siteConfig.contact.officePhone.replace(/\s+/g, '')}`}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors min-h-[44px]"
+            >
+              <Phone className="w-4 h-4 text-slate-600" />
+              <span>Office: {siteConfig.contact.officePhone}</span>
             </a>
           </div>
         </div>

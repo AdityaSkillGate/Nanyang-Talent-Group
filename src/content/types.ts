@@ -38,6 +38,7 @@ export interface CourseDetail {
   fees: FeeStructure;
   featured: boolean;
   order: number;
+  image?: string;
 }
 
 export interface SiteStatistic {

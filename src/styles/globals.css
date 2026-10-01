@@ -5,6 +5,16 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+  }
+
+  /* Universal smooth interaction transitions */
+  a, button {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
   body {
     color: var(--ny-ink-primary);
     background-color: var(--ny-canvas);
@@ -18,6 +28,12 @@
     color: var(--ny-navy-700);
     letter-spacing: -0.02em;
     text-wrap: balance;
+  }
+
+  /* Headings on dark or text-white containers inherit white / light text color */
+  .text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white h5, .text-white h6,
+  [class*="text-white"] h1, [class*="text-white"] h2, [class*="text-white"] h3, [class*="text-white"] h4, [class*="text-white"] h5, [class*="text-white"] h6 {
+    color: inherit;
   }
 
   /* Chinese Typography & Hierarchy Enhancement */
@@ -37,14 +53,284 @@
   }
 }
 
-/* Prevent animation jitter & subpixel flickering */
+/* ==========================================================================
+   Professional Animation Keyframes & Performance GPU Acceleration
+   ========================================================================== */
 .ny-animate-fade-in,
 .ny-animate-slide-up,
 .ny-brush-reveal,
+.fade-in,
+.fade-out,
+.zoom-in,
+.zoom-out,
+.grow-ttb-in,
+.grow-ttb-out,
+.jump-in,
+.jump-out,
+.jump-alt-in,
+.jump-alt-out,
+.power-on,
+.power-off,
+.rush-btt-in,
+.rush-ltr-in,
+.rush-rtl-in,
+.rush-ttb-in,
+.slide-btt-in,
+.slide-btt-out,
+.slide-ltr-in,
+.slide-ltr-out,
+.slide-rtl-in,
+.slide-rtl-out,
+.slide-ttb-in,
+.slide-ttb-out,
+.spring-btt-in,
+.spring-ltr-in,
+.spring-rtl-in,
+.spring-rtl-in-,
+.spring-ttb-in,
+.throw-btt-in,
+.throw-ltr-in,
+.throw-rtl-in,
+.throw-ttb-in,
+.vortex-in,
+.vortex-out,
+.vortex-alt-in,
+.vortex-alt-out,
 [class*="animate-in"] {
   transform: translateZ(0);
   backface-visibility: hidden;
   will-change: transform, opacity;
+}
+
+/* 1. Fade Animations */
+@keyframes anim-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes anim-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.fade-in { animation: anim-fade-in 0.4s ease-out forwards; }
+.fade-out { animation: anim-fade-out 0.3s ease-in forwards; }
+
+/* 2. Zoom Animations */
+@keyframes anim-zoom-in {
+  from { opacity: 0; transform: scale(0.93) translateZ(0); }
+  to { opacity: 1; transform: scale(1) translateZ(0); }
+}
+@keyframes anim-zoom-out {
+  from { opacity: 1; transform: scale(1) translateZ(0); }
+  to { opacity: 0; transform: scale(0.93) translateZ(0); }
+}
+.zoom-in { animation: anim-zoom-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.zoom-out { animation: anim-zoom-out 0.35s ease-in forwards; }
+
+/* 3. Grow Top-To-Bottom (ttb) */
+@keyframes anim-grow-ttb-in {
+  from { opacity: 0; transform: translateY(-16px) scaleY(0.92) translateZ(0); }
+  to { opacity: 1; transform: translateY(0) scaleY(1) translateZ(0); }
+}
+@keyframes anim-grow-ttb-out {
+  from { opacity: 1; transform: translateY(0) scaleY(1) translateZ(0); }
+  to { opacity: 0; transform: translateY(16px) scaleY(0.92) translateZ(0); }
+}
+.grow-ttb-in { animation: anim-grow-ttb-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.grow-ttb-out { animation: anim-grow-ttb-out 0.35s ease-in forwards; }
+
+/* 4. Jump & Jump-Alt (Bounce entrance / exit) */
+@keyframes anim-jump-in {
+  0% { opacity: 0; transform: scale(0.8) translateZ(0); }
+  65% { opacity: 1; transform: scale(1.05) translateZ(0); }
+  100% { opacity: 1; transform: scale(1) translateZ(0); }
+}
+@keyframes anim-jump-out {
+  0% { transform: scale(1) translateZ(0); opacity: 1; }
+  35% { transform: scale(1.05) translateZ(0); }
+  100% { transform: scale(0.8) translateZ(0); opacity: 0; }
+}
+@keyframes anim-jump-alt-in {
+  0% { opacity: 0; transform: translateY(18px) scale(0.9) translateZ(0); }
+  65% { opacity: 1; transform: translateY(-4px) scale(1.03) translateZ(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
+}
+@keyframes anim-jump-alt-out {
+  0% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
+  35% { transform: translateY(-4px) scale(1.03) translateZ(0); }
+  100% { opacity: 0; transform: translateY(18px) scale(0.9) translateZ(0); }
+}
+.jump-in { animation: anim-jump-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.jump-out { animation: anim-jump-out 0.4s ease-in forwards; }
+.jump-alt-in { animation: anim-jump-alt-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.jump-alt-out { animation: anim-jump-alt-out 0.4s ease-in forwards; }
+
+/* 5. Power On / Power Off (Glow & Snap entrance) */
+@keyframes anim-power-on {
+  0% { opacity: 0; filter: brightness(1.6) contrast(1.1); transform: scale(0.97) translateZ(0); }
+  60% { opacity: 0.95; filter: brightness(1.15); transform: scale(1.01) translateZ(0); }
+  100% { opacity: 1; filter: brightness(1); transform: scale(1) translateZ(0); }
+}
+@keyframes anim-power-off {
+  0% { opacity: 1; filter: brightness(1); transform: scale(1) translateZ(0); }
+  50% { opacity: 0.6; filter: brightness(1.4); transform: scale(0.99) translateZ(0); }
+  100% { opacity: 0; filter: brightness(2); transform: scale(0.96) translateZ(0); }
+}
+.power-on { animation: anim-power-on 0.45s ease-out forwards; }
+.power-off { animation: anim-power-off 0.35s ease-in forwards; }
+
+/* 6. Rush Animations (Fast-entry ease-out motion) */
+@keyframes anim-rush-btt-in {
+  from { opacity: 0; transform: translateY(36px) translateZ(0); }
+  to { opacity: 1; transform: translateY(0) translateZ(0); }
+}
+@keyframes anim-rush-ttb-in {
+  from { opacity: 0; transform: translateY(-36px) translateZ(0); }
+  to { opacity: 1; transform: translateY(0) translateZ(0); }
+}
+@keyframes anim-rush-ltr-in {
+  from { opacity: 0; transform: translateX(-36px) translateZ(0); }
+  to { opacity: 1; transform: translateX(0) translateZ(0); }
+}
+@keyframes anim-rush-rtl-in {
+  from { opacity: 0; transform: translateX(36px) translateZ(0); }
+  to { opacity: 1; transform: translateX(0) translateZ(0); }
+}
+.rush-btt-in { animation: anim-rush-btt-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.rush-ttb-in { animation: anim-rush-ttb-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.rush-ltr-in { animation: anim-rush-ltr-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.rush-rtl-in { animation: anim-rush-rtl-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+/* 7. Slide Animations (btt, ttb, ltr, rtl - in and out) */
+@keyframes anim-slide-btt-in {
+  from { opacity: 0; transform: translateY(24px) translateZ(0); }
+  to { opacity: 1; transform: translateY(0) translateZ(0); }
+}
+@keyframes anim-slide-btt-out {
+  from { opacity: 1; transform: translateY(0) translateZ(0); }
+  to { opacity: 0; transform: translateY(-24px) translateZ(0); }
+}
+@keyframes anim-slide-ttb-in {
+  from { opacity: 0; transform: translateY(-24px) translateZ(0); }
+  to { opacity: 1; transform: translateY(0) translateZ(0); }
+}
+@keyframes anim-slide-ttb-out {
+  from { opacity: 1; transform: translateY(0) translateZ(0); }
+  to { opacity: 0; transform: translateY(24px) translateZ(0); }
+}
+@keyframes anim-slide-ltr-in {
+  from { opacity: 0; transform: translateX(-24px) translateZ(0); }
+  to { opacity: 1; transform: translateX(0) translateZ(0); }
+}
+@keyframes anim-slide-ltr-out {
+  from { opacity: 1; transform: translateX(0) translateZ(0); }
+  to { opacity: 0; transform: translateX(24px) translateZ(0); }
+}
+@keyframes anim-slide-rtl-in {
+  from { opacity: 0; transform: translateX(24px) translateZ(0); }
+  to { opacity: 1; transform: translateX(0) translateZ(0); }
+}
+@keyframes anim-slide-rtl-out {
+  from { opacity: 1; transform: translateX(0) translateZ(0); }
+  to { opacity: 0; transform: translateX(-24px) translateZ(0); }
+}
+.slide-btt-in { animation: anim-slide-btt-in 0.45s ease-out forwards; }
+.slide-btt-out { animation: anim-slide-btt-out 0.35s ease-in forwards; }
+.slide-ttb-in { animation: anim-slide-ttb-in 0.45s ease-out forwards; }
+.slide-ttb-out { animation: anim-slide-ttb-out 0.35s ease-in forwards; }
+.slide-ltr-in { animation: anim-slide-ltr-in 0.45s ease-out forwards; }
+.slide-ltr-out { animation: anim-slide-ltr-out 0.35s ease-in forwards; }
+.slide-rtl-in { animation: anim-slide-rtl-in 0.45s ease-out forwards; }
+.slide-rtl-out { animation: anim-slide-rtl-out 0.35s ease-in forwards; }
+
+/* 8. Spring Physics Animations */
+@keyframes anim-spring-btt-in {
+  0% { opacity: 0; transform: translateY(32px) scale(0.96) translateZ(0); }
+  75% { opacity: 1; transform: translateY(-4px) scale(1.01) translateZ(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
+}
+@keyframes anim-spring-ttb-in {
+  0% { opacity: 0; transform: translateY(-32px) scale(0.96) translateZ(0); }
+  75% { opacity: 1; transform: translateY(4px) scale(1.01) translateZ(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
+}
+@keyframes anim-spring-ltr-in {
+  0% { opacity: 0; transform: translateX(-32px) scale(0.96) translateZ(0); }
+  75% { opacity: 1; transform: translateX(4px) scale(1.01) translateZ(0); }
+  100% { opacity: 1; transform: translateX(0) scale(1) translateZ(0); }
+}
+@keyframes anim-spring-rtl-in {
+  0% { opacity: 0; transform: translateX(32px) scale(0.96) translateZ(0); }
+  75% { opacity: 1; transform: translateX(-4px) scale(1.01) translateZ(0); }
+  100% { opacity: 1; transform: translateX(0) scale(1) translateZ(0); }
+}
+.spring-btt-in { animation: anim-spring-btt-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.spring-ttb-in { animation: anim-spring-ttb-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.spring-ltr-in { animation: anim-spring-ltr-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.spring-rtl-in { animation: anim-spring-rtl-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.spring-rtl-in- { animation: anim-spring-rtl-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+/* 9. Throw Animations */
+@keyframes anim-throw-btt-in {
+  0% { opacity: 0; transform: translateY(48px) rotate(-1.5deg) translateZ(0); }
+  70% { transform: translateY(-4px) rotate(0.4deg) translateZ(0); }
+  100% { opacity: 1; transform: translateY(0) rotate(0) translateZ(0); }
+}
+@keyframes anim-throw-ttb-in {
+  0% { opacity: 0; transform: translateY(-48px) rotate(1.5deg) translateZ(0); }
+  70% { transform: translateY(4px) rotate(-0.4deg) translateZ(0); }
+  100% { opacity: 1; transform: translateY(0) rotate(0) translateZ(0); }
+}
+@keyframes anim-throw-ltr-in {
+  0% { opacity: 0; transform: translateX(-48px) rotate(-1.5deg) translateZ(0); }
+  70% { transform: translateX(4px) rotate(0.4deg) translateZ(0); }
+  100% { opacity: 1; transform: translateX(0) rotate(0) translateZ(0); }
+}
+@keyframes anim-throw-rtl-in {
+  0% { opacity: 0; transform: translateX(48px) rotate(1.5deg) translateZ(0); }
+  70% { transform: translateX(-4px) rotate(-0.4deg) translateZ(0); }
+  100% { opacity: 1; transform: translateX(0) rotate(0) translateZ(0); }
+}
+.throw-btt-in { animation: anim-throw-btt-in 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.throw-ttb-in { animation: anim-throw-ttb-in 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.throw-ltr-in { animation: anim-throw-ltr-in 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.throw-rtl-in { animation: anim-throw-rtl-in 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+/* 10. Vortex Animations */
+@keyframes anim-vortex-in {
+  0% { opacity: 0; transform: scale(0.65) rotate(-15deg) translateZ(0); }
+  100% { opacity: 1; transform: scale(1) rotate(0) translateZ(0); }
+}
+@keyframes anim-vortex-out {
+  0% { opacity: 1; transform: scale(1) rotate(0) translateZ(0); }
+  100% { opacity: 0; transform: scale(0.65) rotate(15deg) translateZ(0); }
+}
+@keyframes anim-vortex-alt-in {
+  0% { opacity: 0; transform: scale(0.7) rotate(20deg) translateZ(0); }
+  100% { opacity: 1; transform: scale(1) rotate(0) translateZ(0); }
+}
+@keyframes anim-vortex-alt-out {
+  0% { opacity: 1; transform: scale(1) rotate(0) translateZ(0); }
+  100% { opacity: 0; transform: scale(0.7) rotate(-20deg) translateZ(0); }
+}
+.vortex-in { animation: anim-vortex-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.vortex-out { animation: anim-vortex-out 0.4s ease-in forwards; }
+.vortex-alt-in { animation: anim-vortex-alt-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.vortex-alt-out { animation: anim-vortex-alt-out 0.4s ease-in forwards; }
+
+/* 11. Slides Continuous Moving Marquee Animation */
+@keyframes slides-marquee-scroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+.slides-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: slides-marquee-scroll 55s linear infinite;
+  will-change: transform;
+}
+.slides-marquee-track:hover,
+.slides-marquee-track.is-paused {
+  animation-play-state: paused !important;
 }
 
 /* Custom Scrollbar for sleek aesthetic */

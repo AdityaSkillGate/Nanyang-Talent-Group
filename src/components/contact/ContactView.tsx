@@ -8,7 +8,7 @@ import { MobileStickyCta } from '@/components/layout/MobileStickyCta';
 import { siteConfig } from '@/data/site-config';
 import { uiTranslations } from '@/content/translations';
 import { Language } from '@/content/types';
-import { Phone, Mail, MapPin, Send, MessageCircle, Clock, ShieldAlert } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, MessageCircle, Clock, ShieldAlert, ShieldCheck } from 'lucide-react';
 
 interface ContactViewProps {
   lang: Language;
@@ -114,21 +114,40 @@ export const ContactView: React.FC<ContactViewProps> = ({ lang }) => {
                 </h3>
 
                 <div className="space-y-4">
+                  {/* WhatsApp Direct Line */}
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                      <MessageCircle className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wide block">
+                        WhatsApp ({isZh ? '咨询专线' : 'Direct Line'})
+                      </span>
+                      <a
+                        href={siteConfig.contact.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base font-semibold text-brand-navy hover:text-emerald-600 transition-colors"
+                      >
+                        {siteConfig.contact.whatsappLabel}
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Office Phone */}
                   <div className="flex items-start gap-3.5">
                     <div className="w-10 h-10 rounded-xl bg-red-50 text-brand-red flex items-center justify-center shrink-0">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
                       <span className="text-xs font-bold text-slate-500 uppercase tracking-wide block">
-                        {t.whatsappAdmissions[lang]}
+                        {t.officeNumber[lang]}
                       </span>
                       <a
-                        href={siteConfig.contact.whatsapp}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={`tel:${siteConfig.contact.officePhone.replace(/\s+/g, '')}`}
                         className="text-base font-semibold text-brand-navy hover:text-brand-red transition-colors"
                       >
-                        {siteConfig.contact.whatsappLabel}
+                        {siteConfig.contact.officePhone}
                       </a>
                     </div>
                   </div>
@@ -158,11 +177,12 @@ export const ContactView: React.FC<ContactViewProps> = ({ lang }) => {
                       <span className="text-xs font-bold text-slate-500 uppercase tracking-wide block">
                         {t.locationTitle[lang]}
                       </span>
-                      <span className="text-sm font-medium text-brand-navy block">
+                      <span className="text-sm font-semibold text-brand-navy block">
                         {t.singaporeLocation[lang]}
                       </span>
-                      <span className="text-xs text-ink-muted">
-                        {t.locationPending[lang]}
+                      <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md mt-1 border border-emerald-200">
+                        <ShieldCheck className="w-3 h-3 text-emerald-600" />
+                        <span>{t.locationPending[lang]}</span>
                       </span>
                     </div>
                   </div>
@@ -179,7 +199,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ lang }) => {
 
                 <div className="pt-2">
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-2.5 text-xs text-ink-muted leading-relaxed">
-                    <ShieldAlert className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                    <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                     <span>{siteConfig.contact.notice[lang]}</span>
                   </div>
                 </div>

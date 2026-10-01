@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Language } from '@/content/types';
 import { uiTranslations } from '@/content/translations';
 import { brainCourses } from '@/content/enrichment-courses';
@@ -49,6 +50,17 @@ export const BrainCoursesSection: React.FC<BrainCoursesSectionProps> = ({ lang }
               className="bg-surface-canvas rounded-2xl border border-surface-border p-6 sm:p-7 hover:bg-white hover:shadow-hover transition-all flex flex-col justify-between group"
             >
               <div className="space-y-4">
+                {course.image && (
+                  <div className="relative h-44 w-full rounded-xl overflow-hidden border border-surface-border/80 bg-slate-100">
+                    <Image
+                      src={course.image}
+                      alt={course.title[lang]}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100/70 px-2.5 py-1 rounded-md border border-amber-200">
                     {course.ageGroup ? course.ageGroup[lang] : (lang === 'zh' ? '全脑潜能' : 'Cognitive')}

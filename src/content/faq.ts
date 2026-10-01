@@ -54,6 +54,46 @@ export const faqItems: FAQItem[] = [
     },
   },
   {
+    id: 'general-dr-teng',
+    category: 'General',
+    question: {
+      en: 'Who is Dr. Teng Jiashu and what is his background in education and the arts?',
+      zh: '滕家恕博士是谁？他的办学与艺术背景如何？',
+    },
+    answer: {
+      en: 'Dr. Teng Jiashu is the CEO / Director of Nanyang Talent Group and Founder of Nanyang Asia College. Establishing his first education center in Singapore in 1993, he was inducted into Who’s Who in the World in 1997. Over 30 years, he has led tertiary education and earned 4-year EduTrust certification for Nanyang Asia College. A renowned artist, he founded the Nanyang Artists Association in 2002 under the guidance of Nanyang Art Style founder Mr. Liu Kang. He mastered five calligraphy scripts, created "Mantis-Leg Clerical Script", pioneered the "Tropical Rainforest Painting Style", created sculptures for Nanyang Primary School and Foon Yew 2, and founded cognitive development programs.',
+      zh: '滕家恕博士是南洋人才集团总裁/董事及南洋亚洲学院创办人。1993年在新加坡创立首间教育中心，1997年荣登《世界名人录》。30余年来深耕高等教育，其创办的南洋亚洲学院荣获4年期EduTrust认证，是AEIS优选机构。他亦是著名艺术家，2002年在“南洋画派”宗师刘抗先生指点下创立南洋美术家协会，精通书法五体并独创“螳螂腿隶书”，开创“热带雨林画派”，为新加坡南洋小学创作《同心高飞》雕塑，并创立全脑潜能启发体系。',
+    },
+    keywords: [
+      'dr teng', 'teng jiashu', 'dr. teng jiashu', 'ceo', 'director', 'founder', 'liu kang', 'nanyang artists',
+      '滕家恕', '滕博士', '总裁', '董事', '创办人', '刘抗', '南洋美术家协会', '世界名人录', '螳螂腿隶书', '同心高飞'
+    ],
+    relatedLink: {
+      label: { en: 'Learn About Dr. Teng Jiashu', zh: '了解滕家恕博士' },
+      href: { en: '/about#leadership', zh: '/zh/about#leadership' },
+    },
+  },
+  {
+    id: 'general-alliance',
+    category: 'General',
+    question: {
+      en: 'What is the Nanyang Institutional Alliance and which partners are included?',
+      zh: '什么是南洋教育与艺术联盟？包含哪些合作机构？',
+    },
+    answer: {
+      en: 'The Nanyang Institutional Alliance connects Nanyang Talent Group with Nanyang Asia College (EduTrust certified tertiary & AEIS preparatory institution, established 1993; nycollege.edu.sg) and Nanyang Artists Society (established in 2002 under Mr. Liu Kang, promoting Nanyang style visual arts; nyart.org.sg), providing a comprehensive ecosystem of academic preparation and artistic mastery.',
+      zh: '南洋教育与艺术联盟是南洋人才集团携手南洋亚洲学院（1993年立足新加坡，荣获4年期EduTrust认证的AEIS备考与高等学府；nycollege.edu.sg）与南洋美术家协会（2002年刘抗先生指导下创立，弘扬南洋画派与水墨创新的权威公会；nyart.org.sg）共同构建的贯通式教研与艺术创作共同体。',
+    },
+    keywords: [
+      'alliance', 'nanyang asia college', 'nanyang artists society', 'partner', 'nycollege', 'nyart',
+      '联盟', '南洋亚洲学院', '南洋美术家协会', '合作伙伴', '合作机构', 'edutrust'
+    ],
+    relatedLink: {
+      label: { en: 'Explore Institutional Alliance', zh: '查看南洋教育与艺术联盟' },
+      href: { en: '/about#alliance', zh: '/zh/about#alliance' },
+    },
+  },
+  {
     id: 'general-age-groups',
     category: 'General',
     question: {
@@ -77,8 +117,8 @@ export const faqItems: FAQItem[] = [
       zh: '南洋人才集团在新加坡的教学中心与画室具体位于何处？',
     },
     answer: {
-      en: 'Our teaching studios are situated in Singapore. In strict compliance with institutional accuracy standards, the specific physical center address and upcoming campus viewings are confirmed upon direct client booking with Admissions.',
-      zh: '我们的专业研修画室位于新加坡。根据严格的机构信息审核规范，中心具体校区地址与实地探校安排将在您通过招生热线或在线表单预约时，由课程顾问直接确认发送。',
+      en: 'Our official teaching centre is situated at 135 Jurong Gateway Road, #03-335, Singapore 600135 (conveniently accessible via Jurong East MRT station). Trial assessments and studio visits are welcome by appointment.',
+      zh: '我们的官方教学中心位于新加坡裕廊商业大道 135 号 #03-335（135 Jurong Gateway Road, #03-335, Singapore 600135，邻近裕廊东地铁站）。欢迎通过招生热线或在线表单预约实地探校与试听评估。',
     },
     keywords: [
       'location', 'address', 'where', 'studio', 'center', 'campus', 'singapore', 'visit',
@@ -277,8 +317,8 @@ export const faqItems: FAQItem[] = [
       zh: '各门课程的学费收费标准与结算方式是怎样的？',
     },
     answer: {
-      en: 'Tuition rates at Nanyang Talent Group are structured by discipline and format. In source records, foundational group art classes start from S$ 50 per 2-hour session (or structured term packages). Current Singapore package pricing and intake terms are confirmed directly with Admissions prior to registration.',
-      zh: '南洋人才集团各项课程学费按学科、班制及阶梯等级规范设定。原始课程大纲记载的基础美术小组课学费约为每课时（2小时）50新币（S$ 50）起。最新学期优惠包与具体期数费用将在咨询时由招生顾问为您详细列明。',
+      en: 'Tuition rates at Nanyang Talent Group are tailored based on discipline, course level, and format (small group or private 1-to-1). Course fees, term schedules, and trial arrangements are provided directly upon consultation with our admissions team.',
+      zh: '南洋人才集团各项课程学费按学科特点、研修等级以及授课班型（精品小组班或一对一定制辅导）科学规划。详细学费标准、开班排期与优惠安排请直接咨询我们的招生顾问团队。',
     },
     keywords: [
       'fees', 'fee', 'tuition', 'cost', 'price', 'pricing', 'sgd', 's$', 'how much', 'rates',
@@ -349,8 +389,8 @@ export const faqItems: FAQItem[] = [
       zh: '如何联系南洋人才集团进行课程咨询与入学报读？',
     },
     answer: {
-      en: 'You can contact our admissions team instantly via WhatsApp (+65 6789 0123), email us at info@nytalent.com.sg, or submit an inquiry through our online contact form. Our course advisors reply promptly with class schedules and fee guides.',
-      zh: '您可以通过 WhatsApp 专线（+65 6789 0123）直接与我们的招生顾问交流，发送电邮至 info@nytalent.com.sg，或在网站“联系我们”页面提交留言。顾问将第一时间为您提供详尽的开班名额与选课建议。',
+      en: 'You can contact our admissions team instantly via WhatsApp (+65 9004 8768), call our office telephone (+65 6899 0828), email us at info@nytalent.com.sg, or submit an inquiry through our online contact form. Our course advisors reply promptly with class schedules and fee guides.',
+      zh: '您可以通过 WhatsApp 专线（+65 9004 8768）直接与招生顾问交流，致电办公总机（+65 6899 0828），发送电邮至 info@nytalent.com.sg，或在网站“联系我们”页面提交留言。顾问将第一时间为您提供详尽解答。',
     },
     keywords: [
       'contact', 'whatsapp', 'phone', 'email', 'enquire', 'enroll', 'enrolment', 'register', 'apply',

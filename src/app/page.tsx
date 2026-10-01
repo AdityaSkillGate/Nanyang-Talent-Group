@@ -3,16 +3,18 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/home/Hero';
-import { StatsSection } from '@/components/home/StatsSection';
+import { HomeRecruitmentSection } from '@/components/home/HomeRecruitmentSection';
 import { PathwaysSection } from '@/components/home/PathwaysSection';
-import { FeaturedCourses } from '@/components/home/FeaturedCourses';
 import { LanguageCoursesSection } from '@/components/home/LanguageCoursesSection';
 import { BrainCoursesSection } from '@/components/home/BrainCoursesSection';
+import { FeaturedCourses } from '@/components/home/FeaturedCourses';
 import { HeritageSection } from '@/components/home/HeritageSection';
-import { WhyNanyangSection } from '@/components/home/WhyNanyangSection';
 import { StudentReviewsSection } from '@/components/home/StudentReviewsSection';
+import { WhyNanyangSection } from '@/components/home/WhyNanyangSection';
 import { HomeNewsSection } from '@/components/home/HomeNewsSection';
 import { FAQPreviewSection } from '@/components/home/FAQPreviewSection';
+import { HomeSlidesSection } from '@/components/home/HomeSlidesSection';
+import { StatsSection } from '@/components/home/StatsSection';
 import { FinalCtaSection } from '@/components/home/FinalCtaSection';
 import { FAQChatbot } from '@/components/faq/FAQChatbot';
 import { MobileStickyCta } from '@/components/layout/MobileStickyCta';
@@ -42,44 +44,44 @@ export default function HomePage() {
       <StructuredData data={faqSchema} />
       <Header lang="en" />
       <main className="flex-1 pb-16 lg:pb-0">
-        {/* 1. Hero */}
+        {/* Hero */}
         <Hero lang="en" />
 
-        {/* 2. Trust statistics with animated counters */}
-        <StatsSection lang="en" />
+        {/* 1. Student Recruitment Service */}
+        <HomeRecruitmentSection lang="en" />
 
-        {/* 3. Learning pathways */}
+        {/* 2. Courses (Heading: Explore Course) */}
         <PathwaysSection lang="en" />
 
-        {/* 4. Featured Art Courses */}
-        <FeaturedCourses lang="en" />
-
-        {/* 5. Language Courses */}
+        {/* 2.1 Enrichment Courses (Languages & Brain Intelligence) */}
         <LanguageCoursesSection lang="en" />
-
-        {/* 6. Brain Intelligence Courses */}
         <BrainCoursesSection lang="en" />
 
-        {/* 7. Art / Chinese heritage visual feature */}
+        {/* 2.2 Art Courses & Heritage */}
+        <FeaturedCourses lang="en" />
         <HeritageSection lang="en" />
 
-        {/* 8. Why Nanyang */}
-        <WhyNanyangSection lang="en" />
-
-        {/* 9. Student Reviews & Testimonials */}
+        {/* 3. Student Reviews & Testimonials */}
         <StudentReviewsSection lang="en" />
 
-        {/* 10. Latest News & Events */}
+        {/* Institutional Pillars & News */}
+        <WhyNanyangSection lang="en" />
         <HomeNewsSection lang="en" />
 
-        {/* 10. FAQ preview */}
+        {/* 4. FAQ Section */}
         <FAQPreviewSection lang="en" />
 
-        {/* 11. Final enquiry CTA */}
+        {/* 5. Institutional Slides Presentation Showcase */}
+        <HomeSlidesSection lang="en" />
+
+        {/* 6. Counts / Statistics Section (Moved above footer per client request) */}
+        <StatsSection lang="en" />
+
+        {/* Final enquiry CTA */}
         <FinalCtaSection lang="en" />
       </main>
 
-      {/* 12. Footer */}
+      {/* Footer */}
       <Footer lang="en" />
 
       {/* Mobile Sticky CTA & Floating FAQ Assistant */}

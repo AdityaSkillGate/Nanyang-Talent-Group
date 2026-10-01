@@ -5,6 +5,7 @@ export const languageCourses: CourseDetail[] = [
     slug: 'english',
     category: 'language',
     order: 1,
+    image: '/assets/courses/english.jpg',
     title: {
       en: 'General English Course',
       zh: '通用英语课程',
@@ -42,6 +43,7 @@ export const languageCourses: CourseDetail[] = [
     slug: 'japanese',
     category: 'language',
     order: 2,
+    image: '/assets/courses/japanese.jpg',
     title: {
       en: 'Japanese Language Course',
       zh: '日语研习课程',
@@ -79,6 +81,7 @@ export const languageCourses: CourseDetail[] = [
     slug: 'german',
     category: 'language',
     order: 3,
+    image: '/assets/courses/german.jpg',
     title: {
       en: 'German Language Course',
       zh: '德语基础与进阶',
@@ -116,6 +119,7 @@ export const languageCourses: CourseDetail[] = [
     slug: 'chinese',
     category: 'language',
     order: 4,
+    image: '/assets/courses/chinese.jpg',
     title: {
       en: 'Chinese (Mandarin) Course',
       zh: '华语研习课程',
@@ -157,6 +161,7 @@ export const languageCourses: CourseDetail[] = [
     slug: 'korean',
     category: 'language',
     order: 5,
+    image: '/assets/courses/korean.jpg',
     title: {
       en: 'Korean Language Course',
       zh: '韩语实用课程',
@@ -197,6 +202,7 @@ export const brainCourses: CourseDetail[] = [
     slug: 'right-brain-development',
     category: 'brain',
     order: 1,
+    image: '/assets/courses/right-brain-development.jpg',
     title: {
       en: 'Right Brain Development',
       zh: '右脑潜能开发',
@@ -239,6 +245,7 @@ export const brainCourses: CourseDetail[] = [
     slug: 'super-right-brain',
     category: 'brain',
     order: 2,
+    image: '/assets/courses/super-right-brain.jpg',
     title: {
       en: 'Super Right Brain',
       zh: '超强右脑专注力',
@@ -280,6 +287,7 @@ export const brainCourses: CourseDetail[] = [
     slug: 'mind-mapping',
     category: 'brain',
     order: 3,
+    image: '/assets/courses/mind-mapping.jpg',
     title: {
       en: 'Mind Mapping',
       zh: '思维导图与辐射思考',
@@ -321,6 +329,7 @@ export const brainCourses: CourseDetail[] = [
     slug: 'super-memory',
     category: 'brain',
     order: 4,
+    image: '/assets/courses/super-memory.jpg',
     title: {
       en: 'Super Memory',
       zh: '超强记忆法',
@@ -362,6 +371,7 @@ export const brainCourses: CourseDetail[] = [
     slug: 'whole-brain-development',
     category: 'brain',
     order: 5,
+    image: '/assets/courses/whole-brain-development.jpg',
     title: {
       en: 'Whole Brain Development',
       zh: '全脑启发 (间脑开发)',
@@ -402,6 +412,7 @@ export const brainCourses: CourseDetail[] = [
     slug: 'quantum-speed-reading',
     category: 'brain',
     order: 6,
+    image: '/assets/courses/quantum-speed-reading.jpg',
     title: {
       en: 'Quantum Speed Reading',
       zh: '极速阅读潜能训练',
