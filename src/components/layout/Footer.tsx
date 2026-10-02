@@ -35,13 +35,13 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
               href={prefix || '/'} 
               className="inline-block group focus:outline-none focus:ring-2 focus:ring-brand-navy rounded-xl"
             >
-              {/* Increased Logo Size in Footer */}
-              <div className="relative h-16 sm:h-20 w-72 sm:w-84">
+              {/* Prominently Scaled Logo in Footer */}
+              <div className="relative h-20 sm:h-24 lg:h-26 w-60 sm:w-72 lg:w-[312px]">
                 <Image
                   src="/assets/logo-horizontal.png"
                   alt={siteConfig.fullName[lang]}
                   fill
-                  sizes="(max-width: 640px) 288px, 336px"
+                  sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 312px"
                   className="object-contain object-left group-hover:opacity-90 transition-opacity"
                 />
               </div>

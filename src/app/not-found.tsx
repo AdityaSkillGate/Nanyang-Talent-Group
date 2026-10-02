@@ -9,13 +9,13 @@ export default function NotFound() {
       {/* Micro Top Header */}
       <header className="bg-white border-b border-surface-border py-4 px-6 sm:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="relative h-12 w-56">
+          <Link href="/" className="relative h-15 w-48 sm:h-18 sm:w-56">
             <Image
               src="/assets/logo-horizontal.png"
               alt="Nanyang Talent Group"
               fill
               priority
-              sizes="224px"
+              sizes="(max-width: 640px) 192px, 224px"
               className="object-contain object-left"
             />
           </Link>

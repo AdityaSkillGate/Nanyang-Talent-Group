@@ -143,7 +143,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
 
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-4 xl:px-8" ref={navContainerRef}>
-        <div className="flex items-center justify-between h-20 sm:h-[5.5rem] lg:h-24 gap-2 lg:gap-3 xl:gap-4">
+        <div className="flex items-center justify-between h-20 sm:h-24 lg:h-[6.25rem] xl:h-28 gap-2 lg:gap-3 xl:gap-4">
           {/* Logo Section */}
           <Link 
             href={prefix || '/'} 
@@ -151,24 +151,24 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
             aria-label={`${siteConfig.name.en} Home`}
           >
             {/* Desktop Horizontal Logo (Prominently Increased Size) */}
-            <div className="hidden sm:block relative h-14 w-56 sm:h-15 sm:w-64 lg:h-16 lg:w-72 xl:h-[4.75rem] xl:w-80 shrink-0">
+            <div className="hidden sm:block relative h-16 w-48 sm:h-18 sm:w-56 md:h-20 md:w-60 lg:h-[5.25rem] lg:w-[252px] xl:h-24 xl:w-72 shrink-0">
               <Image
                 src="/assets/logo-horizontal.png"
                 alt={siteConfig.fullName[lang]}
                 fill
                 priority
-                sizes="(max-width: 1024px) 256px, (max-width: 1280px) 288px, 320px"
+                sizes="(max-width: 1024px) 240px, (max-width: 1280px) 252px, 288px"
                 className="object-contain object-left group-hover:opacity-95 transition-opacity"
               />
             </div>
             {/* Mobile Compact Horizontal Logo (Increased Size) */}
-            <div className="sm:hidden relative h-12 w-44 xs:h-13 xs:w-52 shrink-0">
+            <div className="sm:hidden relative h-14 w-[168px] xs:h-15 xs:w-[180px] shrink-0">
               <Image
                 src="/assets/logo-horizontal.png"
                 alt={siteConfig.fullName[lang]}
                 fill
                 priority
-                sizes="(max-width: 400px) 176px, 208px"
+                sizes="(max-width: 400px) 168px, 180px"
                 className="object-contain object-left"
               />
             </div>
@@ -439,8 +439,8 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
       {/* Mobile Drawer Menu (Large Touch Targets >= 48px) */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-surface-border bg-white px-4 pt-3 pb-8 space-y-3 shadow-xl max-h-[85vh] overflow-y-auto animate-in slide-in-from-top duration-200">
-          <div className="flex justify-center py-2 border-b border-slate-100">
-            <div className="relative h-12 w-44">
+          <div className="flex justify-center py-3 border-b border-slate-100">
+            <div className="relative h-16 w-48 xs:h-18 xs:w-54">
               <Image
                 src="/assets/logo-horizontal.png"
                 alt={siteConfig.name[lang]}

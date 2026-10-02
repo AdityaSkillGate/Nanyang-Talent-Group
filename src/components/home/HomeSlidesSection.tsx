@@ -8,12 +8,7 @@ import {
   ChevronRight, 
   Maximize2, 
   X, 
-  Play, 
-  Pause, 
-  Sparkles,
-  Presentation,
-  CheckCircle2,
-  Gauge
+  Presentation
 } from 'lucide-react';
 
 interface HomeSlidesSectionProps {
@@ -46,9 +41,8 @@ const doubledSlides = [...slidesData, ...slidesData];
 export const HomeSlidesSection: React.FC<HomeSlidesSectionProps> = ({ lang }) => {
   const isZh = lang === 'zh';
   const [activeModalIndex, setActiveModalIndex] = useState<number | null>(null);
-  const [isPaused, setIsPaused] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [speed, setSpeed] = useState<number>(55); // 55s standard speed
+  const speed = 55; // Smooth continuous glide
 
   // Keyboard navigation for modal lightbox
   useEffect(() => {
@@ -84,18 +78,11 @@ export const HomeSlidesSection: React.FC<HomeSlidesSectionProps> = ({ lang }) =>
     if (activeModalIndex === null) {
       setActiveModalIndex(0);
     } else {
-      setActiveModalIndex((prev) => (prev !== null ? (prev < TOTAL_SLIDES - 1 ? prev + 1 : 0) : 0));
+      setActiveModalIndex((prev) => (prev !== null ? (prev < TOTAL_SLIDES - 1 ? prev + 1 : 0) : null));
     }
   };
 
-  const toggleSpeed = () => {
-    // Cycle between Normal (55s) -> Slow (80s) -> Fast (35s)
-    if (speed === 55) setSpeed(80);
-    else if (speed === 80) setSpeed(35);
-    else setSpeed(55);
-  };
-
-  const isActuallyPaused = isPaused || isHovered;
+  const isActuallyPaused = isHovered;
 
   return (
     <section className="py-16 sm:py-24 bg-gradient-to-b from-white via-slate-50/60 to-white border-b border-surface-border overflow-hidden">
@@ -117,67 +104,26 @@ export const HomeSlidesSection: React.FC<HomeSlidesSectionProps> = ({ lang }) =>
             </p>
           </div>
 
-          {/* Interactive Navigation & Auto-Moving Controls */}
-          <div className="flex flex-wrap items-center gap-2.5 shrink-0 self-start md:self-end">
-            {/* Live Autoplay Indicator Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-100 border border-slate-200 text-xs font-semibold text-brand-navy">
-              <span className={`w-2 h-2 rounded-full ${isActuallyPaused ? 'bg-amber-500' : 'bg-emerald-500 animate-pulse'}`} />
-              <span className="hidden sm:inline">
-                {isActuallyPaused 
-                  ? (isZh ? '已暂停 (悬停/手动)' : 'Paused (Hover/Manual)') 
-                  : (isZh ? '自动滚动中' : 'Auto-Moving Active')}
-              </span>
-            </div>
-
-            {/* Play / Pause Toggle Button */}
+          {/* Minimalist Gallery Navigation Controls */}
+          <div className="flex items-center gap-2 shrink-0 self-start md:self-end">
             <button
               type="button"
-              onClick={() => setIsPaused(!isPaused)}
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-brand-navy shadow-xs transition-all active:scale-95"
-              title={isPaused ? (isZh ? '恢复自动滚动' : 'Resume Auto-Moving') : (isZh ? '暂停自动滚动' : 'Pause Auto-Moving')}
+              onClick={handlePrevSlide}
+              className="w-10 h-10 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-brand-navy shadow-xs transition-all active:scale-95 focus:ring-2 focus:ring-brand-navy"
+              aria-label={isZh ? '上一张大图' : 'Previous Slide'}
+              title={isZh ? '打开/查看上一张' : 'View Previous Slide'}
             >
-              {isPaused ? <Play className="w-3.5 h-3.5 text-brand-red" /> : <Pause className="w-3.5 h-3.5 text-slate-600" />}
-              <span>{isPaused ? (isZh ? '播放' : 'Play') : (isZh ? '暂停' : 'Pause')}</span>
+              <ChevronLeft className="w-5 h-5" />
             </button>
-
-            {/* Speed Toggle */}
             <button
               type="button"
-              onClick={toggleSpeed}
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 shadow-xs transition-all active:scale-95"
-              title={isZh ? '调节自动轮播速度' : 'Change Scroll Speed'}
+              onClick={handleNextSlide}
+              className="w-10 h-10 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-brand-navy shadow-xs transition-all active:scale-95 focus:ring-2 focus:ring-brand-navy"
+              aria-label={isZh ? '下一张大图' : 'Next Slide'}
+              title={isZh ? '打开/查看下一张' : 'View Next Slide'}
             >
-              <Gauge className="w-3.5 h-3.5 text-brand-blue" />
-              <span>
-                {speed === 55 
-                  ? (isZh ? '标准速度' : 'Normal') 
-                  : speed === 80 
-                  ? (isZh ? '慢速' : 'Slow') 
-                  : (isZh ? '快速' : 'Fast')}
-              </span>
+              <ChevronRight className="w-5 h-5" />
             </button>
-
-            {/* Prev / Next Buttons (Open or Step Lightbox) */}
-            <div className="flex items-center gap-1.5">
-              <button
-                type="button"
-                onClick={handlePrevSlide}
-                className="w-10 h-10 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-brand-navy shadow-xs transition-all active:scale-95 focus:ring-2 focus:ring-brand-navy"
-                aria-label={isZh ? '上一张大图' : 'Previous Slide'}
-                title={isZh ? '打开/查看上一张' : 'View Previous Slide'}
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                type="button"
-                onClick={handleNextSlide}
-                className="w-10 h-10 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-brand-navy shadow-xs transition-all active:scale-95 focus:ring-2 focus:ring-brand-navy"
-                aria-label={isZh ? '下一张大图' : 'Next Slide'}
-                title={isZh ? '打开/查看下一张' : 'View Next Slide'}
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
           </div>
         </div>
 
@@ -203,10 +149,10 @@ export const HomeSlidesSection: React.FC<HomeSlidesSectionProps> = ({ lang }) =>
               <div
                 key={`${slide.id}-${index}`}
                 onClick={() => handleOpenModal(index)}
-                className="group relative flex-none w-[260px] sm:w-[300px] md:w-[320px] aspect-[1/1.26] rounded-2xl bg-white border border-surface-border shadow-card hover:shadow-hover hover:-translate-y-1.5 transition-all duration-300 overflow-hidden cursor-pointer flex flex-col"
+                className="group relative flex-none w-[260px] sm:w-[300px] md:w-[320px] aspect-[1/1.22] rounded-2xl bg-white border border-surface-border shadow-card hover:shadow-hover hover:-translate-y-1.5 transition-all duration-300 overflow-hidden cursor-pointer flex flex-col"
               >
-                {/* Image Container */}
-                <div className="relative flex-1 w-full bg-slate-100 overflow-hidden">
+                {/* Full Slide Presentation Surface */}
+                <div className="relative w-full h-full bg-slate-100 overflow-hidden">
                   <Image
                     src={slide.filename}
                     alt={isZh ? slide.titleZh : slide.titleEn}
@@ -223,37 +169,8 @@ export const HomeSlidesSection: React.FC<HomeSlidesSectionProps> = ({ lang }) =>
                     </span>
                   </div>
                 </div>
-
-                {/* Card Bottom Meta Bar with Prominent Number Order */}
-                <div className="p-3.5 bg-white border-t border-slate-100 flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2 min-w-0">
-                    <span className="w-2 h-2 rounded-full bg-brand-red shrink-0" />
-                    <span className="text-xs font-bold text-brand-navy truncate">
-                      {isZh ? slide.titleZh : slide.titleEn}
-                    </span>
-                  </div>
-                  {/* Elegant Number Pill Badge */}
-                  <span className="inline-flex items-center justify-center px-2.5 py-1 rounded-md bg-brand-navy text-white text-[11px] font-mono font-bold shrink-0 tracking-wider">
-                    {slide.id.toString().padStart(2, '0')} / {TOTAL_SLIDES}
-                  </span>
-                </div>
               </div>
             ))}
-          </div>
-
-          {/* Quick Indicator Note */}
-          <div className="pt-6 flex flex-wrap items-center justify-between text-xs text-ink-muted">
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>
-                {isZh 
-                  ? '自动平滑轮播中：鼠标悬停即可自动暂停，点击任意画册即可展开高清大图研读' 
-                  : 'Continuous auto-moving animation: hover to pause smoothly, click any slide to open high-resolution review'}
-              </span>
-            </span>
-            <span className="text-[11px] text-slate-400 font-medium">
-              18 {isZh ? '张高清全景演示图 (无限循环)' : 'High-Resolution Presentation Slides (Infinite Loop)'}
-            </span>
           </div>
         </div>
       </div>
