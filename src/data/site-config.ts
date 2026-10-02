@@ -86,12 +86,12 @@ export const siteConfig = {
     },
     {
       key: 'recruitment',
-      label: { en: 'Student Recruitment Service', zh: '留学服务' },
+      label: { en: 'Explore Service', zh: '探索服务' },
       href: { en: '/student-recruitment', zh: '/zh/student-recruitment' },
     },
     {
       key: 'courses',
-      label: { en: 'The Courses', zh: '课程体系' },
+      label: { en: 'Explore Course', zh: '探索课程' },
       href: { en: '/art-courses', zh: '/zh/art-courses' },
     },
     {

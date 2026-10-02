@@ -242,6 +242,9 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
             <Link href={`${prefix}/student-recruitment`} className="hover:text-brand-navy transition-colors">
               {t.nav.studentRecruitment[lang]}
             </Link>
+            <Link href={`${prefix}/#courses`} className="hover:text-brand-navy transition-colors">
+              {t.nav.theCourses[lang]}
+            </Link>
             <Link href={`${prefix}/art-courses`} className="hover:text-brand-navy transition-colors">
               {t.nav.artCourses[lang]}
             </Link>
@@ -255,11 +258,28 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
         </div>
       </div>
 
-      {/* Bottom Bar: Copyright & Static Architecture Guarantee */}
-      <div className="border-t border-slate-200 bg-slate-100/90 pt-5 pb-20 lg:pb-5 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <p>© {currentYear} {siteConfig.fullName[lang]}. {t.footer.copyright[lang]}</p>
-          <div className="flex items-center gap-3">
+      {/* Bottom Bar: Copyright, Developer Accreditation & Static Architecture Guarantee */}
+      <div className="border-t border-slate-200 bg-slate-100/90 pt-5 pb-24 lg:pb-6 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p>© {currentYear} {siteConfig.fullName[lang]}. {t.footer.copyright[lang]}</p>
+            <span className="hidden sm:inline text-slate-300">•</span>
+            <p className="flex items-center gap-1.5 font-medium text-slate-600">
+              <span>{lang === 'zh' ? '网站开发与维护：' : 'Developed and Maintained by'}</span>
+              <a 
+                href="https://adityaskillgate.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-brand-navy hover:text-brand-red font-semibold underline underline-offset-2 transition-colors inline-flex items-center gap-1 group"
+                title="Aditya Skill Gate IT Solution"
+              >
+                <span>Aditya Skill Gate IT Solution</span>
+                <span className="inline-block text-slate-400 group-hover:text-brand-red group-hover:translate-x-0.5 transition-transform text-[10px]">↗</span>
+              </a>
+            </p>
+          </div>
+
+          <div className="flex items-center gap-3 text-slate-400 text-[11px]">
             <span>{t.common.staticNotice[lang]}</span>
             <span>•</span>
             <span>{t.footer.singaporeEntity[lang]}</span>

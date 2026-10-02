@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import { Language } from '@/content/types';
 import { uiTranslations } from '@/content/translations';
@@ -9,10 +11,95 @@ interface WhyNanyangSectionProps {
   lang: Language;
 }
 
+const parseMetricValue = (raw: string) => {
+  const clean = raw.trim();
+  const suffix = clean.endsWith('+') ? '+' : '';
+  const numPart = clean.replace('+', '').replace(/,/g, '');
+  const target = parseInt(numPart, 10) || 0;
+  const hasComma = clean.includes(',');
+  return { target, suffix, hasComma };
+};
+
+const AnimatedStatCounter: React.FC<{
+  raw: string;
+  isTriggered: boolean;
+}> = ({ raw, isTriggered }) => {
+  const { target, suffix, hasComma } = parseMetricValue(raw);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isTriggered) return;
+
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setCount(target);
+      return;
+    }
+
+    let startTimestamp: number | null = null;
+    let animationFrameId: number;
+    const duration = 2000; // 2s smooth ease-out count
+
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      // Easing: ease-out cubic
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easedProgress * target));
+
+      if (progress < 1) {
+        animationFrameId = window.requestAnimationFrame(step);
+      } else {
+        setCount(target);
+      }
+    };
+
+    animationFrameId = window.requestAnimationFrame(step);
+
+    return () => {
+      if (animationFrameId) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [isTriggered, target]);
+
+  const displayCount = hasComma ? count.toLocaleString() : count.toString();
+
+  return (
+    <span>
+      {isTriggered ? displayCount : '0'}
+      {suffix}
+    </span>
+  );
+};
+
 export const WhyNanyangSection: React.FC<WhyNanyangSectionProps> = ({ lang }) => {
   const t = uiTranslations;
   const prefix = lang === 'zh' ? '/zh' : '';
   const stats = siteConfig.stats;
+
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isTriggered, setIsTriggered] = useState(false);
+
+  useEffect(() => {
+    const currentRef = cardRef.current;
+    if (!currentRef) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsTriggered(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(currentRef);
+
+    return () => {
+      if (currentRef) observer.unobserve(currentRef);
+    };
+  }, []);
 
   return (
     <section className="py-16 sm:py-24 bg-white border-b border-surface-border">
@@ -63,37 +150,41 @@ export const WhyNanyangSection: React.FC<WhyNanyangSectionProps> = ({ lang }) =>
               </div>
             </div>
 
+            {/* Institutional Link to About Page */}
             <div className="pt-2">
               <Link
                 href={`${prefix}/about`}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-brand-navy hover:text-brand-red transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-red transition-colors group"
               >
                 <span>{lang === 'zh' ? '了解南洋人才集团办学历程' : 'Discover Our Institutional Background'}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Verified Statistical Proofpoints (5 cols) */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-brand-navy to-brand-navy-dark text-white p-5 sm:p-10 rounded-2xl shadow-xl space-y-6 sm:space-y-8 relative overflow-hidden">
+          {/* Right Column: Verified Statistical Proofpoints with Counting Animation (5 cols) */}
+          <div 
+            ref={cardRef}
+            className="lg:col-span-5 bg-gradient-to-br from-brand-navy to-brand-navy-dark text-white p-6 sm:p-10 rounded-2xl shadow-xl space-y-6 sm:space-y-8 relative overflow-hidden"
+          >
             {/* Background globe line accent */}
             <div className="absolute right-0 top-0 w-48 h-48 rounded-full bg-brand-blue/10 blur-2xl pointer-events-none" />
 
             <div className="space-y-2 border-b border-white/10 pb-4 sm:pb-5">
               <span className="text-xs uppercase tracking-widest text-brand-gold font-bold block">
-                {lang === 'zh' ? '官方教学积淀与统计' : 'Verified Educational Heritage'}
+                {lang === 'zh' ? '官方教学积淀与统计' : 'VERIFIED EDUCATIONAL HERITAGE'}
               </span>
               <h3 className="text-xl font-bold text-white">
                 {lang === 'zh' ? '以数据呈现稳健教学质量' : 'Demonstrated Educational Milestones'}
               </h3>
             </div>
 
-            {/* Metrics List */}
-            <div className="grid grid-cols-2 gap-3.5 sm:gap-6">
+            {/* Metrics List with Counting Animation */}
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {stats.map((s, idx) => (
                 <div key={idx} className="space-y-1">
                   <div className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-sans">
-                    {s.value}
+                    <AnimatedStatCounter raw={s.value} isTriggered={isTriggered} />
                   </div>
                   <div className="text-xs text-slate-300 font-medium leading-snug">
                     {s.label[lang]}
