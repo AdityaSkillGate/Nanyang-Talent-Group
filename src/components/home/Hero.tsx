@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Language } from '@/content/types';
 import { uiTranslations } from '@/content/translations';
 import { Button, Badge } from '@/components/ui';
-import { ArrowRight, BookOpen, Palette, BrainCircuit, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, BookOpen, Palette, BrainCircuit } from 'lucide-react';
+import { HeroShowcaseAnimation } from './HeroShowcaseAnimation';
 
 interface HeroProps {
   lang: Language;
@@ -15,7 +15,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
   const prefix = lang === 'zh' ? '/zh' : '';
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-surface-canvas to-white py-14 sm:py-20 lg:py-24 border-b border-surface-border">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-surface-canvas to-white pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 lg:pb-20 border-b border-surface-border">
       {/* Background ambient decorative blurs */}
       <div className="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 rounded-full bg-brand-blue/5 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -ml-24 -mb-24 w-96 h-96 rounded-full bg-brand-red/5 blur-3xl pointer-events-none" />
@@ -42,9 +42,9 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Text & CTAs (7 cols) */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-10 items-center">
+          {/* Left Column: Text & CTAs (6 cols) */}
+          <div className="lg:col-span-6 xl:col-span-6 space-y-6 text-center lg:text-left">
             {/* Since 1998 Badge */}
             <div className="inline-flex items-center gap-2">
               <Badge variant="since" dot size="md">
@@ -110,9 +110,9 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
             </div>
           </div>
 
-          {/* Right Column: Layered Visual Graphic Card (5 cols) */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-md bg-white p-5 sm:p-8 rounded-2xl border border-surface-border shadow-card hover:shadow-hover transition-all">
+          {/* Right Column: Layered Visual Graphic Card (Expanded Width, 6 cols) */}
+          <div className="lg:col-span-6 xl:col-span-6 flex justify-center lg:justify-end w-full">
+            <div className="relative w-full max-w-xl lg:max-w-none xl:max-w-[580px] bg-white p-5 sm:p-7 rounded-2xl border border-surface-border shadow-card hover:shadow-hover transition-all">
               {/* Subtle watermark globe & brush stroke background in card */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-blue/5 via-transparent to-brand-red/5 pointer-events-none" />
 
@@ -129,80 +129,22 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
                 />
               </svg>
 
-              {/* Centered Brand Emblem Presentation */}
-              <div className="relative space-y-6">
+              {/* Interactive Educational Showcase Animation */}
+              <div className="relative space-y-3.5">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-brand-red" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
                     <span className="text-xs uppercase tracking-widest text-brand-navy font-bold">
                       {t.hero.emblemCard.brandTitle[lang]}
                     </span>
                   </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-brand-gold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-brand-gold bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200 shadow-2xs">
                     {t.hero.emblemCard.estBadge[lang]}
                   </span>
                 </div>
 
-                <div className="relative mx-auto h-36 w-36 sm:h-44 sm:w-44 aspect-square">
-                  <Image
-                    src="/assets/logo-vertical.png"
-                    alt="Nanyang Talent Group Emblem"
-                    fill
-                    priority
-                    sizes="(max-width: 640px) 144px, 176px"
-                    className="object-contain"
-                  />
-                </div>
-
-                <div className="space-y-2 border-t border-slate-100 pt-4">
-                  <div className="text-[11px] uppercase tracking-wider text-ink-muted text-center font-semibold">
-                    {t.hero.emblemCard.pathwaysHeader[lang]}
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2 text-center pt-1">
-                    <Link 
-                      href={`${prefix}/art-courses`}
-                      className="p-2 sm:p-2.5 rounded-lg bg-red-50/70 border border-red-100 hover:bg-red-100/70 transition-colors group flex flex-col justify-center min-h-[44px]"
-                    >
-                      <span className="block text-[11px] sm:text-xs font-bold text-brand-red group-hover:underline leading-tight">
-                        {t.hero.emblemCard.artAcademy[lang]}
-                      </span>
-                      <span className="text-[10px] text-slate-500 mt-0.5">
-                        {t.hero.emblemCard.artCount[lang]}
-                      </span>
-                    </Link>
-
-                    <Link 
-                      href={`${prefix}/enrichment-courses#languages`}
-                      className="p-2 sm:p-2.5 rounded-lg bg-sky-50/70 border border-sky-100 hover:bg-sky-100/70 transition-colors group flex flex-col justify-center min-h-[44px]"
-                    >
-                      <span className="block text-[11px] sm:text-xs font-bold text-brand-blue group-hover:underline leading-tight">
-                        {t.hero.emblemCard.languages[lang]}
-                      </span>
-                      <span className="text-[10px] text-slate-500 mt-0.5">
-                        {t.hero.emblemCard.languagesCount[lang]}
-                      </span>
-                    </Link>
-
-                    <Link 
-                      href={`${prefix}/enrichment-courses#brain`}
-                      className="p-2 sm:p-2.5 rounded-lg bg-amber-50/70 border border-amber-100 hover:bg-amber-100/70 transition-colors group flex flex-col justify-center min-h-[44px]"
-                    >
-                      <span className="block text-[11px] sm:text-xs font-bold text-brand-gold group-hover:underline leading-tight">
-                        {t.hero.emblemCard.brain[lang]}
-                      </span>
-                      <span className="text-[10px] text-slate-500 mt-0.5">
-                        {t.hero.emblemCard.brainCount[lang]}
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Footnote reassurance */}
-                <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-400 pt-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>{t.hero.emblemCard.pedagogyNote[lang]}</span>
-                </div>
+                {/* Animated Showcase replacing static logo & pathway text */}
+                <HeroShowcaseAnimation lang={lang} />
               </div>
             </div>
           </div>
