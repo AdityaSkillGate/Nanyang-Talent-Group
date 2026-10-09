@@ -11,7 +11,7 @@ import { FeaturedCourses } from '@/components/home/FeaturedCourses';
 import { HeritageSection } from '@/components/home/HeritageSection';
 import { StudentReviewsSection } from '@/components/home/StudentReviewsSection';
 import { WhyNanyangSection } from '@/components/home/WhyNanyangSection';
-import { HomeNewsSection } from '@/components/home/HomeNewsSection';
+import { HomeCorporateServicesSection } from '@/components/home/HomeCorporateServicesSection';
 import { FAQPreviewSection } from '@/components/home/FAQPreviewSection';
 import { HomeSlidesSection } from '@/components/home/HomeSlidesSection';
 import { StatsSection } from '@/components/home/StatsSection';
@@ -64,9 +64,9 @@ export default function HomePage() {
         {/* 3. Student Reviews & Testimonials */}
         <StudentReviewsSection lang="en" />
 
-        {/* Institutional Pillars & News */}
+        {/* Institutional Pillars & Corporate Services */}
         <WhyNanyangSection lang="en" />
-        <HomeNewsSection lang="en" />
+        <HomeCorporateServicesSection lang="en" />
 
         {/* 4. FAQ Section */}
         <FAQPreviewSection lang="en" />

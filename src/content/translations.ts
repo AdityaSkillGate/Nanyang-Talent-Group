@@ -25,7 +25,9 @@ export const uiTranslations = {
   nav: {
     home: { en: 'Home', zh: '首页' },
     about: { en: 'About Us', zh: '关于我们' },
-    studentRecruitment: { en: 'Explore Service', zh: '探索服务' },
+    studentRecruitment: { en: 'Job Placement Service', zh: '就业安置服务' },
+    jobPlacement: { en: 'Job Placement Service', zh: '就业安置服务' },
+    corporateServices: { en: 'Corporate Services', zh: '企业服务' },
     theCourses: { en: 'Explore Course', zh: '探索课程' },
     artCourses: { en: 'Art Courses', zh: '美术课程' },
     enrichmentCourses: { en: 'Enrichment Courses', zh: '潜能与语言课程' },
@@ -53,7 +55,9 @@ export const uiTranslations = {
 
   buttons: {
     exploreCourses: { en: 'Explore Course', zh: '探索课程' },
-    exploreService: { en: 'Explore Service (Student Recruitment)', zh: '探索服务（权威留学）' },
+    exploreService: { en: 'Job Placement Service', zh: '就业安置服务' },
+    jobPlacementService: { en: 'Job Placement Service', zh: '就业安置服务' },
+    corporateServices: { en: 'Corporate Services', zh: '企业服务' },
     learnMore: { en: 'Learn More', zh: '了解更多' },
     viewAll: { en: 'View All', zh: '查看全部' },
     viewAllArt: { en: 'View All Art Courses', zh: '查看全部美术课程' },

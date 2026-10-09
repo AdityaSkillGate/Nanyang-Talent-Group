@@ -8,20 +8,20 @@ import {
   getBreadcrumbSchema,
 } from '@/components/seo/StructuredData';
 
-export const metadata: Metadata = seoMetadata.jobPlacement.zh;
+export const metadata: Metadata = seoMetadata.jobPlacement.en;
 
-export default function ZhStudentRecruitmentPage() {
+export default function JobPlacementPage() {
   const orgSchema = getOrganizationSchema();
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: '首页', url: 'https://nytalent.com.sg/zh' },
-    { name: '就业安置服务', url: 'https://nytalent.com.sg/zh/job-placement' },
+    { name: 'Home', url: 'https://nytalent.com.sg/' },
+    { name: 'Job Placement Service', url: 'https://nytalent.com.sg/job-placement' },
   ]);
 
   return (
     <>
       <StructuredData data={orgSchema} />
       <StructuredData data={breadcrumbSchema} />
-      <JobPlacementView lang="zh" />
+      <JobPlacementView lang="en" />
     </>
   );
 }

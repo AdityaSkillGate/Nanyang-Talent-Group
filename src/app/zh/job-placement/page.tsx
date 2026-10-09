@@ -10,7 +10,7 @@ import {
 
 export const metadata: Metadata = seoMetadata.jobPlacement.zh;
 
-export default function ZhStudentRecruitmentPage() {
+export default function ZhJobPlacementPage() {
   const orgSchema = getOrganizationSchema();
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: '首页', url: 'https://nytalent.com.sg/zh' },

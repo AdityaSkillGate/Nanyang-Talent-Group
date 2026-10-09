@@ -13,7 +13,8 @@ import {
   GraduationCap, 
   Brain, 
   Globe2,
-  Award
+  Award,
+  Briefcase
 } from 'lucide-react';
 
 interface HeroShowcaseAnimationProps {
@@ -55,18 +56,18 @@ const SLIDES: ShowcaseSlide[] = [
     accentBg: 'bg-rose-500',
   },
   {
-    id: 'recruitment',
-    categoryEn: 'Student Recruitment Service',
-    categoryZh: '权威留学招生服务',
-    titleEn: 'Official Singapore Study Pathway',
-    titleZh: '新加坡权威留学 · 名校升学直通',
-    highlightEn: 'EduTrust 4-Year Certified Alliance · AEIS Preferred',
-    highlightZh: 'SWDA/CPE 4年EduTrust认证联盟 · AEIS备考首选',
-    statBadgeEn: 'Nanyang Asia College Alliance',
-    statBadgeZh: '南洋亚洲学院官方合作',
+    id: 'placement',
+    categoryEn: 'Job Placement Service',
+    categoryZh: '专业人才就业安置服务',
+    titleEn: 'Singapore Career & Placement Advisory',
+    titleZh: '新加坡专业人才就业安置 · 权威职场推荐',
+    highlightEn: 'Enterprise Referral · MOM & TAFEP Advisory · Career Readiness',
+    highlightZh: '企业精准内推 · 人力部准证指引 · 职业发展规划',
+    statBadgeEn: 'Enterprise Alliance Network',
+    statBadgeZh: '深厚企业雇主联盟网络',
     image: '/assets/recruitment/student-recruitment-counseling.jpg',
-    href: '/student-recruitment',
-    icon: GraduationCap,
+    href: '/job-placement',
+    icon: Briefcase,
     accentColor: 'text-blue-400',
     accentBg: 'bg-blue-500',
   },

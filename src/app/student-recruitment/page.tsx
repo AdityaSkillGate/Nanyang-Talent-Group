@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { StudentRecruitmentView } from '@/components/recruitment/StudentRecruitmentView';
+import { JobPlacementView } from '@/components/recruitment/JobPlacementView';
 import { seoMetadata } from '@/content/seo-metadata';
 import {
   StructuredData,
@@ -8,20 +8,20 @@ import {
   getBreadcrumbSchema,
 } from '@/components/seo/StructuredData';
 
-export const metadata: Metadata = seoMetadata.studentRecruitment.en;
+export const metadata: Metadata = seoMetadata.jobPlacement.en;
 
 export default function StudentRecruitmentPage() {
   const orgSchema = getOrganizationSchema();
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: 'Home', url: 'https://nytalent.com.sg/' },
-    { name: 'Student Recruitment Service', url: 'https://nytalent.com.sg/student-recruitment' },
+    { name: 'Job Placement Service', url: 'https://nytalent.com.sg/job-placement' },
   ]);
 
   return (
     <>
       <StructuredData data={orgSchema} />
       <StructuredData data={breadcrumbSchema} />
-      <StudentRecruitmentView lang="en" />
+      <JobPlacementView lang="en" />
     </>
   );
 }

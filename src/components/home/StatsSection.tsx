@@ -104,10 +104,10 @@ export const StatsSection: React.FC<StatsSectionProps> = ({
   }, []);
 
   const statsConfig = [
-    { target: 15, suffix: '+', hasComma: false, icon: <Award className="w-6 h-6 text-brand-red" /> },
-    { target: 26500, suffix: '+', hasComma: true, icon: <Users className="w-6 h-6 text-brand-blue" /> },
+    { target: 25, suffix: '+', hasComma: false, icon: <Award className="w-6 h-6 text-brand-red" /> },
+    { target: 37500, suffix: '+', hasComma: true, icon: <Users className="w-6 h-6 text-brand-blue" /> },
     { target: 11, suffix: '+', hasComma: false, icon: <Globe2 className="w-6 h-6 text-brand-navy" /> },
-    { target: 33, suffix: '+', hasComma: false, icon: <Clock className="w-6 h-6 text-brand-gold" /> },
+    { target: 25, suffix: '+', hasComma: false, icon: <Clock className="w-6 h-6 text-brand-gold" /> },
   ];
 
   return (

@@ -94,15 +94,101 @@ export const seoMetadata = {
     } as Metadata,
   },
 
+  jobPlacement: {
+    en: {
+      title: 'Job Placement Service | Singapore Career Placement | Nanyang Talent Group',
+      description:
+        'Professional Job Placement and Career Services in Singapore: career profiling, bilingual resume optimization, direct enterprise referral, and MOM Work Pass guidance.',
+      openGraph: {
+        title: 'Job Placement Service | Singapore Career Placement | Nanyang Talent Group',
+        description:
+          'Connect with top Singapore employers. Professional career advisory, executive placement, and work pass advisory.',
+        url: `${baseUrl}/job-placement`,
+        locale: 'en_SG',
+        type: 'website',
+      },
+      alternates: {
+        canonical: `${baseUrl}/job-placement`,
+        languages: {
+          'en-SG': `${baseUrl}/job-placement`,
+          'zh-SG': `${baseUrl}/zh/job-placement`,
+        },
+      },
+    } as Metadata,
+    zh: {
+      title: '专业人才就业安置服务 | 新加坡职场推荐 | 南洋人才集团',
+      description:
+        '南洋人才集团专业就业安置服务：职业规划诊断、双语简历精修、新加坡企业岗位精准内推、人力部（MOM）工作准证政策指引与入职融入。',
+      openGraph: {
+        title: '专业人才就业安置服务 | 南洋人才集团',
+        description:
+          '立足新加坡，服务全球菁英：提供企业直聘内推、面试辅导与工作准证政策全流程支持。',
+        url: `${baseUrl}/zh/job-placement`,
+        locale: 'zh_SG',
+        type: 'website',
+      },
+      alternates: {
+        canonical: `${baseUrl}/zh/job-placement`,
+        languages: {
+          'en-SG': `${baseUrl}/job-placement`,
+          'zh-SG': `${baseUrl}/zh/job-placement`,
+        },
+      },
+    } as Metadata,
+  },
+
+  corporateServices: {
+    en: {
+      title: 'Corporate Services | Enterprise Talent & Training | Nanyang Talent Group',
+      description:
+        'Comprehensive corporate services in Singapore: customized talent acquisition, executive upskilling, workplace bilingual fluency, corporate art wellness workshops, and cognitive agility training.',
+      openGraph: {
+        title: 'Corporate Services | Enterprise Talent & Training | Nanyang Talent Group',
+        description:
+          'Bespoke enterprise training, talent acquisition, bilingual communications, and corporate wellness workshops.',
+        url: `${baseUrl}/corporate-services`,
+        locale: 'en_SG',
+        type: 'website',
+      },
+      alternates: {
+        canonical: `${baseUrl}/corporate-services`,
+        languages: {
+          'en-SG': `${baseUrl}/corporate-services`,
+          'zh-SG': `${baseUrl}/zh/corporate-services`,
+        },
+      },
+    } as Metadata,
+    zh: {
+      title: '企业服务与机构人才赋能 | 新加坡企业内训 | 南洋人才集团',
+      description:
+        '南洋人才集团新加坡企业服务：定向人才招聘、企业定制化内训、商务双语实战培训、员工身心艺术工作坊、高效脑力认知研修及校企产教融合咨询。',
+      openGraph: {
+        title: '企业服务与机构人才赋能 | 南洋人才集团',
+        description:
+          '依托二十余载优质教育资源，为新加坡企业与跨国机构提供一站式人才引育与组织赋能方案。',
+        url: `${baseUrl}/zh/corporate-services`,
+        locale: 'zh_SG',
+        type: 'website',
+      },
+      alternates: {
+        canonical: `${baseUrl}/corporate-services`,
+        languages: {
+          'en-SG': `${baseUrl}/corporate-services`,
+          'zh-SG': `${baseUrl}/zh/corporate-services`,
+        },
+      },
+    } as Metadata,
+  },
+
   studentRecruitment: {
     en: {
-      title: 'Student Recruitment Service | Study in Singapore | Nanyang Talent Group',
+      title: 'Job Placement Service | Singapore Career Placement | Nanyang Talent Group',
       description:
-        'Official student recruitment and education agent services in Singapore: course counseling, school admissions, ICA Student Pass processing, and arrival support in partnership with Nanyang Asia College.',
+        'Professional Job Placement and Career Services in Singapore: career profiling, bilingual resume optimization, direct enterprise referral, and MOM Work Pass guidance.',
       openGraph: {
-        title: 'Student Recruitment Service | Study in Singapore',
+        title: 'Job Placement Service | Singapore Career Placement',
         description:
-          'Comprehensive education agent representation in Singapore: course counseling, admissions, ICA student pass, and arrival support.',
+          'Connect with top Singapore employers. Professional career advisory, executive placement, and work pass advisory.',
         url: `${baseUrl}/student-recruitment`,
         locale: 'en_SG',
         type: 'website',
@@ -116,13 +202,13 @@ export const seoMetadata = {
       },
     } as Metadata,
     zh: {
-      title: '留学服务与国际招生代表 | 新加坡求学 | 南洋人才集团',
+      title: '专业人才就业安置服务 | 新加坡职场推荐 | 南洋人才集团',
       description:
-        '南洋人才集团官方留学招生服务：院校专业咨询、申请材料递交、新加坡移民局（ICA）学生准证申报与抵星安顿，携手南洋亚洲学院等权威合作院校。',
+        '南洋人才集团专业就业安置服务：职业规划诊断、双语简历精修、新加坡企业岗位精准内推、人力部（MOM）工作准证政策指引与入职融入。',
       openGraph: {
-        title: '留学服务与国际招生代表 | 南洋人才集团',
+        title: '专业人才就业安置服务 | 南洋人才集团',
         description:
-          '全方位新加坡留学服务：择校规划、入学报读、学生准证申报与行前接机住宿安排。',
+          '立足新加坡，服务全球菁英：提供企业直聘内推、面试辅导与工作准证政策全流程支持。',
         url: `${baseUrl}/zh/student-recruitment`,
         locale: 'zh_SG',
         type: 'website',

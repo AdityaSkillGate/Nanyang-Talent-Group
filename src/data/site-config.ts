@@ -41,7 +41,7 @@ export const siteConfig = {
   },
   stats: [
     {
-      value: '15+',
+      value: '25+',
       label: {
         en: 'Years of Expert Instructors',
         zh: '年资深导师教研背景',
@@ -49,7 +49,7 @@ export const siteConfig = {
       status: 'client-provided',
     },
     {
-      value: '26,500+',
+      value: '37,500+',
       label: {
         en: 'Students Enrolled',
         zh: '累计学员就读',
@@ -65,7 +65,7 @@ export const siteConfig = {
       status: 'client-provided',
     },
     {
-      value: '33+',
+      value: '25+',
       label: {
         en: 'Years of School Experience',
         zh: '载办学与教学经验',
@@ -85,9 +85,9 @@ export const siteConfig = {
       href: { en: '/about', zh: '/zh/about' },
     },
     {
-      key: 'recruitment',
-      label: { en: 'Explore Service', zh: '探索服务' },
-      href: { en: '/student-recruitment', zh: '/zh/student-recruitment' },
+      key: 'job-placement',
+      label: { en: 'Job Placement Service', zh: '就业安置服务' },
+      href: { en: '/job-placement', zh: '/zh/job-placement' },
     },
     {
       key: 'courses',
@@ -95,9 +95,9 @@ export const siteConfig = {
       href: { en: '/art-courses', zh: '/zh/art-courses' },
     },
     {
-      key: 'news',
-      label: { en: 'News & Events', zh: '资讯与活动' },
-      href: { en: '/news-events', zh: '/zh/news-events' },
+      key: 'corporate-services',
+      label: { en: 'Corporate Services', zh: '企业服务' },
+      href: { en: '/corporate-services', zh: '/zh/corporate-services' },
     },
     {
       key: 'contact',

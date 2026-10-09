@@ -12,7 +12,9 @@ import {
   MessageCircle, 
   ShieldCheck, 
   Building2, 
-  Sparkles 
+  Sparkles,
+  Briefcase,
+  UserCheck
 } from 'lucide-react';
 
 interface HomeRecruitmentSectionProps {
@@ -27,34 +29,34 @@ export const HomeRecruitmentSection: React.FC<HomeRecruitmentSectionProps> = ({ 
     {
       icon: <Compass className="w-5 h-5 text-brand-red" />,
       number: '01',
-      title: isZh ? '院校与专业升学咨询' : 'Course & Institution Counseling',
+      title: isZh ? '职业规划与人才画像评估' : 'Career Profiling & Skills Matching',
       desc: isZh
-        ? '根据学生学术背景与升学目标，一对一定制最佳新加坡教育路径。'
-        : 'Helping students select the right program, school, or university based on academic background and career goals.',
+        ? '深度诊断学术背景与专业技能，精准匹配新加坡本地高景气行业与优质高薪岗位。'
+        : 'Evaluating academic background, technical abilities, and bilingual strengths to match high-demand Singapore job roles.',
     },
     {
       icon: <FileText className="w-5 h-5 text-brand-blue" />,
       number: '02',
-      title: isZh ? '申请材料与规范签约' : 'Application Assistance',
+      title: isZh ? '双语简历精修与作品集指导' : 'Resume & Portfolio Optimization',
       desc: isZh
-        ? '指导并协助递交入学申请，公证翻译材料审核，严谨签署标准学生合同。'
-        : 'Reviewing and submitting enrollment forms, ensuring proper documentation, and explaining standard student contracts.',
+        ? '对标新加坡外企与本土名企HR审核标准重塑简历，优化ATS招聘系统关键词。'
+        : 'Refining resumes and portfolios to Singapore corporate HR standards, maximizing ATS compatibility and recruiter engagement.',
     },
     {
       icon: <FileCheck className="w-5 h-5 text-brand-gold" />,
       number: '03',
-      title: isZh ? '学生准证与移民局审批' : 'Visa & Pass Processing',
+      title: isZh ? '企业岗位精准内推与模拟面试' : 'Direct Enterprise Referral & Coaching',
       desc: isZh
-        ? '精准协助向新加坡移民与关卡局 (ICA) 递交并跟进学生准证 (Student’s Pass)。'
-        : 'Assisting with ICA student pass applications, document compilation, and required entry formalities.',
+        ? '直通合作企业决策层与用人主管优先内推，资深面试官一对一实战模拟演练。'
+        : 'Direct submission to hiring managers and intensive mock interviews with experienced industry mentors.',
     },
     {
       icon: <PlaneTakeoff className="w-5 h-5 text-emerald-600" />,
       number: '04',
-      title: isZh ? '行前指导与抵新安顿' : 'Pre-Departure & Arrival Support',
+      title: isZh ? '工作准证政策指引与入职融入' : 'MOM Work Pass Guidance & Onboarding',
       desc: isZh
-        ? '行前须知、住宿规划安排、机场接机指引与入学体检全流程协助。'
-        : 'Briefing students on living in Singapore, coordinating accommodation, airport reception, and medical checkups.',
+        ? '熟稔新加坡人力部（MOM）最新准证政策（EP/SP及COMPASS计分），全程合规护航。'
+        : 'Expert orientation on Singapore Ministry of Manpower (MOM) pass regulations and smooth workplace transition.',
     },
   ];
 
@@ -65,25 +67,25 @@ export const HomeRecruitmentSection: React.FC<HomeRecruitmentSectionProps> = ({ 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200/80 pb-8">
           <div className="space-y-3 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 text-brand-red text-xs font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>{isZh ? '官方教育机构代理' : 'Official Educational Representation'}</span>
+              <Briefcase className="w-3.5 h-3.5" />
+              <span>{isZh ? '专业人才就业安置 · 权威职场推荐' : 'Professional Job Placement · Career Pathways'}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight">
-              {isZh ? '探索服务 (权威留学)' : 'Explore Service (Student Recruitment)'}
+              {isZh ? '就业安置服务 (专业就业推荐)' : 'Job Placement Service (Career Placement)'}
             </h2>
             <p className="text-base sm:text-lg text-ink-secondary leading-relaxed">
               {isZh
-                ? '作为新加坡多所知名院校官方授权招生代表，我们为国际学生提供从院校咨询、申请规划、签证申请到抵新安顿的一站式严谨服务。'
-                : 'Education agents provide student services by acting as official representatives for schools and universities to guide applicants through admissions, visas, and arrival in Singapore.'}
+                ? '依托新加坡深厚行业资源与企业网络，南洋人才集团为毕业生、专业人才及跨国求职者提供职业咨询、简历优化、精准岗位推荐与工作准证政策指引的一站式就业安置服务。'
+                : 'Connecting skilled candidates, international graduates, and working professionals with reputable Singapore employers and industry leaders across commerce, education, creative industries, and technology.'}
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <Link
-              href={`${prefix}/student-recruitment`}
+              href={`${prefix}/job-placement`}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold shadow-xs transition-colors"
             >
-              <span>{isZh ? '探索留学服务详情 →' : 'Explore Service Details →'}</span>
+              <span>{isZh ? '就业安置服务详情 →' : 'Job Placement Details →'}</span>
             </Link>
             <a
               href={siteConfig.contact.whatsapp}
@@ -92,7 +94,7 @@ export const HomeRecruitmentSection: React.FC<HomeRecruitmentSectionProps> = ({ 
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-sm font-semibold transition-colors"
             >
               <MessageCircle className="w-4 h-4 text-emerald-600" />
-              <span>{isZh ? '留学直通咨询' : 'WhatsApp Inquiry'}</span>
+              <span>{isZh ? '咨询就业顾问' : 'WhatsApp Inquiry'}</span>
             </a>
           </div>
         </div>
@@ -104,7 +106,7 @@ export const HomeRecruitmentSection: React.FC<HomeRecruitmentSectionProps> = ({ 
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-xs font-bold text-brand-navy uppercase tracking-wider">
                 <Building2 className="w-4 h-4 text-brand-gold" />
-                <span>{isZh ? '战略合作院校' : 'Strategic Partner Institute'}</span>
+                <span>{isZh ? '战略合作院校与雇主网络' : 'Strategic Academic & Employer Alliance'}</span>
               </div>
               <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
                 {isZh ? '官方签约合作' : 'Official Alliance'}
@@ -133,16 +135,16 @@ export const HomeRecruitmentSection: React.FC<HomeRecruitmentSectionProps> = ({ 
 
             <p className="text-sm text-ink-secondary leading-relaxed">
               {isZh
-                ? '南洋亚洲学院（设立于1993年）是新加坡政府中小学预备班（AEIS）家庭的首选培训学府，荣获新加坡精深技能发展局/私立教育理事会（CPE）4年期 EduTrust 权威认证。'
-                : 'Preferred training institute for international students pursuing Singapore government school admissions (AEIS) and higher academic pathways, certified by CPE with the 4-year EduTrust mark.'}
+                ? '南洋亚洲学院携手南洋人才集团开展职场技能提升、商务语言培训与国际人才就业接轨实训，为毕业生与专业人才奠定通往新加坡职场的坚实基石。'
+                : 'Strategic education and career readiness partner collaborating on professional upskilling, language mastery, and workforce certification for Singapore career pathways.'}
             </p>
 
             <div className="p-3.5 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 flex items-start gap-2">
               <Sparkles className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
               <span>
                 {isZh
-                  ? '更多公立与私立知名高校战略代理合作正在持续接入中，将陆续更新公布。'
-                  : 'Additional accredited Singapore polytechnics, degree universities, and pathway institutions will be announced soon.'}
+                  ? '更多新加坡跨国企业与行业领军雇主合作通道正在持续拓展接入中。'
+                  : 'Additional accredited corporate partners and enterprise placement channels are onboarded continuously.'}
               </span>
             </div>
           </div>
@@ -152,16 +154,16 @@ export const HomeRecruitmentSection: React.FC<HomeRecruitmentSectionProps> = ({ 
             <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden shadow-card border border-surface-border">
               <Image
                 src="/assets/recruitment/student-recruitment-counseling.jpg"
-                alt="Student Recruitment & Counseling"
+                alt="Job Placement & Career Services"
                 fill
                 sizes="(max-width: 1024px) 100vw, 680px"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-6">
                 <p className="text-white text-sm sm:text-base font-semibold">
                   {isZh
-                    ? '规范透明 · 严谨合规 · 专注新加坡优质升学通道'
-                    : 'Transparent, accredited representation ensuring compliance with Singapore CPE and ICA frameworks.'}
+                    ? '规范透明 · 严谨合规 · 专注新加坡优质高薪职业机会'
+                    : 'Transparent, accredited job placement compliant with Singapore MOM and TAFEP frameworks.'}
                 </p>
               </div>
             </div>

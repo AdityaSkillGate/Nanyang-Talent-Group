@@ -33,8 +33,8 @@ export const OurStorySection: React.FC<OurStorySectionProps> = ({ lang }) => {
             <div className="space-y-4 text-base text-ink-secondary leading-relaxed">
               <p>
                 {isZh
-                  ? `南洋人才集团历经数十载教学积淀，迄今已陪伴并见证了超过 26,500 名来自新加坡本土及全球 11 个以上国家和地区的学员在这里系统研习与成长。`
-                  : `With educational roots tracing through decades of continuous teaching in Singapore, Nanyang Talent Group has welcomed over 26,500 students from more than 11 countries across the region.`}
+                  ? `南洋人才集团历经数十载教学积淀，迄今已陪伴并见证了超过 37,500 名来自新加坡本土及全球 11 个以上国家和地区的学员在这里系统研习与成长。`
+                  : `With educational roots tracing through decades of continuous teaching in Singapore, Nanyang Talent Group has welcomed over 37,500 students from more than 11 countries across the region.`}
               </p>
               <p>
                 {isZh

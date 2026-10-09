@@ -41,8 +41,8 @@ export const faqItems: FAQItem[] = [
       zh: '南洋人才集团创办于哪一年？办学历史与背景如何？',
     },
     answer: {
-      en: 'Nanyang Talent Group Pte Ltd was established Since 1998 in Singapore. With 33+ years of cumulative school experience, 15+ years of expert instructor background, over 26,500 students enrolled, and learners representing 11+ countries, we are dedicated to excellence in Fine Arts, Multilingual Studies, and Cognitive Brain Intelligence.',
-      zh: '南洋人才集团（Nanyang Talent Group Pte Ltd）始创于1998年。集团拥有33载办学经验沉淀、15年资深导师教研背景，累计培育学员超26,500人，学员来自全球11个以上国家与地区，深耕美术、多语种研修与全脑智力开发三大核心领域。',
+      en: 'Nanyang Talent Group Pte Ltd was established Since 1998 in Singapore. With 25+ years of cumulative school experience, 25+ years of expert instructor background, over 37,500 students enrolled, and learners representing 11+ countries, we are dedicated to excellence in Fine Arts, Multilingual Studies, Cognitive Brain Intelligence, and Professional Career & Corporate Services.',
+      zh: '南洋人才集团（Nanyang Talent Group Pte Ltd）始创于1998年。集团拥有25载办学经验沉淀、25年资深导师教研背景，累计培育学员超37,500人，学员来自全球11个以上国家与地区，深耕美术、多语种研修、全脑智力开发、专业就业安置及企业服务核心领域。',
     },
     keywords: [
       'about', 'history', 'since 1998', 'established', '1998', 'singapore', 'experience', 'students', 'countries',

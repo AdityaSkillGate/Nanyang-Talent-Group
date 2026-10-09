@@ -24,7 +24,9 @@ import {
   Clock,
   Sparkles,
   GraduationCap,
-  MessageCircle
+  MessageCircle,
+  Briefcase,
+  Building2
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -200,16 +202,16 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               {t.nav.about[lang]}
             </Link>
 
-            {/* 3. Student Recruitment Service */}
+            {/* 3. Job Placement Service */}
             <Link
-              href={`${prefix}/student-recruitment`}
+              href={`${prefix}/job-placement`}
               className={`px-2 xl:px-3 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-colors ${
-                pathname.startsWith(`${prefix}/student-recruitment`)
+                pathname.startsWith(`${prefix}/job-placement`) || pathname.startsWith(`${prefix}/student-recruitment`)
                   ? 'text-brand-red font-semibold bg-red-50/70'
                   : 'text-ink-primary hover:text-brand-navy hover:bg-slate-50'
               }`}
             >
-              {t.nav.studentRecruitment[lang]}
+              {t.nav.jobPlacement[lang]}
             </Link>
 
             {/* 4. The Courses (Dropdown with Art Courses & Enrichment Courses) */}
@@ -384,16 +386,16 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               )}
             </div>
 
-            {/* 5. News & Events */}
+            {/* 5. Corporate Services */}
             <Link
-              href={`${prefix}/news-events`}
+              href={`${prefix}/corporate-services`}
               className={`px-2 xl:px-3 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-colors ${
-                pathname.startsWith(`${prefix}/news-events`)
+                pathname.startsWith(`${prefix}/corporate-services`)
                   ? 'text-brand-red font-semibold bg-red-50/70'
                   : 'text-ink-primary hover:text-brand-navy hover:bg-slate-50'
               }`}
             >
-              {t.nav.newsEvents[lang]}
+              {t.nav.corporateServices[lang]}
             </Link>
 
             {/* 6. Contact Us */}
@@ -479,19 +481,19 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               <ChevronRight className="w-5 h-5 text-slate-400" />
             </Link>
 
-            {/* 3. Student Recruitment Service */}
+            {/* 3. Job Placement Service */}
             <Link
-              href={`${prefix}/student-recruitment`}
+              href={`${prefix}/job-placement`}
               onClick={() => setMobileMenuOpen(false)}
               className={`flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-semibold min-h-[48px] ${
-                pathname.startsWith(`${prefix}/student-recruitment`) 
+                pathname.startsWith(`${prefix}/job-placement`) || pathname.startsWith(`${prefix}/student-recruitment`)
                   ? 'bg-red-50 text-brand-red font-bold' 
                   : 'text-ink-primary hover:bg-slate-50'
               }`}
             >
               <div className="flex items-center gap-2.5">
-                <GraduationCap className="w-5 h-5 text-brand-navy" />
-                <span>{t.nav.studentRecruitment[lang]}</span>
+                <Briefcase className="w-5 h-5 text-brand-navy" />
+                <span>{t.nav.jobPlacement[lang]}</span>
               </div>
               <ChevronRight className="w-5 h-5 text-slate-400" />
             </Link>
@@ -576,17 +578,20 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               )}
             </div>
 
-            {/* 5. News & Events */}
+            {/* 5. Corporate Services */}
             <Link
-              href={`${prefix}/news-events`}
+              href={`${prefix}/corporate-services`}
               onClick={() => setMobileMenuOpen(false)}
               className={`flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-semibold min-h-[48px] ${
-                pathname.startsWith(`${prefix}/news-events`) 
+                pathname.startsWith(`${prefix}/corporate-services`) 
                   ? 'bg-red-50 text-brand-red font-bold' 
                   : 'text-ink-primary hover:bg-slate-50'
               }`}
             >
-              <span>{t.nav.newsEvents[lang]}</span>
+              <div className="flex items-center gap-2.5">
+                <Building2 className="w-5 h-5 text-brand-navy" />
+                <span>{t.nav.corporateServices[lang]}</span>
+              </div>
               <ChevronRight className="w-5 h-5 text-slate-400" />
             </Link>
 
