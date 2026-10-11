@@ -10,11 +10,11 @@ import {
 
 export const metadata: Metadata = seoMetadata.corporateServices.zh;
 
-export default function ZhCorporateServicesPage() {
+export default function ZhBusinessIncorporationImmigrationPage() {
   const orgSchema = getOrganizationSchema();
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: '首页', url: 'https://nytalent.com.sg/zh' },
-    { name: '企业注册与移民服务', url: 'https://nytalent.com.sg/zh/corporate-services' },
+    { name: '企业注册与移民服务', url: 'https://nytalent.com.sg/zh/business-incorporation-immigration-services' },
   ]);
 
   return (

@@ -6,9 +6,13 @@ export interface CorporatePillar {
   title: LocalizedString;
   shortDesc: LocalizedString;
   description: LocalizedString;
-  deliverables: LocalizedString[];
-  icon: string;
+  image: string;
   badge: LocalizedString;
+  icon: string;
+  category: 'incorporation' | 'immigration';
+  processingTime: LocalizedString;
+  targetAudience: LocalizedString;
+  deliverables: LocalizedString[];
 }
 
 export interface CorporateEngagementStep {
@@ -26,247 +30,344 @@ export interface CorporateAdvantage {
 export const corporateServicesContent = {
   hero: {
     badge: {
-      en: 'Institutional & Enterprise Solutions · Singapore',
-      zh: '新加坡专业企业服务 · 权威产教融合',
+      en: 'ACRA & MOM Registered Practices · Singapore',
+      zh: '新加坡 ACRA & MOM 官方合规服务体系',
     },
     title: {
-      en: 'Corporate Services & Enterprise Talent Solutions',
-      zh: '企业服务与机构人才赋能解决方案',
+      en: 'Business Incorporation & Immigration Services',
+      zh: '新加坡企业注册与全方位移民服务',
     },
     subtitle: {
-      en: 'Customized corporate talent acquisition, executive leadership upskilling, workplace bilingual fluency, employee wellness art workshops, and cognitive agility training tailored for businesses and institutions in Singapore.',
-      zh: '南洋人才集团依托二十余载优质教育资源与广泛的商业合作网络，为新加坡企业与跨国机构提供定向人才招聘、高管定制化培训、商务双语提升、员工身心艺术工作坊及企业认知效能研修等一站式综合服务。',
+      en: 'One-stop professional solutions for Singapore company registration, corporate secretarial compliance, Employment Pass (EP/S Pass), EntrePass, Permanent Residency (PR), family passes, and personalized immigration advisory.',
+      zh: '南洋人才集团依托二十余载本土深厚资源，为全球创业者、跨国企业与高净值人士提供新加坡公司注册、法定秘书合规、工作准证（EP/SP/EntrePass）、永久居民（PR）规划及家属签证一站式专业服务。',
     },
     image: '/assets/corporate/corporate-services-boardroom.jpg',
     stats: [
       {
         value: '25+',
-        label: { en: 'Years Institutional Pedagogy', zh: '载办学积淀与培训经验' },
-      },
-      {
-        value: '150+',
-        label: { en: 'Enterprise & School Partners', zh: '合作企业与院校伙伴' },
+        label: { en: 'Years Institutional Heritage', zh: '载深厚本土办学与专业积淀' },
       },
       {
         value: '100%',
-        label: { en: 'Customized Curriculum', zh: '专属量身定制方案' },
+        label: { en: 'ACRA & MOM Compliance Rate', zh: '官方标准合规率与严谨审核' },
+      },
+      {
+        value: '7',
+        label: { en: 'Core Advisory Services', zh: '大核心商业与签证服务模块' },
       },
       {
         value: '4.9/5',
-        label: { en: 'Client Satisfaction Rating', zh: '企业客户综合满意度' },
+        label: { en: 'Client Trust & Satisfaction', zh: '客户综合好评与长期信赖' },
       },
     ],
   },
 
   pillarsSection: {
     badge: {
-      en: 'Comprehensive Enterprise Solutions',
-      zh: '六大核心企业服务支柱',
+      en: 'Complete Solutions',
+      zh: '七大核心专业服务',
     },
     title: {
-      en: 'Integrated Corporate Development Pillars',
-      zh: '全方位企业赋能与专业支持体系',
+      en: 'Explore Business & Immigration Services',
+      zh: '新加坡商业设立与全球移居服务体系',
     },
     subtitle: {
-      en: 'Tailored for Singapore SMEs, multinational corporations, private academies, and government-linked entities.',
-      zh: '专为新加坡中小型企业、跨国公司、私立教育学府及政府关联机构量身定制的高品质服务。',
+      en: 'Simple, transparent, and compliant pathways tailored for global founders, corporate executives, and international families.',
+      zh: '流程清晰透明、材料高效审核，为您量身定制合规的新加坡落地与长期定居方案。',
     },
     pillars: [
       {
-        id: 'talent-acquisition',
+        id: 'company-registration',
         order: '01',
         title: {
-          en: 'Corporate Talent Acquisition & Placement',
-          zh: '企业定向人才招聘与猎头安置',
+          en: 'Company Registration & Incorporation',
+          zh: '公司注册与设立',
         },
         badge: {
-          en: 'Hiring & Headhunting',
-          zh: '精准猎聘',
+          en: 'ACRA Fast-Track',
+          zh: 'ACRA 官方快线',
         },
         shortDesc: {
-          en: 'Pre-vetted bilingual candidates, executive search, and specialized talent matching for Singapore companies.',
-          zh: '依托庞大人才库与多维背调，为新加坡企业精准输送高质量双语专业人才与业务骨干。',
+          en: 'Fast, compliant Singapore Private Limited (Pte Ltd) company incorporation with ACRA in 1 to 2 business days.',
+          zh: '1至2个工作日内快速完成新加坡私人有限公司（Pte Ltd）在会计与企业管制局（ACRA）的官方注册。',
         },
         description: {
-          en: 'We match qualified professionals, polytechnic/university graduates, and specialized bilingual talent with corporate roles across education, commerce, finance, and creative design while ensuring strict TAFEP and MOM compliance.',
-          zh: '深入洞察雇主用人需求，针对教育师资、商务运营、外贸管理及创意设计等紧缺岗位开展精准搜寻与背景初筛，严格遵循新加坡劳资政公平雇佣框架（TAFEP）与人力部准则。',
+          en: 'Setting up a company in Singapore unlocks global prestige, 100% foreign ownership, and low corporate tax (8.5% to 17%). We handle the entire end-to-end incorporation digitally.',
+          zh: '在新加坡设立企业可享国际商业公信力、低企业所得税优惠（8.5% - 17%）及100%外资控股权。我们全程在线对接新加坡ACRA，协助您零差错快速设立。',
+        },
+        image: '/assets/corporate/company-registration.jpg',
+        category: 'incorporation',
+        processingTime: {
+          en: '1 - 2 Business Days',
+          zh: '1 - 2 个工作日',
+        },
+        targetAudience: {
+          en: 'Global Entrepreneurs, Foreign Investors, SMEs',
+          zh: '出海创业者、海外投资者、跨国中小企业',
         },
         deliverables: [
-          { en: 'Custom candidate sourcing & technical pre-screening', zh: '企业用人画像定制与候选人专业初筛' },
-          { en: 'Bilingual proficiency & background verification', zh: '中英双语流利度核查与职业背景核验' },
-          { en: 'MOM Work Pass (EP/SP) eligibility guidance', zh: '人力部工作准证（EP/SP）申报政策协助' },
-          { en: 'Probation tracking & candidate guarantee replacement', zh: '试用期工作表现跟进与合规保障机制' },
-        ],
-        icon: 'UserCheck',
-      },
-      {
-        id: 'custom-training',
-        order: '02',
-        title: {
-          en: 'Corporate Custom Training & Executive Upskilling',
-          zh: '企业定制化内训与高管研修',
-        },
-        badge: {
-          en: 'Workforce Upskilling',
-          zh: '内训定制',
-        },
-        shortDesc: {
-          en: 'Bespoke corporate workshops in leadership development, cross-cultural synergy, and business execution.',
-          zh: '围绕企业发展战略与团队短板，定制开发领导力拓展、跨文化协同与高效业务执行力研修课程。',
-        },
-        description: {
-          en: 'Tailored training modules co-developed with senior educators and industry veterans, focused on elevating practical workplace capabilities, team accountability, and strategic adaptability.',
-          zh: '由南洋资深教研导师与业界实战专家联合授课，结合大量本土与跨国真实商战案例，助力管理层破局思维瓶颈，全面提升组织战斗力。',
-        },
-        deliverables: [
-          { en: 'Pre-training enterprise training needs analysis (TNA)', zh: '培训前企业痛点诊断与培训需求评估（TNA）' },
-          { en: 'Modular curriculum design with interactive case studies', zh: '模块化课程架构设计与情境演练案例' },
-          { en: 'Flexible delivery: on-site at client office or NTG campus', zh: '灵活授课模式：企业上门内训或南洋校区研修' },
-          { en: 'Post-training effectiveness evaluation & action plans', zh: '培训后转化效果评估与行动改进追踪' },
-        ],
-        icon: 'GraduationCap',
-      },
-      {
-        id: 'bilingual-communication',
-        order: '03',
-        title: {
-          en: 'Business Bilingual Fluency & Workplace Communications',
-          zh: '商务双语沟通与跨文化实战培训',
-        },
-        badge: {
-          en: 'Language & Etiquette',
-          zh: '双语沟通',
-        },
-        shortDesc: {
-          en: 'Business English and Mandarin coaching for multinational teams, executive presentations, and cross-border commercial deals.',
-          zh: '专注于商务英语与商务华语实战应用，提升多文化背景员工的提案汇报、跨国谈判与客户沟通效能。',
-        },
-        description: {
-          en: 'Singapore is Asia’s premier bilingual commerce hub. We equip corporate executives and cross-border teams with fluent oral presentation, precise business writing, negotiation terminology, and high-stakes communication etiquette.',
-          zh: '新加坡作为连接东西方的核心商业枢纽，对员工的双语与跨文化交互能力要求极高。南洋多语种教研团队为企业量身定制高级商务沟通、商务信函与合同表达、跨国跨文化商务礼仪等专业实训。',
-        },
-        deliverables: [
-          { en: 'Executive pitch & board-level presentation coaching', zh: '高管商务演讲、述职汇报与项目推介演练' },
-          { en: 'Cross-border business contract & email correspondence', zh: '跨国商业合同解析与商务英文邮件精准书写' },
-          { en: 'Professional Business Mandarin for non-native speakers', zh: '针对非华语母语员工的定制化商务华语快训' },
-          { en: 'Singapore multicultural workplace etiquette workshops', zh: '新加坡多元文化职场沟通与跨文化协作规范' },
-        ],
-        icon: 'Globe2',
-      },
-      {
-        id: 'art-wellness',
-        order: '04',
-        title: {
-          en: 'Corporate Art, Calligraphy & Wellness Workshops',
-          zh: '员工身心健康与企业艺术书法工作坊',
-        },
-        badge: {
-          en: 'Wellness & Teambuilding',
-          zh: '艺术团建',
-        },
-        shortDesc: {
-          en: 'Mindful corporate team-building events in Chinese calligraphy, oil painting, watercolor, and mindfulness art therapy.',
-          zh: '以传统书画、现代油画及水彩晕染为载体的沉浸式企业团建，有效缓解员工职场压力，凝聚团队向心力。',
-        },
-        description: {
-          en: 'Combating corporate burnout through creative flow. Our fine arts faculty leads interactive teambuilding experiences where employees explore calligraphy brushwork, collaborative murals, and artistic mindfulness in a relaxing environment.',
-          zh: '现代企业节奏紧凑，创意美育与书画静心具有独特的心理疏导与赋能效果。我们的国家级与资深美院导师带领员工静心体悟笔墨意趣、共创大型企业主题画作，融艺术熏陶与团队凝聚于一体。',
-        },
-        deliverables: [
-          { en: 'Corporate calligraphy & seal carving team bonding', zh: '正统中国书法与印章篆刻传统文化体验团建' },
-          { en: 'Collaborative giant canvas mural painting for teams', zh: '团队协同大型企业文化主题油画/画布共创' },
-          { en: 'Stress-reduction art therapy & mindfulness sessions', zh: '职场减压艺术疗愈与专注力静心工作坊' },
-          { en: 'All professional art materials & framed keepsakes included', zh: '提供全套高端艺术画材并为员工装裱留念' },
-        ],
-        icon: 'Palette',
-      },
-      {
-        id: 'cognitive-agility',
-        order: '05',
-        title: {
-          en: 'Cognitive Agility & Brain Intelligence for Executives',
-          zh: '职场高效脑力与专注力提升研修',
-        },
-        badge: {
-          en: 'Cognitive Optimization',
-          zh: '脑力效能',
-        },
-        shortDesc: {
-          en: 'Scientific memory optimization, Buzan Mind Mapping, and Schulte focus drills to enhance analytical decision-making speed.',
-          zh: '运用博赞思维导图、舒尔特方格注意力训练及超强记忆法，全面优化职场人的信息处理速度与决策敏锐度。',
-        },
-        description: {
-          en: 'Information overload impairs executive performance. Drawing from our acclaimed Brain Intelligence curriculum, we train corporate teams in structured visual thinking, rapid data retention, and sustained focus under pressure.',
-          zh: '海量信息时代，注意力与结构化思考是企业核心竞争力。本课程提炼南洋人才全脑启发精粹，帮助职场精英掌握复杂信息脉络梳理、核心数据超强记忆与高强度工作下的深度专注技巧。',
-        },
-        deliverables: [
-          { en: 'Buzan Mind Mapping for complex project brainstorming', zh: '博赞思维导图法在复杂项目分解与头脑风暴中的实战' },
-          { en: 'Schulte Grid drills for sustained workplace focus', zh: '舒尔特方格高抗干扰度与专注力训练体系' },
-          { en: 'Memory palace techniques for rapid data & pitch recall', zh: '快速记忆宫殿法在关键数据汇报与记忆中的应用' },
-          { en: 'Executive mental agility & cognitive resilience toolkit', zh: '高管抗压认知韧性与敏捷决策思维工具箱' },
-        ],
-        icon: 'Brain',
-      },
-      {
-        id: 'institutional-alliances',
-        order: '06',
-        title: {
-          en: 'Institutional Alliances & Academic Consulting',
-          zh: '院校产教融合与校企战略合作咨询',
-        },
-        badge: {
-          en: 'Academic Alliances',
-          zh: '产教融合',
-        },
-        shortDesc: {
-          en: 'Facilitating corporate-school alliances, student internship programs, joint certifications, and Singapore EduTrust consulting.',
-          zh: '搭建新加坡院校与企业的协同育人桥梁，协助设立企业实习基地、联合认证项目及私立教育合规咨询。',
-        },
-        description: {
-          en: 'Bridging academia and commerce. We connect businesses with leading educational institutions like Nanyang Asia College for graduate talent pipelines, co-branded certificates, and private education regulatory compliance support.',
-          zh: '依托在新加坡教育界深耕多年的行业声誉，我们协助企业对接本土与海外优质院校，建立产学研一体化实践基地，协助企业设计具备学术含金量的联合认证，并提供EduTrust教育信托合规辅导。',
-        },
-        deliverables: [
-          { en: 'Corporate internship & graduate trainee program design', zh: '企业实习生管培生项目架构设计与定向招募' },
-          { en: 'Joint academic-industry certification partnerships', zh: '院校-企业联合职业技能认证与学分衔接' },
-          { en: 'Singapore CPE / EduTrust regulatory framework advisory', zh: '新加坡私立教育理事会（CPE）政策与EduTrust合规咨询' },
-          { en: 'Cross-border educational delegation & forum hosting', zh: '跨国教育学术考察团接待与行业研讨会承办' },
+          { en: 'ACRA company name reservation & registration approval', zh: 'ACRA 公司名称核准与正式注册获批' },
+          { en: 'Official Certificate of Incorporation & BizFile profile', zh: '官方注册纸（BizFile）与企业法定编号（UEN）' },
+          { en: 'Company Constitution & Shareholder Certificates', zh: '公司章程（Constitution）与股东名册出具' },
+          { en: 'Assistance with premier local corporate bank accounts', zh: '协助开立新加坡三大本地银行商业账户' },
         ],
         icon: 'Building2',
+      },
+      {
+        id: 'business-setup',
+        order: '02',
+        title: {
+          en: 'Business Setup & Corporate Services',
+          zh: '商业运营与企业秘书服务',
+        },
+        badge: {
+          en: 'Corporate Governance',
+          zh: '法定秘书与合规',
+        },
+        shortDesc: {
+          en: 'Qualified Singapore named corporate secretary, prestige CBD registered address, and ongoing statutory compliance.',
+          zh: '提供新加坡法定公司秘书任命、CBD核心区注册商业地址及全年公司法合规维护。',
+        },
+        description: {
+          en: 'Under Singapore law, every Pte Ltd must appoint a qualified local resident secretary. We maintain statutory registers, prepare AGMs, file annual returns, and safeguard corporate standing.',
+          zh: '根据新加坡《公司法》，公司成立6个月内须委任一名合格常住法定秘书。我们妥善保管法定登记册、起草董事决议、呈报年度申报表（Annual Return），确保全流程合法合规。',
+        },
+        image: '/assets/corporate/business-setup.jpg',
+        category: 'incorporation',
+        processingTime: {
+          en: 'Annual Ongoing Service',
+          zh: '即时生效并全年持续维护',
+        },
+        targetAudience: {
+          en: 'All Singapore Pte Ltd Companies & Foreign Subsidiaries',
+          zh: '所有新加坡注册公司与外资分支机构',
+        },
+        deliverables: [
+          { en: 'Named Singapore Corporate Secretary service for 12 months', zh: '提供12个月常住法定商业秘书职位委任' },
+          { en: 'Prestigious Singapore CBD commercial registered address', zh: '提供新加坡核心商业区（CBD）合规法定注册地址' },
+          { en: 'Annual General Meeting (AGM) prep & ACRA Annual Return filing', zh: '准备年度股东大会（AGM）决议并呈报ACRA年审' },
+          { en: 'Qualified Local Nominee Director service upon request', zh: '按需提供符合官方资质的本地挂名董事合规服务' },
+        ],
+        icon: 'Briefcase',
+      },
+      {
+        id: 'employment-pass',
+        order: '03',
+        title: {
+          en: 'Employment Pass (EP) & S Pass',
+          zh: '就业准证 (EP) 与 S Pass',
+        },
+        badge: {
+          en: 'MOM COMPASS System',
+          zh: 'MOM 积分制精准评估',
+        },
+        shortDesc: {
+          en: 'Strategic work pass applications for company directors, managers, and specialized foreign talent under the MOM COMPASS framework.',
+          zh: '针对企业董事、管理高管及外籍专业技术人才，依据人力部（MOM）COMPASS积分制标准提供精准评估与准证申报。',
+        },
+        description: {
+          en: 'The Employment Pass allows foreign professionals and executives to live and work in Singapore. We audit candidate profiles, optimize salary benchmarks, and maximize COMPASS pass points.',
+          zh: '就业准证（EP）是外籍精英管理层在新加坡合法工作的首要工作签证。我们深入解读人力部最新指标，精准梳理薪资门槛与积分加分项，保障申请高获批率。',
+        },
+        image: '/assets/corporate/employment-pass.jpg',
+        category: 'immigration',
+        processingTime: {
+          en: '3 - 8 Weeks',
+          zh: '3 - 8 周（视人力部审核周期）',
+        },
+        targetAudience: {
+          en: 'C-Suite Executives, Key Managers, Skilled Professionals',
+          zh: '企业高管、核心技术骨干、外派管理人员',
+        },
+        deliverables: [
+          { en: 'Pre-submission MOM COMPASS framework points audit', zh: '递交前 MOM COMPASS 积分全面测评与优化' },
+          { en: 'Degree & credential background verification support', zh: '官方认可第三方学历认证核查指导与对接' },
+          { en: 'Complete MOM dossier drafting and e-submission', zh: '全套官方申请材料撰写、雇主推荐信与在线呈报' },
+          { en: 'IPA card issuance, biometric registration & renewal tracking', zh: '原则性批准函（IPA）获取、生物录入及续签跟进' },
+        ],
+        icon: 'FileCheck',
+      },
+      {
+        id: 'entrepass-work-pass',
+        order: '04',
+        title: {
+          en: 'EntrePass & Work Pass Applications',
+          zh: '创业准证与工作签证申请',
+        },
+        badge: {
+          en: 'Founders & Innovators',
+          zh: '创业家与科技创新',
+        },
+        shortDesc: {
+          en: 'Tailored visa pathway for eligible foreign entrepreneurs and innovators launching scalable venture-backed businesses in Singapore.',
+          zh: '为计划在新加坡创办创新型、高成长性科技或风险投资初创企业的全球创业家打造的专项工作签证通道。',
+        },
+        description: {
+          en: 'EntrePass has no strict minimum salary requirement and allows founders to relocate before or after company formation. We assist with Singapore-standard Business Plans and innovation criteria matching.',
+          zh: '创业准证（EntrePass）无硬性薪资限制，允许创业者在公司成立前后移居新加坡。我们协助撰写符合官方严谨标准的商业计划书，对接创投或知识产权资质，加速获准。',
+        },
+        image: '/assets/corporate/entrepass.jpg',
+        category: 'immigration',
+        processingTime: {
+          en: '8 - 12 Weeks',
+          zh: '8 - 12 周',
+        },
+        targetAudience: {
+          en: 'Tech Founders, Venture-backed Innovators, Serial Entrepreneurs',
+          zh: '科技创始人、天使/风投被投团队、连续创业者',
+        },
+        deliverables: [
+          { en: 'Professional 10-page Singapore-standard Business Plan drafting', zh: '量身定制全套符合官方标准的商业计划书（BP）' },
+          { en: 'Innovation criteria alignment (funding, IP, or incubator partnership)', zh: '对接官方认可知识产权、风投资金或创投孵化资质' },
+          { en: 'Enterprise Singapore (ESG) & MOM liaison', zh: '协助对接新加坡企发局（ESG）与人力部审批流程' },
+          { en: 'Annual milestone renewal strategy and local hiring roadmap', zh: '首年及次年考核达标规划与本地雇佣路线指导' },
+        ],
+        icon: 'Rocket',
+      },
+      {
+        id: 'permanent-residency',
+        order: '05',
+        title: {
+          en: 'Permanent Residency (PR) Services',
+          zh: '永久居民 (PR) 申请规划',
+        },
+        badge: {
+          en: 'ICA Long-Term Settlement',
+          zh: 'ICA 长期定居规划',
+        },
+        shortDesc: {
+          en: 'Comprehensive Singapore PR profiling, documentary enhancement, and official ICA submission for professionals and families.',
+          zh: '针对在籍就业人士及高净值家庭，提供新加坡永久居民（PR）深度背景挖掘、材料公证美化与ICA系统官方申报。',
+        },
+        description: {
+          en: 'Singapore PR status unlocks subsidized healthcare, public housing access, child education priority, and CPF retirement security. We highlight your unique economic and community contributions.',
+          zh: '获得新加坡PR身份可享受优质医疗补贴、子女优先入读政府公立学校、中央公积金（CPF）及购房税费减免。我们深度梳理申请人家庭背景与社会融合度，大幅增强获批优势。',
+        },
+        image: '/assets/corporate/permanent-residency.jpg',
+        category: 'immigration',
+        processingTime: {
+          en: '6 - 12 Months (ICA processing)',
+          zh: '6 - 12 个月（视ICA移民局审查期）',
+        },
+        targetAudience: {
+          en: 'EP/S Pass Holders, Foreign Investors, International Families',
+          zh: 'EP/S Pass 持有人、家庭投资者、长期定居专业人士',
+        },
+        deliverables: [
+          { en: 'In-depth PR eligibility assessment and competitive profile audit', zh: '深入评估申请人背景竞争力，定制专属PR提升策略' },
+          { en: 'Strategic personalized Cover Letter highlighting societal value', zh: '撰写高水准个人陈述信（Cover Letter），凸显社会贡献' },
+          { en: 'Document compilation, certified translation, and notary review', zh: '全套支撑材料梳理、专业公证翻译与规范格式排版' },
+          { en: 'Flawless digital submission via the ICA e-PR portal', zh: 'ICA官方电子系统零差错递交与全流程状态跟进' },
+        ],
+        icon: 'Award',
+      },
+      {
+        id: 'dependants-pass',
+        order: '06',
+        title: {
+          en: "Dependant's Pass & Long-Term Visit Pass",
+          zh: '家属准证 (DP) 与长期探访准证 (LTVP)',
+        },
+        badge: {
+          en: 'Family Relocation',
+          zh: '全家移居与团聚',
+        },
+        shortDesc: {
+          en: 'Bring your legal spouse, children, and parents to live in Singapore through Dependant’s Pass (DP) and Long-Term Visit Pass (LTVP).',
+          zh: '协助就业准证持有者及永久居民为合法配偶、未成年子女及父母申请家属准证（DP）与长期探访准证（LTVP），实现全家赴新生活。',
+        },
+        description: {
+          en: 'Eligible work pass holders earning at least S$6,000/month can sponsor spouses and children for DP. We facilitate document legalization, vaccination registry verification, and school placement coordination.',
+          zh: '月薪达标（通常S$6,000及以上）的EP持有人可为配偶与21岁以下未婚子女申请DP；月薪S$12,000及以上可为父母申请LTVP。我们负责婚生证明认证、HPB疫苗注册及全程签证代办。',
+        },
+        image: '/assets/corporate/dependants-pass.jpg',
+        category: 'immigration',
+        processingTime: {
+          en: '2 - 4 Weeks',
+          zh: '2 - 4 周',
+        },
+        targetAudience: {
+          en: 'Spouses, Children & Parents of EP / EntrePass / PR Holders',
+          zh: 'EP/EntrePass/PR持有人的合法配偶、子女及长辈',
+        },
+        deliverables: [
+          { en: 'Dependant’s Pass (DP) application for legally married spouse', zh: '协助合法配偶申请家属准证（DP）全套申报' },
+          { en: 'Child DP with Health Promotion Board (HPB) vaccination sign-off', zh: '协助未成年子女通过新加坡HPB疫苗认证与DP申请' },
+          { en: 'Long-Term Visit Pass (LTVP) applications for parents', zh: '为父母申请长期探访准证（LTVP）材料指导与呈报' },
+          { en: 'Local and international school placement consultation', zh: '提供新加坡本土公立及国际知名学校入学择校衔接' },
+        ],
+        icon: 'Users',
+      },
+      {
+        id: 'immigration-advisory',
+        order: '07',
+        title: {
+          en: 'Immigration Advisory & Support',
+          zh: '移民顾问与全方位合规支持',
+        },
+        badge: {
+          en: '1-on-1 Advisory',
+          zh: '一对一合规专案',
+        },
+        shortDesc: {
+          en: 'Tailored consultation on Singapore immigration pathways, citizenship roadmap, tax residency planning, and corporate pass quota management.',
+          zh: '提供定制化新加坡移居战略、公民身份进阶路径、税务居民规划以及企业外籍雇员配额合规管理。',
+        },
+        description: {
+          en: 'Navigating Singapore immigration requires an up-to-date understanding of MOM, ACRA, and ICA regulations. We provide confidential, objective advisory to craft a multi-year relocation and tax-efficient residency blueprint.',
+          zh: '新加坡移民政策严谨且持续调整。我们的资深顾问凭借本土二十余载深厚资源，为您提供高度保密的一对一咨询，量身定制家庭移居方案与税务优化路径。',
+        },
+        image: '/assets/corporate/immigration-advisory.jpg',
+        category: 'immigration',
+        processingTime: {
+          en: 'On-Demand / Flexible',
+          zh: '预约即享深度咨询',
+        },
+        targetAudience: {
+          en: 'High-Net-Worth Individuals, Family Offices, Global Executives',
+          zh: '高净值人士、家族办公室、跨国企业高管与雇主',
+        },
+        deliverables: [
+          { en: 'Confidential 1-on-1 personalized immigration pathway assessment', zh: '高度保密的一对一个性化移民路径深度评估' },
+          { en: 'Multi-year residency roadmap (Work Pass → PR → Citizenship)', zh: '多阶段长期定居规划（工作准证 → PR → 新加坡公民）' },
+          { en: 'Singapore personal & corporate tax residency advisory', zh: '新加坡个人与企业税务居民身份合规咨询' },
+          { en: 'MOM Fair Consideration Framework (FCF) & quota guidance', zh: '新加坡人力部公平雇佣条例（FCF）与准证配额统筹' },
+        ],
+        icon: 'Compass',
       },
     ] as CorporatePillar[],
   },
 
   advantages: [
     {
-      title: { en: '25+ Years Verified Pedagogy', zh: '25+ 载深厚教育教研积淀' },
+      title: { en: '25+ Years Institutional Heritage', zh: '25+ 载新加坡深厚公信力' },
       desc: {
-        en: 'A mature curriculum heritage founded by Dr. Teng Jiashu, tested across tens of thousands of learners and professionals.',
-        zh: '传承滕家澍博士创立的严谨治学精神，历经数万学员与专业人士实践验证，体系成熟扎实。',
+        en: 'Rooted in Singapore since 1998, offering unparalleled local network, transparency, and institutional credibility.',
+        zh: '自1998年深耕新加坡本土，积累了广泛的官方互信、院校合作及商业网络，信誉卓著。',
       },
       icon: 'ShieldCheck',
     },
     {
-      title: { en: 'Singapore Institutional Standard', zh: '新加坡高标准合规与专业性' },
+      title: { en: 'ACRA & MOM Regulatory Rigor', zh: '紧跟 ACRA、MOM 及 ICA 最新政策' },
       desc: {
-        en: 'Strict compliance with Singapore regulatory bodies, MOM frameworks, and EduTrust educational benchmarks.',
-        zh: '严谨遵循新加坡相关政策、劳资政公平雇佣框架与私立教育高质标准，信誉可靠。',
+        en: 'Strict adherence to Singapore company laws, COMPASS scoring benchmarks, and official immigration guidelines.',
+        zh: '严谨遵循新加坡《公司法》、人力部COMPASS积分制与移民局准则，材料审核严丝合缝。',
       },
       icon: 'Award',
     },
     {
-      title: { en: 'Cross-Disciplinary Synergy', zh: '跨学科复合赋能独特优势' },
+      title: { en: 'End-to-End One-Stop Service', zh: '公司设立到全家移居一站式闭环' },
       desc: {
-        en: 'Seamlessly merging corporate professionalism with artistic creativity, multilingual agility, and brain science.',
-        zh: '融合专业商务素养、艺术美学陶冶、多语种实战与全脑认知科学，提供不可替代的复合型培训方案。',
+        en: 'From company incorporation and corporate secretarial to executive work passes and family permanent residency.',
+        zh: '无缝打通商业注册、银行开户、高管EP工签、家属团聚到永久居民PR申请全流程。',
       },
       icon: 'Sparkles',
     },
     {
-      title: { en: 'Customized & Measurable ROI', zh: '高契合度定制与可衡量成效' },
+      title: { en: '100% Confidentiality & Bilingual Advisory', zh: '全程私密保障与双语专业顾问' },
       desc: {
-        en: 'Every corporate programme is designed to solve real operational bottlenecks with transparent outcome tracking.',
-        zh: '紧扣企业实际业务痛点与员工成长诉求量身定制，提供清晰可衡量的培训转化与交付成果。',
+        en: 'Strict client privacy protection with seamless bilingual English and Mandarin professional support.',
+        zh: '严格执行客户信息保密协议，中英双语资深顾问团队提供清晰、高效、有温度的咨询。',
       },
       icon: 'Target',
     },
@@ -275,62 +376,62 @@ export const corporateServicesContent = {
   process: [
     {
       step: 'STEP 01',
-      title: { en: 'Discovery & Needs Audit', zh: '深度调研与痛点诊断' },
+      title: { en: 'Profile Assessment & Strategy', zh: '初步评估与方案定制' },
       desc: {
-        en: 'Understanding your enterprise objectives, team profile, operational hurdles, and budget parameters.',
-        zh: '深入了解企业战略目标、团队构成特点、面临的业务瓶颈与预期预算。',
+        en: 'In-depth review of your business plan, qualifications, or family background to identify the optimal legal and visa pathway.',
+        zh: '全面了解您的商业规划、教育背景或家庭情况，精准测算合规指标与最佳落地路径。',
       },
     },
     {
       step: 'STEP 02',
-      title: { en: 'Tailored Solution Architecture', zh: '方案定制与课程架构' },
+      title: { en: 'Document Curation & Verification', zh: '材料核验与合规润色' },
       desc: {
-        en: 'Curating custom modules, assigning lead faculty mentors, and providing detailed syllabus deliverables.',
-        zh: '针对性匹配核心教研师资，输出详细的模块化实施大纲、排期表与预期产出。',
+        en: 'Rigorous preparation of company incorporation forms, Business Plans, notarized documents, and COMPASS points proof.',
+        zh: '高效准备公司章程、商业计划书、公证翻译及官方积分证明，确保材料100%完整合规。',
       },
     },
     {
       step: 'STEP 03',
-      title: { en: 'Interactive Program Delivery', zh: '沉浸实施与互动交付' },
+      title: { en: 'Official ACRA / MOM / ICA Filing', zh: '官方系统电子申报' },
       desc: {
-        en: 'High-engagement workshops delivered on-site at your premises, at our modern campus, or via hybrid format.',
-        zh: '可安排企业上门培训、南洋校区实训或线上混合交付，注重实战演练与全员互动。',
+        en: 'Seamless digital submission to ACRA, MOM, or ICA portals with proactive status monitoring and liaison.',
+        zh: '通过官方直连通道呈交申请，专人跟进审批动态并及时响应政府部门的问询与补件。',
       },
     },
     {
       step: 'STEP 04',
-      title: { en: 'Outcomes Review & Sustained Support', zh: '成效复盘与持续赋能' },
+      title: { en: 'Approval & Long-Term Support', zh: '获批落地与后续陪伴' },
       desc: {
-        en: 'Delivering participant evaluation analytics, actionable growth roadmaps, and ongoing institutional alliance support.',
-        zh: '提供学员反馈大数据分析与评估报告，量化成果交付，并建立长期合作赋能机制。',
+        en: 'Immediate collection of incorporation certificates or visa passes, followed by ongoing statutory secretary and tax compliance.',
+        zh: '协助领取执照或完成准证办理，并提供后续银行开户、企业年审及移居生活长效支持。',
       },
     },
   ] as CorporateEngagementStep[],
 
   cta: {
     badge: {
-      en: 'Enterprise Consultation Hotline',
-      zh: '企业定制咨询专线 · 快速响应',
+      en: 'Confidential Consultation Line',
+      zh: '企业与移居专属咨询热线 · 快速响应',
     },
     title: {
-      en: 'Empower Your Organization with Nanyang Talent Group',
-      zh: '携手南洋人才集团 · 全面激发企业组织潜能',
+      en: 'Start Your Singapore Business & Immigration Journey',
+      zh: '开启您的高效新加坡商业与移居之旅',
     },
     subtitle: {
-      en: 'Speak directly with our Director of Corporate Services to discuss bespoke training programs, talent recruitment, or strategic institutional partnerships.',
-      zh: '欢迎致电或通过 WhatsApp 联络企业服务总监，我们将在24小时内为您出具专业诊断与定制化合作建议书。',
+      en: 'Speak directly with our senior incorporation and immigration consultants for a confidential assessment and bespoke roadmap within 24 hours.',
+      zh: '欢迎致电或通过 WhatsApp 联络我们资深顾问，24小时内为您提供免费初步可行性评估与专属合作方案。',
     },
     whatsappText: {
-      en: 'Corporate WhatsApp (+65 9004 8768)',
-      zh: '企业微信/WhatsApp (+65 9004 8768)',
+      en: 'WhatsApp Advisory (+65 9004 8768)',
+      zh: 'WhatsApp 快速咨询 (+65 9004 8768)',
     },
     officeText: {
-      en: 'Office Telephone: +65 6899 0828',
+      en: 'Office: +65 6899 0828',
       zh: '总部办公热线: +65 6899 0828',
     },
     formText: {
-      en: 'Request Corporate Proposal',
-      zh: '在线申请企业合作方案',
+      en: 'Book Confidential Consultation',
+      zh: '在线预约一对一咨询',
     },
   },
 };

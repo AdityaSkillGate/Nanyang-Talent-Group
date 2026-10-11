@@ -14,13 +14,13 @@ import { siteConfig } from '@/data/site-config';
 import { corporateServicesContent } from '@/content/corporate-services';
 import {
   Building2,
-  UserCheck,
-  GraduationCap,
-  Globe2,
-  Palette,
-  Brain,
-  ShieldCheck,
+  Briefcase,
+  FileCheck,
+  Rocket,
   Award,
+  Users,
+  Compass,
+  ShieldCheck,
   Sparkles,
   Target,
   ArrowRight,
@@ -28,9 +28,8 @@ import {
   Phone,
   CheckCircle2,
   Clock,
-  Briefcase,
-  Users,
-  Compass,
+  Check,
+  ExternalLink,
 } from 'lucide-react';
 
 interface CorporateServicesViewProps {
@@ -44,19 +43,21 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
 
   const getPillarIcon = (iconName: string) => {
     switch (iconName) {
-      case 'UserCheck':
-        return <UserCheck className="w-6 h-6 text-brand-red" />;
-      case 'GraduationCap':
-        return <GraduationCap className="w-6 h-6 text-brand-blue" />;
-      case 'Globe2':
-        return <Globe2 className="w-6 h-6 text-emerald-600" />;
-      case 'Palette':
-        return <Palette className="w-6 h-6 text-brand-gold" />;
-      case 'Brain':
-        return <Brain className="w-6 h-6 text-purple-600" />;
+      case 'Briefcase':
+        return <Briefcase className="w-6 h-6 text-brand-navy" />;
+      case 'FileCheck':
+        return <FileCheck className="w-6 h-6 text-emerald-600" />;
+      case 'Rocket':
+        return <Rocket className="w-6 h-6 text-brand-red" />;
+      case 'Award':
+        return <Award className="w-6 h-6 text-brand-gold" />;
+      case 'Users':
+        return <Users className="w-6 h-6 text-brand-blue" />;
+      case 'Compass':
+        return <Compass className="w-6 h-6 text-purple-600" />;
       case 'Building2':
       default:
-        return <Building2 className="w-6 h-6 text-brand-navy" />;
+        return <Building2 className="w-6 h-6 text-brand-red" />;
     }
   };
 
@@ -77,8 +78,8 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
   return (
     <>
       <Header lang={lang} />
-      <main className="flex-1 bg-surface-canvas min-h-screen py-10 sm:py-14 space-y-14 sm:space-y-20 pb-24 lg:pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+      <main className="flex-1 bg-surface-canvas min-h-screen py-10 sm:py-14 space-y-12 sm:space-y-16 pb-24 lg:pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14">
           {/* Breadcrumb */}
           <Breadcrumb
             homeHref={prefix || '/'}
@@ -88,15 +89,15 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
           {/* ========================================================= */}
           {/* 1. HERO SECTION                                           */}
           {/* ========================================================= */}
-          <section className="bg-white rounded-2xl border border-surface-border p-6 sm:p-10 shadow-card space-y-8">
+          <section className="bg-white rounded-3xl border border-surface-border p-6 sm:p-10 shadow-card space-y-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7 space-y-5">
                 <div className="flex flex-wrap items-center gap-2.5">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy/5 text-brand-navy text-xs font-bold uppercase tracking-wider">
-                    <Building2 className="w-4 h-4 text-brand-red" />
+                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
                     <span>{data.hero.badge[lang]}</span>
                   </div>
-                  <BilingualBadge en="B2B & Institutional" zh="企业与机构专享" color="gold" />
+                  <BilingualBadge en="B2B & Migration" zh="商业设立与移居专享" color="gold" />
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-navy tracking-tight leading-tight">
@@ -112,7 +113,7 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
                   {data.hero.stats.map((st, idx) => (
                     <div
                       key={idx}
-                      className="p-3.5 rounded-xl bg-surface-canvas border border-surface-border text-center space-y-1"
+                      className="p-3.5 rounded-2xl bg-surface-canvas border border-surface-border text-center space-y-1"
                     >
                       <span className="text-xl sm:text-2xl font-black text-brand-navy block">
                         {st.value}
@@ -146,7 +147,7 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
                     href={`${prefix}/contact`}
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[46px] rounded-xl text-sm font-semibold text-brand-navy hover:text-brand-red border border-slate-200 hover:bg-slate-50 transition-colors"
                   >
-                    <span>{isZh ? '提交合作意向' : 'Submit RFP / Inquiry'}</span>
+                    <span>{isZh ? '预约在线评估' : 'Book Consultation'}</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -163,18 +164,18 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
                     sizes="(max-width: 1024px) 100vw, 520px"
                     className="object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/35 to-black/10 flex flex-col justify-end p-6 text-white space-y-3">
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/40 to-black/10 flex flex-col justify-end p-6 text-white space-y-3">
                     <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-semibold self-start">
                       <Briefcase className="w-3.5 h-3.5 text-brand-gold" />
-                      <span>{isZh ? '新加坡企业综合人才解决方案' : 'Enterprise Talent & Training Hub'}</span>
+                      <span>{isZh ? '新加坡官方合规落地服务' : 'Official Singapore Setup & Migration'}</span>
                     </div>
                     <h3 className="text-lg font-bold text-white">
-                      {isZh ? '定制化 · 产教融合 · 跨学科赋能' : 'Customized · Collaborative · Cross-Disciplinary'}
+                      {isZh ? '商业设立 · 工作签证 · 永久居留' : 'Incorporation · Work Passes · Permanent Residency'}
                     </h3>
                     <p className="text-xs text-slate-300 leading-relaxed">
                       {isZh
-                        ? '全方位满足新加坡企业在人才引育、团队建设与高管潜能提升上的多维需求。'
-                        : 'Empowering organizations across Singapore with vetted talent, executive agility, and cultural wellness.'}
+                        ? '全流程专业对接新加坡 ACRA、MOM 及 ICA，为企业与个人提供高效、透明、合规的一站式保障。'
+                        : 'Seamless liaison with ACRA, MOM, and ICA for global entrepreneurs, executives, and families.'}
                     </p>
                   </div>
                 </div>
@@ -183,82 +184,187 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
           </section>
 
           {/* ========================================================= */}
-          {/* 2. 6 CORPORATE SOLUTION PILLARS                           */}
+          {/* QUICK JUMP PILLS                                          */}
           {/* ========================================================= */}
-          <section className="bg-white rounded-2xl border border-surface-border p-6 sm:p-10 shadow-xs space-y-10">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-bold text-brand-red">
-                <Building2 className="w-4 h-4" />
+          <div className="bg-white rounded-2xl border border-surface-border p-3 shadow-xs">
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-0.5 scrollbar-thin">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-400 pl-2 shrink-0">
+                {isZh ? '快捷直达:' : 'Quick Jump:'}
+              </span>
+              {data.pillarsSection.pillars.map((p) => (
+                <a
+                  key={p.id}
+                  href={`#${p.id}`}
+                  className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-50 hover:bg-red-50 text-slate-700 hover:text-brand-red border border-slate-200 hover:border-red-200 transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5"
+                >
+                  <span className="text-[10px] font-mono font-bold text-slate-400">{p.order}</span>
+                  <span>{p.title[lang]}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* ========================================================= */}
+          {/* 2. 7 SERVICES SHOWCASE WITH IMAGES                        */}
+          {/* ========================================================= */}
+          <section className="space-y-8">
+            <div className="space-y-2 text-center max-w-3xl mx-auto">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-brand-red text-xs uppercase tracking-wider font-bold">
+                <Building2 className="w-3.5 h-3.5" />
                 <span>{data.pillarsSection.badge[lang]}</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-navy tracking-tight">
                 {data.pillarsSection.title[lang]}
               </h2>
-              <p className="text-sm sm:text-base text-ink-secondary max-w-3xl">
+              <p className="text-sm sm:text-base text-ink-secondary">
                 {data.pillarsSection.subtitle[lang]}
               </p>
             </div>
 
-            {/* 6 Pillars Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {data.pillarsSection.pillars.map((pillar) => (
-                <div
-                  key={pillar.id}
-                  className="p-6 rounded-2xl bg-surface-canvas border border-surface-border hover:border-slate-300 hover:shadow-subtle transition-all flex flex-col justify-between space-y-5 group"
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="w-12 h-12 rounded-xl bg-white border border-surface-border flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
-                        {getPillarIcon(pillar.icon)}
+            {/* List of 7 Services with dedicated images */}
+            <div className="space-y-8">
+              {data.pillarsSection.pillars.map((pillar, idx) => {
+                const isEven = idx % 2 === 1;
+                return (
+                  <div
+                    key={pillar.id}
+                    id={pillar.id}
+                    className="scroll-mt-28 bg-white rounded-3xl border border-surface-border overflow-hidden shadow-card hover:border-slate-300 transition-all group"
+                  >
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+                      {/* Image Column */}
+                      <div
+                        className={`relative h-64 sm:h-80 lg:h-auto min-h-[280px] lg:col-span-5 ${
+                          isEven ? 'lg:order-2' : 'lg:order-1'
+                        } bg-slate-900`}
+                      >
+                        <Image
+                          src={pillar.image}
+                          alt={pillar.title[lang]}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 500px"
+                          className="object-cover group-hover:scale-102 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent flex flex-col justify-between p-5 text-white">
+                          <div className="flex items-center justify-between">
+                            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/90 text-brand-navy shadow-xs backdrop-blur-md">
+                              {pillar.badge[lang]}
+                            </span>
+                            <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-black/40 text-white backdrop-blur-md">
+                              #{pillar.order}
+                            </span>
+                          </div>
+
+                          <div className="flex items-center gap-2 text-xs bg-slate-950/70 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 self-start">
+                            <Clock className="w-3.5 h-3.5 text-brand-gold shrink-0" />
+                            <span>
+                              {isZh ? '官方周期:' : 'Processing:'} {pillar.processingTime[lang]}
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                      <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-white border border-slate-200 text-slate-600">
-                        {pillar.badge[lang]}
-                      </span>
+
+                      {/* Content Column */}
+                      <div
+                        className={`p-6 sm:p-8 lg:p-10 lg:col-span-7 flex flex-col justify-between space-y-6 ${
+                          isEven ? 'lg:order-1' : 'lg:order-2'
+                        }`}
+                      >
+                        <div className="space-y-4">
+                          <div className="flex items-center gap-3">
+                            <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+                              {getPillarIcon(pillar.icon)}
+                            </div>
+                            <div>
+                              <span className="text-[11px] font-bold text-brand-red uppercase tracking-wider block">
+                                {isZh ? '项目' : 'Service'} {pillar.order} · {pillar.badge[lang]}
+                              </span>
+                              <h3 className="text-xl sm:text-2xl font-bold text-brand-navy">
+                                {pillar.title[lang]}
+                              </h3>
+                            </div>
+                          </div>
+
+                          <p className="text-sm font-semibold text-brand-blue">
+                            {pillar.shortDesc[lang]}
+                          </p>
+
+                          <p className="text-sm text-ink-secondary leading-relaxed">
+                            {pillar.description[lang]}
+                          </p>
+
+                          {/* Target Audience Pill */}
+                          <div className="p-3 rounded-xl bg-surface-canvas border border-surface-border text-xs text-ink-muted">
+                            <span className="font-bold text-brand-navy mr-1.5">
+                              {isZh ? '适用对象:' : 'Who It’s For:'}
+                            </span>
+                            <span>{pillar.targetAudience[lang]}</span>
+                          </div>
+
+                          {/* Deliverables Checklist */}
+                          <div className="space-y-2 pt-1">
+                            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
+                              {isZh ? '核心服务内容与交付成果' : 'Key Inclusions & Deliverables'}
+                            </span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                              {pillar.deliverables.map((item, dIdx) => (
+                                <div key={dIdx} className="flex items-start gap-2 text-xs text-ink-secondary">
+                                  <div className="w-4 h-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                                    <Check className="w-3 h-3" />
+                                  </div>
+                                  <span className="leading-snug">{item[lang]}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Card Bottom CTA */}
+                        <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                          <div className="flex items-center gap-2 text-xs text-ink-muted">
+                            <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                            <span>{isZh ? '100% 官方合规申报保障' : 'Guaranteed Singapore Compliance'}</span>
+                          </div>
+
+                          <div className="flex items-center gap-2">
+                            <a
+                              href={`${siteConfig.contact.whatsapp}?text=${encodeURIComponent(
+                                `Hello Nanyang Talent Group, I would like to inquire about: ${pillar.title.en}`
+                              )}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors"
+                            >
+                              <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
+                              <span>{isZh ? '咨询该项目' : 'Inquire on WhatsApp'}</span>
+                            </a>
+                            <Link
+                              href={`${prefix}/contact`}
+                              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-brand-navy hover:bg-brand-navy-dark transition-colors"
+                            >
+                              <span>{isZh ? '预约申请' : 'Get Started'}</span>
+                              <ArrowRight className="w-3.5 h-3.5" />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-
-                    <div>
-                      <h3 className="text-lg font-bold text-brand-navy group-hover:text-brand-red transition-colors">
-                        {pillar.title[lang]}
-                      </h3>
-                      <p className="text-xs font-semibold text-brand-blue mt-1">
-                        {pillar.shortDesc[lang]}
-                      </p>
-                    </div>
-
-                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                      {pillar.description[lang]}
-                    </p>
                   </div>
-
-                  {/* Deliverables Checklist */}
-                  <div className="pt-3 border-t border-slate-200/80 space-y-2">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
-                      {isZh ? '交付内容及亮点' : 'Key Deliverables'}
-                    </span>
-                    <ul className="space-y-1.5">
-                      {pillar.deliverables.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-xs text-ink-secondary">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                          <span>{item[lang]}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
 
           {/* ========================================================= */}
           {/* 3. CORE INSTITUTIONAL ADVANTAGES                          */}
           {/* ========================================================= */}
-          <section className="bg-surface-canvas rounded-2xl border border-surface-border p-6 sm:p-10 space-y-8">
+          <section className="bg-surface-canvas rounded-3xl border border-surface-border p-6 sm:p-10 space-y-8">
             <div className="space-y-2">
               <span className="text-xs uppercase tracking-wider font-bold text-brand-gold block">
                 {isZh ? '权威机构优势' : 'Why Partner With Nanyang Talent Group'}
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight">
-                {isZh ? '以二十余载教育公信力 · 赋能企业长效增长' : 'Educational Heritage Grounding Modern Corporate Excellence'}
+                {isZh ? '以二十余载教育与官方公信力 · 保障商业设立与移居成功率' : 'Proven Singapore Heritage Grounding Commercial & Residency Success'}
               </h2>
             </div>
 
@@ -266,9 +372,9 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
               {data.advantages.map((adv, idx) => (
                 <div
                   key={idx}
-                  className="p-5 rounded-xl bg-white border border-surface-border shadow-2xs space-y-3"
+                  className="p-5 rounded-2xl bg-white border border-surface-border shadow-2xs space-y-3"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center">
                     {getAdvantageIcon(adv.icon)}
                   </div>
                   <h3 className="text-base font-bold text-brand-navy">
@@ -285,13 +391,13 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
           {/* ========================================================= */}
           {/* 4. 4-STEP ENGAGEMENT WORKFLOW                             */}
           {/* ========================================================= */}
-          <section className="bg-white rounded-2xl border border-surface-border p-6 sm:p-10 shadow-xs space-y-8">
+          <section className="bg-white rounded-3xl border border-surface-border p-6 sm:p-10 shadow-xs space-y-8">
             <div className="space-y-2">
               <span className="text-xs uppercase tracking-wider font-bold text-brand-red block">
-                {isZh ? '严谨合作流程' : 'Structured Engagement Methodology'}
+                {isZh ? '规范服务流程' : 'Structured 4-Step Process'}
               </span>
               <h2 className="text-2xl font-extrabold text-brand-navy">
-                {isZh ? '4步高效闭环 · 从需求诊断到成果复盘' : 'From Needs Discovery to Sustained ROI'}
+                {isZh ? '4步高效闭环 · 从需求评估到官方获批' : 'From Initial Assessment to Official Approval'}
               </h2>
             </div>
 
@@ -299,7 +405,7 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
               {data.process.map((step, idx) => (
                 <div
                   key={idx}
-                  className="p-5 rounded-xl bg-surface-canvas border border-surface-border space-y-2 relative"
+                  className="p-5 rounded-2xl bg-surface-canvas border border-surface-border space-y-2 relative"
                 >
                   <span className="text-xs font-bold text-brand-red font-mono block">
                     {step.step}
@@ -318,7 +424,7 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
           {/* ========================================================= */}
           {/* 5. DIRECT CTA SECTION                                     */}
           {/* ========================================================= */}
-          <section className="relative overflow-hidden bg-gradient-to-br from-brand-navy-dark via-brand-navy to-brand-navy-deep text-white rounded-2xl p-8 sm:p-12 shadow-card space-y-6">
+          <section className="relative overflow-hidden bg-gradient-to-br from-brand-navy-dark via-brand-navy to-slate-950 text-white rounded-3xl p-8 sm:p-12 shadow-card space-y-6">
             <div className="max-w-2xl space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-brand-gold text-xs font-semibold">
                 <Sparkles className="w-3.5 h-3.5" />
@@ -337,7 +443,7 @@ export const CorporateServicesView: React.FC<CorporateServicesViewProps> = ({ la
                 href={siteConfig.contact.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold text-white bg-emerald-700 hover:bg-emerald-800 transition-all shadow-md"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-all shadow-md"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>{data.cta.whatsappText[lang]}</span>

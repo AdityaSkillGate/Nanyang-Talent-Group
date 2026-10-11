@@ -139,13 +139,13 @@ export const seoMetadata = {
 
   corporateServices: {
     en: {
-      title: 'Corporate Services | Enterprise Talent & Training | Nanyang Talent Group',
+      title: 'Business Incorporation & Immigration Services | Singapore | Nanyang Talent Group',
       description:
-        'Comprehensive corporate services in Singapore: customized talent acquisition, executive upskilling, workplace bilingual fluency, corporate art wellness workshops, and cognitive agility training.',
+        'One-stop professional services in Singapore: ACRA company registration, corporate secretarial compliance, Employment Pass (EP), S Pass, EntrePass, Permanent Residency (PR), and immigration advisory.',
       openGraph: {
-        title: 'Corporate Services | Enterprise Talent & Training | Nanyang Talent Group',
+        title: 'Business Incorporation & Immigration Services | Nanyang Talent Group',
         description:
-          'Bespoke enterprise training, talent acquisition, bilingual communications, and corporate wellness workshops.',
+          'Fast ACRA company setup, corporate secretarial services, Employment Pass (EP), EntrePass, and Singapore PR application support.',
         url: `${baseUrl}/corporate-services`,
         locale: 'en_SG',
         type: 'website',
@@ -159,13 +159,13 @@ export const seoMetadata = {
       },
     } as Metadata,
     zh: {
-      title: '企业服务与机构人才赋能 | 新加坡企业内训 | 南洋人才集团',
+      title: '企业注册与移民服务 | 新加坡公司设立 · 工作签证 · 永久居留 | 南洋人才集团',
       description:
-        '南洋人才集团新加坡企业服务：定向人才招聘、企业定制化内训、商务双语实战培训、员工身心艺术工作坊、高效脑力认知研修及校企产教融合咨询。',
+        '南洋人才集团为全球企业与个人提供新加坡公司快速注册、法定秘书合规、就业准证（EP/SP）、创业准证（EntrePass）、永久居民（PR）申请及家属移居一站式服务。',
       openGraph: {
-        title: '企业服务与机构人才赋能 | 南洋人才集团',
+        title: '企业注册与移民服务 | 新加坡南洋人才集团',
         description:
-          '依托二十余载优质教育资源，为新加坡企业与跨国机构提供一站式人才引育与组织赋能方案。',
+          '依托二十余载本土深厚资源，提供新加坡公司注册、法定秘书、工作准证、创业签证及全家永久居留全方位服务。',
         url: `${baseUrl}/zh/corporate-services`,
         locale: 'zh_SG',
         type: 'website',

@@ -14,7 +14,7 @@ export default function CorporateServicesPage() {
   const orgSchema = getOrganizationSchema();
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: 'Home', url: 'https://nytalent.com.sg/' },
-    { name: 'Corporate Services', url: 'https://nytalent.com.sg/corporate-services' },
+    { name: 'Business Incorporation & Immigration Services', url: 'https://nytalent.com.sg/corporate-services' },
   ]);
 
   return (

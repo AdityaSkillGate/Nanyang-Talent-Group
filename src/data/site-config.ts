@@ -96,8 +96,8 @@ export const siteConfig = {
     },
     {
       key: 'corporate-services',
-      label: { en: 'Corporate Services', zh: '企业服务' },
-      href: { en: '/corporate-services', zh: '/zh/corporate-services' },
+      label: { en: 'Business & Immigration', zh: '企业注册与移民' },
+      href: { en: '/business-incorporation-immigration-services', zh: '/zh/business-incorporation-immigration-services' },
     },
     {
       key: 'contact',

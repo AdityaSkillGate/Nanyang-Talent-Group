@@ -16,9 +16,11 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-surface-canvas to-white pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 lg:pb-20 border-b border-surface-border">
-      {/* Background ambient decorative blurs */}
-      <div className="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 rounded-full bg-brand-blue/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -ml-24 -mb-24 w-96 h-96 rounded-full bg-brand-red/5 blur-3xl pointer-events-none" />
+      {/* Background ambient decorative blurs (Strictly clipped) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 rounded-full bg-brand-blue/5 blur-3xl" />
+        <div className="absolute bottom-0 left-0 -ml-24 -mb-24 w-96 h-96 rounded-full bg-brand-red/5 blur-3xl" />
+      </div>
 
       {/* SVG Background Motifs: Globe Arcs & Calligraphic Stroke */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none opacity-40">

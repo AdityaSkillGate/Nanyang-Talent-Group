@@ -8,20 +8,20 @@ import {
   getBreadcrumbSchema,
 } from '@/components/seo/StructuredData';
 
-export const metadata: Metadata = seoMetadata.corporateServices.zh;
+export const metadata: Metadata = seoMetadata.corporateServices.en;
 
-export default function ZhCorporateServicesPage() {
+export default function BusinessIncorporationImmigrationPage() {
   const orgSchema = getOrganizationSchema();
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: '首页', url: 'https://nytalent.com.sg/zh' },
-    { name: '企业注册与移民服务', url: 'https://nytalent.com.sg/zh/corporate-services' },
+    { name: 'Home', url: 'https://nytalent.com.sg/' },
+    { name: 'Business Incorporation & Immigration Services', url: 'https://nytalent.com.sg/business-incorporation-immigration-services' },
   ]);
 
   return (
     <>
       <StructuredData data={orgSchema} />
       <StructuredData data={breadcrumbSchema} />
-      <CorporateServicesView lang="zh" />
+      <CorporateServicesView lang="en" />
     </>
   );
 }

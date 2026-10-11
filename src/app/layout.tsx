@@ -38,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col font-sans bg-surface-canvas text-ink-primary antialiased">
+    <html lang="en" className="scroll-smooth overflow-x-hidden max-w-[100vw]">
+      <body className="min-h-screen flex flex-col font-sans bg-surface-canvas text-ink-primary antialiased overflow-x-hidden max-w-[100vw]">
         {children}
       </body>
     </html>

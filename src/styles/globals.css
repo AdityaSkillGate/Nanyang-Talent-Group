@@ -8,6 +8,8 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 6.5rem;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   /* Universal smooth interaction transitions */
@@ -21,6 +23,8 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   /* Editorial Headings Standard */
