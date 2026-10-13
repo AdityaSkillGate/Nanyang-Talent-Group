@@ -79,9 +79,9 @@ export default function EnrichmentCoursesPage() {
               {/* Category Card 1: Language Courses */}
               <CategoryCard
                 id="language"
-                title="Multilingual Studies"
-                chineseTitle="多语种研习体系 · 5大核心语种"
-                badge={{ en: 'Languages', zh: '语言学识' }}
+                title="Nanyang Academic School"
+                chineseTitle="南洋语文学校 · 5 Global Languages (Since 1993)"
+                badge={{ en: 'Since 1993', zh: '始于1993' }}
                 countLabel="5 Programmes"
                 description="Comprehensive, communicative language instruction designed to build natural fluency, correct pronunciation, structured grammar, and cross-cultural communication confidence."
                 highlights={[
@@ -97,9 +97,9 @@ export default function EnrichmentCoursesPage() {
               {/* Category Card 2: Brain Intelligence */}
               <CategoryCard
                 id="brain"
-                title="Brain Intelligence"
-                chineseTitle="全脑启发与思维训练 · 6大认知模块"
-                badge={{ en: 'Cognitive', zh: '全脑心智' }}
+                title="Nanyang Super Brain Education"
+                chineseTitle="南洋非凡大脑教育 · 6 Cognitive Modules"
+                badge={{ en: 'Cognitive', zh: '全脑启发' }}
                 countLabel="6 Programmes"
                 description="Cognitive enrichment leveraging proven developmental exercises, including Schulte attention squares, Buzan radiant mind mapping, and image mnemonic associative coding."
                 highlights={[

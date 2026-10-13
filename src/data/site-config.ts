@@ -84,21 +84,25 @@ export const siteConfig = {
       label: { en: 'About Us', zh: '关于我们' },
       href: { en: '/about', zh: '/zh/about' },
     },
+    /* Temporarily hidden until licence confirmation
     {
       key: 'job-placement',
       label: { en: 'Job Placement Service', zh: '就业安置服务' },
       href: { en: '/job-placement', zh: '/zh/job-placement' },
     },
+    */
     {
       key: 'courses',
       label: { en: 'Explore Course', zh: '探索课程' },
       href: { en: '/art-courses', zh: '/zh/art-courses' },
     },
+    /* Temporarily hidden until licence confirmation
     {
       key: 'corporate-services',
       label: { en: 'Business & Immigration', zh: '企业注册与移民' },
       href: { en: '/business-incorporation-immigration-services', zh: '/zh/business-incorporation-immigration-services' },
     },
+    */
     {
       key: 'contact',
       label: { en: 'Contact Us', zh: '联系我们' },

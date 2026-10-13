@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Language } from '@/content/types';
 import { languageCourses, brainCourses } from '@/content/enrichment-courses';
 import { Globe, Brain, ArrowRight, Sparkles, CheckCircle2, ChevronRight } from 'lucide-react';
@@ -32,21 +33,26 @@ export const FeaturedEnrichment: React.FC<FeaturedEnrichmentProps> = ({ lang }) 
 
         {/* Two Large Visual Pathways Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-          {/* Pathway 1: Language Courses */}
+          {/* Pathway 1: Nanyang Academic School */}
           <div className="bg-white rounded-2xl border border-surface-border shadow-card p-6 sm:p-8 flex flex-col justify-between hover:shadow-hover transition-all">
             <div className="space-y-6">
               {/* Card Header */}
               <div className="flex items-start justify-between gap-4 pb-4 border-b border-slate-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-brand-blue shrink-0">
-                    <Globe className="w-6 h-6" />
+                  <div className="w-20 h-14 rounded-xl bg-white border border-slate-200/90 flex items-center justify-center p-1 shrink-0 relative overflow-hidden shadow-2xs">
+                    <Image
+                      src="/assets/brands/nanyang-academic-school-logo.jpg"
+                      alt="Nanyang Academic School"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-brand-navy">
-                      {lang === 'zh' ? '多语种研习体系' : 'Language Courses'}
+                    <h3 className="text-xl sm:text-2xl font-bold text-brand-navy">
+                      {lang === 'zh' ? '南洋语文学校' : 'Nanyang Academic School'}
                     </h3>
                     <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mt-0.5">
-                      {lang === 'zh' ? '共 5 大语种研习' : '5 Global Languages'}
+                      {lang === 'zh' ? '始于 1993 年 · 5大语种研习' : 'Since 1993 · 5 Global Languages'}
                     </p>
                   </div>
                 </div>
@@ -94,27 +100,32 @@ export const FeaturedEnrichment: React.FC<FeaturedEnrichmentProps> = ({ lang }) 
                 href={`${prefix}/enrichment-courses#languages`}
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-brand-blue bg-sky-50 hover:bg-sky-100/70 border border-sky-200 transition-colors"
               >
-                <span>{lang === 'zh' ? '深入了解全部语言课程' : 'Explore All Language Programmes'}</span>
+                <span>{lang === 'zh' ? '深入了解南洋语文学校课程' : 'Explore Nanyang Academic School Programmes'}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
 
-          {/* Pathway 2: Brain Intelligence */}
+          {/* Pathway 2: Nanyang Super Brain Education */}
           <div className="bg-white rounded-2xl border border-surface-border shadow-card p-6 sm:p-8 flex flex-col justify-between hover:shadow-hover transition-all">
             <div className="space-y-6">
               {/* Card Header */}
               <div className="flex items-start justify-between gap-4 pb-4 border-b border-slate-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-brand-gold shrink-0">
-                    <Brain className="w-6 h-6" />
+                  <div className="w-20 h-14 rounded-xl bg-white border border-slate-200/90 flex items-center justify-center p-1 shrink-0 relative overflow-hidden shadow-2xs">
+                    <Image
+                      src="/assets/brands/nanyang-super-brain-logo.png"
+                      alt="Nanyang Super Brain Education"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-brand-navy">
-                      {lang === 'zh' ? '全脑潜能启发' : 'Brain Intelligence'}
+                    <h3 className="text-xl sm:text-2xl font-bold text-brand-navy">
+                      {lang === 'zh' ? '南洋非凡大脑教育' : 'Nanyang Super Brain Education'}
                     </h3>
-                    <p className="text-xs font-semibold text-brand-gold uppercase tracking-wider mt-0.5">
-                      {lang === 'zh' ? '共 6 大专注与思维模块' : '6 Cognitive Modules'}
+                    <p className="text-xs font-semibold text-amber-700 uppercase tracking-wider mt-0.5">
+                      {lang === 'zh' ? '脑科学进阶 · 6大启发模块' : 'Cognitive Acceleration · 6 Modules'}
                     </p>
                   </div>
                 </div>
@@ -162,7 +173,7 @@ export const FeaturedEnrichment: React.FC<FeaturedEnrichmentProps> = ({ lang }) 
                 href={`${prefix}/enrichment-courses#brain`}
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-brand-navy bg-amber-50 hover:bg-amber-100/70 border border-amber-200 transition-colors"
               >
-                <span>{lang === 'zh' ? '深入了解全部全脑课程' : 'Explore All Brain Intelligence Modules'}</span>
+                <span>{lang === 'zh' ? '深入了解南洋非凡大脑模块' : 'Explore Nanyang Super Brain Modules'}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

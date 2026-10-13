@@ -47,8 +47,8 @@ export default function HomePage() {
         {/* Hero */}
         <Hero lang="en" />
 
-        {/* 1. Student Recruitment Service */}
-        <HomeRecruitmentSection lang="en" />
+        {/* 1. Job Placement Service (Temporarily hidden until licence confirmation) */}
+        {/* <HomeRecruitmentSection lang="en" /> */}
 
         {/* 2. Courses (Heading: Explore Course) */}
         <PathwaysSection lang="en" />
@@ -64,9 +64,10 @@ export default function HomePage() {
         {/* 3. Student Reviews & Testimonials */}
         <StudentReviewsSection lang="en" />
 
-        {/* Institutional Pillars & Corporate Services */}
+        {/* Institutional Pillars */}
         <WhyNanyangSection lang="en" />
-        <HomeCorporateServicesSection lang="en" />
+        {/* Business & Immigration Services (Temporarily hidden until licence confirmation) */}
+        {/* <HomeCorporateServicesSection lang="en" /> */}
 
         {/* 4. FAQ Section */}
         <FAQPreviewSection lang="en" />

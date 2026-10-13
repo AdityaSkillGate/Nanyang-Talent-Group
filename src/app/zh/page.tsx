@@ -47,8 +47,8 @@ export default function ChineseHomePage() {
         {/* Hero */}
         <Hero lang="zh" />
 
-        {/* 1. Student Recruitment Service */}
-        <HomeRecruitmentSection lang="zh" />
+        {/* 1. 就业安置服务 (待牌照审批确认后启用，当前临时隐藏) */}
+        {/* <HomeRecruitmentSection lang="zh" /> */}
 
         {/* 2. Courses (Heading: Explore Course) */}
         <PathwaysSection lang="zh" />
@@ -64,9 +64,10 @@ export default function ChineseHomePage() {
         {/* 3. Student Reviews & Testimonials */}
         <StudentReviewsSection lang="zh" />
 
-        {/* Institutional Pillars & Corporate Services */}
+        {/* Institutional Pillars */}
         <WhyNanyangSection lang="zh" />
-        <HomeCorporateServicesSection lang="zh" />
+        {/* 企业注册与移民服务 (待牌照审批确认后启用，当前临时隐藏) */}
+        {/* <HomeCorporateServicesSection lang="zh" /> */}
 
         {/* 4. FAQ Section */}
         <FAQPreviewSection lang="zh" />

@@ -41,8 +41,8 @@ interface ShowcaseSlide {
 const SLIDES: ShowcaseSlide[] = [
   {
     id: 'art',
-    categoryEn: 'Fine Arts & Calligraphy',
-    categoryZh: '艺术与传统书法',
+    categoryEn: 'Nanyang Art',
+    categoryZh: '南洋美术',
     titleEn: 'Mastery in Classical Arts & Calligraphy',
     titleZh: '名师艺术造诣 · 经典书法与绘画',
     highlightEn: 'Dr. Teng Jiashu Pedagogy · Liu Kang Nanyang Style',
@@ -56,41 +56,9 @@ const SLIDES: ShowcaseSlide[] = [
     accentBg: 'bg-rose-500',
   },
   {
-    id: 'placement',
-    categoryEn: 'Job Placement Service',
-    categoryZh: '专业人才就业安置服务',
-    titleEn: 'Singapore Career & Placement Advisory',
-    titleZh: '新加坡专业人才就业安置 · 权威职场推荐',
-    highlightEn: 'Enterprise Referral · MOM & TAFEP Advisory · Career Readiness',
-    highlightZh: '企业精准内推 · 人力部准证指引 · 职业发展规划',
-    statBadgeEn: 'Enterprise Alliance Network',
-    statBadgeZh: '深厚企业雇主联盟网络',
-    image: '/assets/recruitment/student-recruitment-counseling.jpg',
-    href: '/job-placement',
-    icon: Briefcase,
-    accentColor: 'text-blue-400',
-    accentBg: 'bg-blue-500',
-  },
-  {
-    id: 'brain',
-    categoryEn: 'Brain Intelligence',
-    categoryZh: '前沿大脑潜能启发',
-    titleEn: 'Whole-Brain & Cognitive Development',
-    titleZh: '全脑潜能启发 · 超强记忆力拓展',
-    highlightEn: 'Speed Reading, Mind Mapping & Spatial Focus',
-    highlightZh: '高效思维导图、全脑速读与专注力深度研习',
-    statBadgeEn: '6 Cognitive Modules',
-    statBadgeZh: '6大前沿启发模块',
-    image: '/assets/courses/super-memory.jpg',
-    href: '/enrichment-courses#brain',
-    icon: Brain,
-    accentColor: 'text-amber-400',
-    accentBg: 'bg-amber-500',
-  },
-  {
     id: 'languages',
-    categoryEn: 'Multilingual Studies',
-    categoryZh: '多语种研习体系',
+    categoryEn: 'Nanyang Academic School',
+    categoryZh: '南洋语文学校',
     titleEn: 'Global Communication & Fluency',
     titleZh: '多语种实用研修 · 国际化语言能力',
     highlightEn: 'English, Mandarin, Japanese, German & Korean',
@@ -102,6 +70,22 @@ const SLIDES: ShowcaseSlide[] = [
     icon: Globe2,
     accentColor: 'text-emerald-400',
     accentBg: 'bg-emerald-500',
+  },
+  {
+    id: 'brain',
+    categoryEn: 'Nanyang Super Brain Education',
+    categoryZh: '南洋非凡大脑教育',
+    titleEn: 'Whole-Brain & Cognitive Development',
+    titleZh: '全脑潜能启发 · 超强记忆力拓展',
+    highlightEn: 'Speed Reading, Mind Mapping & Spatial Focus',
+    highlightZh: '高效思维导图、全脑速读与专注力深度研习',
+    statBadgeEn: '6 Cognitive Modules',
+    statBadgeZh: '6大前沿启发模块',
+    image: '/assets/courses/super-memory.jpg',
+    href: '/enrichment-courses#brain',
+    icon: Brain,
+    accentColor: 'text-amber-400',
+    accentBg: 'bg-amber-500',
   },
 ];
 
@@ -300,8 +284,8 @@ export const HeroShowcaseAnimation: React.FC<HeroShowcaseAnimationProps> = ({ la
                 <Icon className={`w-3.5 h-3.5 shrink-0 ${isActive ? 'text-brand-red' : 'text-slate-400'}`} />
                 <span className={`text-[11px] sm:text-xs font-bold truncate ${isActive ? 'text-brand-navy' : 'text-slate-600'}`}>
                   {isZh 
-                    ? (slide.id === 'art' ? '传统艺术' : slide.id === 'recruitment' ? '权威留学' : slide.id === 'brain' ? '全脑潜能' : '实用语种') 
-                    : (slide.id === 'art' ? 'Fine Arts' : slide.id === 'recruitment' ? 'Admissions' : slide.id === 'brain' ? 'Brain Intel' : 'Languages')}
+                    ? (slide.id === 'art' ? '南洋美术' : slide.id === 'placement' ? '就业安置' : slide.id === 'brain' ? '非凡大脑' : '语文学校') 
+                    : (slide.id === 'art' ? 'Nanyang Art' : slide.id === 'placement' ? 'Placement' : slide.id === 'brain' ? 'Super Brain' : 'Academic')}
                 </span>
               </div>
               <div className="w-full h-1 rounded-full bg-slate-200/80 overflow-hidden">

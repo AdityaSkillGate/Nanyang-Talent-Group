@@ -11,10 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
     '/about',
+    /* Temporarily excluded from sitemap pending license confirmation
     '/job-placement',
     '/corporate-services',
     '/business-incorporation-immigration-services',
     '/student-recruitment',
+    */
     '/art-courses',
     '/enrichment-courses',
     '/news-events',
@@ -24,10 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/design-system',
     '/zh',
     '/zh/about',
+    /* Temporarily excluded from sitemap pending license confirmation
     '/zh/job-placement',
     '/zh/corporate-services',
     '/zh/business-incorporation-immigration-services',
     '/zh/student-recruitment',
+    */
     '/zh/art-courses',
     '/zh/enrichment-courses',
     '/zh/news-events',

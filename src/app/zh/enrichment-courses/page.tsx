@@ -79,9 +79,9 @@ export default function ChineseEnrichmentCoursesPage() {
               {/* Category Card 1: Language Courses */}
               <CategoryCard
                 id="language"
-                title="多语种研习体系"
-                chineseTitle="5大国际交流语言 · 听说读写全方位精进"
-                badge={{ en: 'Languages', zh: '语言学识' }}
+                title="南洋语文学校"
+                chineseTitle="Nanyang Academic School · 始于1993年 (5大实用语种)"
+                badge={{ en: 'Since 1993', zh: '始于1993' }}
                 countLabel="5 门语种课程"
                 description="注重纯正发音、严谨句法与实用对话沟通能力培养，帮助学员逐步掌握流畅的地道跨文化交流技巧。"
                 highlights={[
@@ -97,9 +97,9 @@ export default function ChineseEnrichmentCoursesPage() {
               {/* Category Card 2: Brain Intelligence */}
               <CategoryCard
                 id="brain"
-                title="全脑潜能与思维进阶"
-                chineseTitle="6大认知科学训练模块 · 提升专注耐力与记忆效率"
-                badge={{ en: 'Cognitive', zh: '全脑心智' }}
+                title="南洋非凡大脑教育"
+                chineseTitle="Nanyang Super Brain Education · 6大认知科学模块"
+                badge={{ en: 'Cognitive', zh: '全脑启发' }}
                 countLabel="6 门认知课程"
                 description="依托科学的认知训练法，通过舒尔特方格、辐射思维导图及图像联想记忆，激发深层学习潜能。"
                 highlights={[

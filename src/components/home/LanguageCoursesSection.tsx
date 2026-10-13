@@ -18,23 +18,37 @@ export const LanguageCoursesSection: React.FC<LanguageCoursesSectionProps> = ({ 
     <section className="py-16 sm:py-24 bg-surface-canvas border-b border-surface-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-slate-200/70">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 text-brand-blue text-xs font-bold uppercase tracking-wider">
-              <Globe className="w-3.5 h-3.5" />
-              <span>{t.languageSection.badge[lang]}</span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200/70">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+            {/* Nanyang Academic School Brand Logo */}
+            <div className="relative h-20 w-36 sm:h-24 sm:w-44 bg-white rounded-2xl p-2.5 border border-slate-200/90 shadow-2xs shrink-0 flex items-center justify-center">
+              <Image
+                src="/assets/brands/nanyang-academic-school-logo.jpg"
+                alt={lang === 'zh' ? '南洋语文学校' : 'Nanyang Academic School'}
+                fill
+                className="object-contain p-1"
+                sizes="(max-width: 640px) 144px, 176px"
+              />
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight">
-              {t.languageSection.title[lang]}
-            </h2>
-            <p className="text-base text-ink-secondary max-w-2xl leading-relaxed">
-              {t.languageSection.subtitle[lang]}
-            </p>
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 text-brand-blue text-xs font-bold uppercase tracking-wider">
+                <Globe className="w-3.5 h-3.5" />
+                <span>{t.languageSection.badge[lang]}</span>
+                <span className="text-sky-300">•</span>
+                <span className="font-semibold">{lang === 'zh' ? '南洋语文学校 · 始于1993年' : 'Nanyang Academic School · Since 1993'}</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight">
+                {t.languageSection.title[lang]}
+              </h2>
+              <p className="text-base text-ink-secondary max-w-2xl leading-relaxed">
+                {t.languageSection.subtitle[lang]}
+              </p>
+            </div>
           </div>
           <div>
             <Link
               href={`${prefix}/enrichment-courses#languages`}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:underline"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:underline whitespace-nowrap"
             >
               <span>{t.languageSection.viewAll[lang]}</span>
               <ArrowRight className="w-4 h-4" />
