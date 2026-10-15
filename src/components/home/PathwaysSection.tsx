@@ -83,7 +83,7 @@ export const PathwaysSection: React.FC<PathwaysSectionProps> = ({ lang }) => {
               <div className="space-y-5">
                 {/* Brand Logo Container */}
                 <div className="relative h-28 sm:h-32 w-full bg-white rounded-xl p-3 border border-slate-200/80 shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)] flex items-center justify-center group-hover:border-slate-300 transition-all">
-                  <div className="relative h-full w-full max-w-[220px]">
+                  <div className={`relative h-full w-full ${pathway.id === 'art' ? 'max-w-[210px] scale-110 sm:scale-115' : 'max-w-[220px]'}`}>
                     <Image
                       src={pathway.logo}
                       alt={pathway.title}

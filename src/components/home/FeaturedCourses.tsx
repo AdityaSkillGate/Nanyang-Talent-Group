@@ -25,13 +25,13 @@ export const FeaturedCourses: React.FC<FeaturedCoursesProps> = ({ lang }) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
             {/* Nanyang Art Brand Logo */}
-            <div className="relative h-20 w-36 sm:h-24 sm:w-44 bg-white rounded-2xl p-2.5 border border-slate-200/90 shadow-2xs shrink-0 flex items-center justify-center">
+            <div className="relative h-22 w-40 sm:h-28 sm:w-48 bg-white rounded-2xl p-2 border border-slate-200/90 shadow-2xs shrink-0 flex items-center justify-center">
               <Image
                 src="/assets/brands/nanyang-art-logo.png"
                 alt={lang === 'zh' ? '南洋美术' : 'Nanyang Art'}
                 fill
-                className="object-contain p-1"
-                sizes="(max-width: 640px) 144px, 176px"
+                className="object-contain p-0.5 scale-105"
+                sizes="(max-width: 640px) 160px, 192px"
               />
             </div>
             <div className="space-y-2">
