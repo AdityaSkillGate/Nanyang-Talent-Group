@@ -81,9 +81,9 @@ export const PathwaysSection: React.FC<PathwaysSectionProps> = ({ lang }) => {
               className={`bg-white rounded-2xl p-6 sm:p-8 border border-surface-border border-t-4 ${pathway.colorClass} shadow-subtle hover:shadow-hover transition-all flex flex-col justify-between group`}
             >
               <div className="space-y-5">
-                {/* Brand Logo Container */}
-                <div className="relative h-28 sm:h-32 w-full bg-white rounded-xl p-3 border border-slate-200/80 shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)] flex items-center justify-center group-hover:border-slate-300 transition-all">
-                  <div className={`relative h-full w-full ${pathway.id === 'art' ? 'max-w-[210px] scale-110 sm:scale-115' : 'max-w-[220px]'}`}>
+                {/* Brand Logo Container (Border-free, clean presentation) */}
+                <div className="relative h-28 sm:h-32 w-full flex items-center justify-center py-1">
+                  <div className={`relative h-full w-full ${pathway.id === 'art' ? 'max-w-[210px] scale-110 sm:scale-115' : 'max-w-[230px]'} transition-transform duration-300 group-hover:scale-105`}>
                     <Image
                       src={pathway.logo}
                       alt={pathway.title}
